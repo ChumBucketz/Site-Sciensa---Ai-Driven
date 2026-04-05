@@ -38,69 +38,63 @@ export default function About() {
       />
 
       {/* Stats */}
-      <section className="border-y border-[#e5e5e5]">
-        <div className="max-w-7xl mx-auto px-6 py-16">
-          <StatGrid
-            stats={[
-              { value: "500+", label: "Engineers" },
-              { value: "10+", label: "Years" },
-              { value: "120+", label: "Enterprise clients" },
-              { value: "6", label: "Industries" },
-            ]}
-          />
+      <section className="max-w-7xl mx-auto px-6 py-3">
+        <div className="bg-white rounded-2xl px-10 py-12">
+          <StatGrid stats={[
+            { value: "500+", label: "Engineers" },
+            { value: "10+", label: "Years" },
+            { value: "120+", label: "Enterprise clients" },
+            { value: "6", label: "Industries" },
+          ]} />
         </div>
       </section>
 
       {/* Story */}
-      <section className="max-w-7xl mx-auto px-6 py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          <div>
-            <h2 className="text-heading text-black mb-8">Our story</h2>
-            <div className="space-y-5 text-[15px] text-[#4e4e4e] leading-relaxed tracking-[0.01em]">
-              <p>
-                We started in 2014 with a simple thesis: the hardest technology problems in Latin
-                America are in financial services, and solving them requires deep engineering — not
-                offshore staffing.
-              </p>
-              <p>
-                Today, over 500 engineers work across banking, payments, insurance, retail,
-                healthcare and energy — building the platforms that run critical infrastructure for
-                millions of users. We invest in proprietary platforms, publish research, and share
-                what we learn with the community.
-              </p>
-            </div>
-          </div>
-
-          {/* Timeline */}
-          <div>
-            {timeline.map((item, i) => (
-              <div key={item.year} className="flex gap-5 pb-8 relative">
-                <div className="flex flex-col items-center shrink-0">
-                  <div className="w-8 h-8 rounded-full border border-[#e5e5e5] flex items-center justify-center bg-white z-10">
-                    <div className="w-2 h-2 rounded-full bg-black" />
-                  </div>
-                  {i < timeline.length - 1 && (
-                    <div className="w-px flex-1 bg-[#e5e5e5] mt-1" />
-                  )}
-                </div>
-                <div className="pt-1 pb-2">
-                  <span className="text-label text-[#777169] block mb-1">{item.year}</span>
-                  <p className="text-[15px] text-[#4e4e4e] leading-relaxed tracking-[0.01em]">{item.event}</p>
-                </div>
+      <section className="max-w-7xl mx-auto px-6 py-3">
+        <div className="bg-white rounded-2xl px-10 py-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            <div>
+              <h2 className="text-heading text-black mb-8">Our story</h2>
+              <div className="space-y-5 text-[15px] text-[#4e4e4e] leading-relaxed tracking-[0.01em]">
+                <p>
+                  We started in 2014 with a simple thesis: the hardest technology problems in Latin
+                  America are in financial services, and solving them requires deep engineering — not
+                  offshore staffing.
+                </p>
+                <p>
+                  Today, over 500 engineers work across banking, payments, insurance, retail,
+                  healthcare and energy — building the platforms that run critical infrastructure for
+                  millions of users. We invest in proprietary platforms, publish research, and share
+                  what we learn with the community.
+                </p>
               </div>
-            ))}
+            </div>
+            <div>
+              {timeline.map((item, i) => (
+                <div key={item.year} className="flex gap-5 pb-8 relative">
+                  <div className="flex flex-col items-center shrink-0">
+                    <div className="w-8 h-8 rounded-full border border-[#e5e5e5] flex items-center justify-center bg-white z-10">
+                      <div className="w-2 h-2 rounded-full bg-black" />
+                    </div>
+                    {i < timeline.length - 1 && (
+                      <div className="w-px flex-1 bg-[#e5e5e5] mt-1" />
+                    )}
+                  </div>
+                  <div className="pt-1 pb-2">
+                    <span className="text-label text-[#777169] block mb-1">{item.year}</span>
+                    <p className="text-[15px] text-[#4e4e4e] leading-relaxed tracking-[0.01em]">{item.event}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* Values */}
-      <section className="bg-[#f5f5f5]">
-        <div className="max-w-7xl mx-auto px-6 py-24">
-          <SectionHeader
-            eyebrow="// VALUES"
-            headline="What drives us"
-            subheadline="Four principles that shape how we build, hire, and operate."
-          />
+      <section className="max-w-7xl mx-auto px-6 py-3">
+        <div className="bg-white rounded-2xl px-10 py-16">
+          <SectionHeader eyebrow="// VALUES" headline="What drives us" subheadline="Four principles that shape how we build, hire, and operate." />
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4">
             {values.map((v) => (
               <div key={v.title} className="el-card p-8">
@@ -113,29 +107,29 @@ export default function About() {
       </section>
 
       {/* Leadership */}
-      <section className="max-w-7xl mx-auto px-6 py-24">
-        <SectionHeader
-          eyebrow="// TEAM"
-          headline="Leadership"
-          subheadline="A senior team of engineers, architects and operators."
-        />
-        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {leadership.map((member) => (
-            <div key={member.name} className="el-card p-8 flex flex-col gap-2">
-              <div className="w-10 h-10 rounded-full bg-[#f5f5f5] border border-[#e5e5e5] mb-2" />
-              <span className="text-base font-medium text-black tracking-tight">{member.name}</span>
-              <span className="text-[15px] text-[#777169] tracking-[0.01em]">{member.role}</span>
-            </div>
-          ))}
+      <section className="max-w-7xl mx-auto px-6 py-3">
+        <div className="bg-white rounded-2xl px-10 py-16">
+          <SectionHeader eyebrow="// TEAM" headline="Leadership" subheadline="A senior team of engineers, architects and operators." />
+          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {leadership.map((member) => (
+              <div key={member.name} className="el-card p-8 flex flex-col gap-2">
+                <div className="w-10 h-10 rounded-full bg-[#f5f5f5] border border-[#e5e5e5] mb-2" />
+                <span className="text-base font-medium text-black tracking-tight">{member.name}</span>
+                <span className="text-[15px] text-[#777169] tracking-[0.01em]">{member.role}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      <CTABanner
-        headline="Want to be part of the team?"
-        subheadline="We're always looking for engineers who care about craft. See open positions or send us a note."
-        primary={{ label: "View open positions", href: "/careers" }}
-        secondary={{ label: "Contact us →", href: "/contact" }}
-      />
+      <section className="max-w-7xl mx-auto px-6 py-3 pb-6">
+        <CTABanner
+          headline="Want to be part of the team?"
+          subheadline="We're always looking for engineers who care about craft. See open positions or send us a note."
+          primary={{ label: "View open positions", href: "/careers" }}
+          secondary={{ label: "Contact us →", href: "/contact" }}
+        />
+      </section>
     </>
   );
 }

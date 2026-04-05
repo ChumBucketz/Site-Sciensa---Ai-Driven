@@ -27,8 +27,8 @@ export default function DigitalBanking() {
         subheadline="End-to-end digital banking platforms — from account opening and KYC to card management and self-service channels — built on event-driven, API-first architectures."
       />
 
-      <section className="border-b border-[#e5e5e5]">
-        <div className="max-w-7xl mx-auto px-6 py-16">
+      <section className="max-w-7xl mx-auto px-6 py-3">
+        <div className="bg-white rounded-2xl px-10 py-12">
           <StatGrid stats={[
             { value: "12M+", label: "Users on platforms we built" },
             { value: "8 wks", label: "Fastest go-live with Amplify" },
@@ -38,36 +38,38 @@ export default function DigitalBanking() {
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto px-6 py-24">
-        <SectionHeader eyebrow="// BUILDING BLOCKS" headline="What we deliver" subheadline="A complete digital banking stack, modular and composable." />
-        <div className="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-4">
-          {modules.map((mod) => (
-            <div key={mod.title} className="el-card p-8 flex flex-col gap-4">
-              <div>
-                <h3 className="text-base font-medium text-black mb-2 tracking-tight">{mod.title}</h3>
-                <p className="text-[15px] text-[#4e4e4e] leading-relaxed tracking-[0.01em]">{mod.description}</p>
+      <section className="max-w-7xl mx-auto px-6 py-3">
+        <div className="bg-white rounded-2xl px-10 py-16">
+          <SectionHeader eyebrow="// BUILDING BLOCKS" headline="What we deliver" subheadline="A complete digital banking stack, modular and composable." />
+          <div className="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-4">
+            {modules.map((mod) => (
+              <div key={mod.title} className="el-card p-8 flex flex-col gap-4">
+                <div>
+                  <h3 className="text-base font-medium text-black mb-2 tracking-tight">{mod.title}</h3>
+                  <p className="text-[15px] text-[#4e4e4e] leading-relaxed tracking-[0.01em]">{mod.description}</p>
+                </div>
+                <ul className="grid grid-cols-2 gap-x-4 gap-y-1.5 mt-auto">
+                  {mod.items.map((item) => (
+                    <li key={item} className="text-xs text-[#777169] flex items-center gap-2">
+                      <span className="w-1 h-1 rounded-full bg-[#777169] shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <ul className="grid grid-cols-2 gap-x-4 gap-y-1.5 mt-auto">
-                {mod.items.map((item) => (
-                  <li key={item} className="text-xs text-[#777169] flex items-center gap-2">
-                    <span className="w-1 h-1 rounded-full bg-[#777169] shrink-0" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
+            ))}
+            <div className="el-card p-8 bg-[#f5f5f5] flex flex-col justify-center gap-3">
+              <p className="text-xs font-medium uppercase tracking-widest text-[#777169]">Powered by</p>
+              <p className="text-xl font-light text-black tracking-tight">Amplify Platform</p>
+              <p className="text-[15px] text-[#4e4e4e] leading-relaxed tracking-[0.01em]">Compress your digital banking roadmap from months to weeks with pre-built, battle-tested modules.</p>
+              <Badge variant="warm" className="w-fit">Platform / Accelerator</Badge>
             </div>
-          ))}
-          <div className="el-card p-8 bg-[#f5f5f5] flex flex-col justify-center gap-3">
-            <p className="text-xs font-medium uppercase tracking-widest text-[#777169]">Powered by</p>
-            <p className="text-xl font-light text-black tracking-tight">Amplify Platform</p>
-            <p className="text-[15px] text-[#4e4e4e] leading-relaxed tracking-[0.01em]">Compress your digital banking roadmap from months to weeks with pre-built, battle-tested modules.</p>
-            <Badge variant="warm" className="w-fit">Platform / Accelerator</Badge>
           </div>
         </div>
       </section>
 
-      <section className="bg-[#f5f5f5]">
-        <div className="max-w-7xl mx-auto px-6 py-24">
+      <section className="max-w-7xl mx-auto px-6 py-3">
+        <div className="bg-white rounded-2xl px-10 py-16">
           <SectionHeader eyebrow="// PROOF POINTS" headline="Results from the field" />
           <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4">
             {caseStudies.map((cs) => (
@@ -84,12 +86,14 @@ export default function DigitalBanking() {
         </div>
       </section>
 
-      <CTABanner
-        headline="Ready to build your digital banking platform?"
-        subheadline="Talk to our team about your digital banking roadmap and how we can accelerate delivery."
-        primary={{ label: "Start a conversation", href: "/contact" }}
-        secondary={{ label: "Explore Amplify →", href: "/platforms/amplify" }}
-      />
+      <section className="max-w-7xl mx-auto px-6 py-3 pb-6">
+        <CTABanner
+          headline="Ready to build your digital banking platform?"
+          subheadline="Talk to our team about your digital banking roadmap and how we can accelerate delivery."
+          primary={{ label: "Start a conversation", href: "/contact" }}
+          secondary={{ label: "Explore Amplify →", href: "/platforms/amplify" }}
+        />
+      </section>
     </>
   );
 }

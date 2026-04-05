@@ -1,4 +1,7 @@
-import { ReactNode } from "react";
+"use client";
+
+import { ReactNode, Children } from "react";
+import { FadeIn } from "@/components/ui/FadeIn";
 
 interface CardGridProps {
   children: ReactNode;
@@ -15,7 +18,11 @@ export function CardGrid({ children, cols = 3, className = "" }: CardGridProps) 
 
   return (
     <div className={`grid ${colClasses[cols]} gap-4 ${className}`}>
-      {children}
+      {Children.map(children, (child, i) => (
+        <FadeIn delay={i * 80} className="h-full">
+          {child}
+        </FadeIn>
+      ))}
     </div>
   );
 }
@@ -30,7 +37,7 @@ export function Card({
   large?: boolean;
 }) {
   return (
-    <div className={`el-card${large ? "-lg" : ""} bg-white p-7 ${className}`}>
+    <div className={`el-card${large ? "-lg" : ""} bg-white p-7 h-full flex flex-col ${className}`}>
       {children}
     </div>
   );

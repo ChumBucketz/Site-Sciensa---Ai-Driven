@@ -21,43 +21,45 @@ export default function Solutions() {
         subheadline="Problem-oriented solutions that combine our capabilities, platforms, and industry expertise into outcomes you can measure."
       />
 
-      <section className="max-w-7xl mx-auto px-6 pb-24">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-          {solutions.map((solution) => (
-            <div key={solution.slug} className="el-card p-10 flex flex-col gap-5">
-              <div>
-                <MonoLabel className="block mb-3">{solution.label}</MonoLabel>
-                <h2 className="text-lg font-light leading-snug text-black mb-3 tracking-tight">{solution.headline}</h2>
-                <p className="text-[15px] text-[#4e4e4e] leading-relaxed tracking-[0.01em]">{solution.description}</p>
+      <section className="max-w-7xl mx-auto px-6 py-3">
+        <div className="bg-white rounded-2xl px-10 py-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            {solutions.map((solution) => (
+              <div key={solution.slug} className="el-card p-10 flex flex-col gap-5">
+                <div>
+                  <MonoLabel className="block mb-3">{solution.label}</MonoLabel>
+                  <h2 className="text-lg font-light leading-snug text-black mb-3 tracking-tight">{solution.headline}</h2>
+                  <p className="text-[15px] text-[#4e4e4e] leading-relaxed tracking-[0.01em]">{solution.description}</p>
+                </div>
+                <ul className="space-y-2">
+                  {solution.buildingBlocks.map((block) => (
+                    <li key={block} className="text-xs text-[#777169] flex items-center gap-2">
+                      <span className="w-1 h-1 rounded-full bg-[#777169] shrink-0" />
+                      {block}
+                    </li>
+                  ))}
+                </ul>
+                <div className="flex flex-wrap gap-2 pt-4 border-t border-[#e5e5e5] mt-auto">
+                  {solution.industries.map((ind) => (
+                    <Badge key={ind} variant="warm">{ind}</Badge>
+                  ))}
+                  {solution.capabilities.slice(0, 2).map((cap) => (
+                    <Badge key={cap} variant="default">{cap}</Badge>
+                  ))}
+                </div>
               </div>
-
-              <ul className="space-y-2">
-                {solution.buildingBlocks.map((block) => (
-                  <li key={block} className="text-xs text-[#777169] flex items-center gap-2">
-                    <span className="w-1 h-1 rounded-full bg-[#777169] shrink-0" />
-                    {block}
-                  </li>
-                ))}
-              </ul>
-
-              <div className="flex flex-wrap gap-2 pt-4 border-t border-[#e5e5e5] mt-auto">
-                {solution.industries.map((ind) => (
-                  <Badge key={ind} variant="warm">{ind}</Badge>
-                ))}
-                {solution.capabilities.slice(0, 2).map((cap) => (
-                  <Badge key={cap} variant="default">{cap}</Badge>
-                ))}
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
-      <CTABanner
-        headline="Build what complexity demands"
-        subheadline="Tell us about your challenge. We'll show you how our solutions, platforms, and capabilities come together to solve it."
-        primary={{ label: "Start a conversation", href: "/contact" }}
-      />
+      <section className="max-w-7xl mx-auto px-6 py-3 pb-6">
+        <CTABanner
+          headline="Build what complexity demands"
+          subheadline="Tell us about your challenge. We'll show you how our solutions, platforms, and capabilities come together to solve it."
+          primary={{ label: "Start a conversation", href: "/contact" }}
+        />
+      </section>
     </>
   );
 }

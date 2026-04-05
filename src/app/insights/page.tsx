@@ -22,16 +22,18 @@ export default function Insights() {
         subheadline="Articles, whitepapers and reports on AI, platforms, data, engineering and digital transformation in complex industries."
       />
 
-      <section className="max-w-7xl mx-auto px-6 pb-24">
-        <CategoryFilter
-          categories={["All", "AI", "Financial Services", "Platforms", "Data", "Engineering", "Cross-market"]}
-          articles={articles}
-        />
+      <section className="max-w-7xl mx-auto px-6 py-3">
+        <div className="bg-white rounded-2xl px-10 py-16">
+          <CategoryFilter
+            categories={["All", "AI", "Financial Services", "Platforms", "Data", "Engineering", "Cross-market"]}
+            articles={articles}
+          />
+        </div>
       </section>
 
       {/* Newsletter */}
-      <section className="bg-black text-white">
-        <div className="max-w-7xl mx-auto px-6 py-20">
+      <section className="max-w-7xl mx-auto px-6 py-3 pb-6">
+        <div className="bg-black text-white rounded-2xl px-10 py-20">
           <div className="max-w-xl">
             <h2 className="text-heading text-white mb-3">Stay ahead of the complexity curve</h2>
             <p className="text-[15px] text-white/60 mb-8 tracking-[0.01em]">

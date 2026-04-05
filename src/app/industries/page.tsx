@@ -22,8 +22,8 @@ export default function Industries() {
       />
 
       {/* Featured: Financial Services */}
-      <section className="max-w-7xl mx-auto px-6 pb-16">
-        <div className="el-card-lg overflow-hidden bg-black text-white p-10 md:p-14">
+      <section className="max-w-7xl mx-auto px-6 py-3">
+        <div className="bg-black text-white rounded-2xl p-10 md:p-14">
           <MonoLabel className="text-white/40 block mb-6">Primary vertical</MonoLabel>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
             <div>
@@ -50,13 +50,9 @@ export default function Industries() {
       </section>
 
       {/* Cross-market */}
-      <section className="bg-[#f5f5f5]">
-        <div className="max-w-7xl mx-auto px-6 py-24">
-          <SectionHeader
-            eyebrow="// CROSS-MARKET"
-            headline="Cross-market expertise"
-            subheadline="The same engineering rigor born in financial services, applied to every complex industry we serve."
-          />
+      <section className="max-w-7xl mx-auto px-6 py-3">
+        <div className="bg-white rounded-2xl px-10 py-16">
+          <SectionHeader eyebrow="// CROSS-MARKET" headline="Cross-market expertise" subheadline="The same engineering rigor born in financial services, applied to every complex industry we serve." />
           <div className="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-4">
             {crossMarket.map((industry) => (
               <div key={industry.slug} className="el-card p-10 flex flex-col gap-5">
@@ -79,11 +75,13 @@ export default function Industries() {
         </div>
       </section>
 
-      <CTABanner
-        headline="Operating in a complex market?"
-        subheadline="Let's discuss how engineering precision and AI can accelerate your digital agenda."
-        primary={{ label: "Talk to our team", href: "/contact" }}
-      />
+      <section className="max-w-7xl mx-auto px-6 py-3 pb-6">
+        <CTABanner
+          headline="Operating in a complex market?"
+          subheadline="Let's discuss how engineering precision and AI can accelerate your digital agenda."
+          primary={{ label: "Talk to our team", href: "/contact" }}
+        />
+      </section>
     </>
   );
 }

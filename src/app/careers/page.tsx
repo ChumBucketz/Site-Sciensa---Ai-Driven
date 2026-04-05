@@ -31,26 +31,22 @@ export default function Careers() {
         subheadline="Join 500+ engineers building mission-critical platforms for financial services, healthcare, retail and more."
       />
 
-      {/* Benefits */}
-      <section className="max-w-7xl mx-auto px-6 pb-24">
-        <SectionHeader
-          eyebrow="// WHY SCIENSA"
-          headline="Why engineers choose Sciensa"
-          subheadline="Hard problems, real impact, and a culture that invests in your growth."
-        />
-        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {benefits.map((b) => (
-            <div key={b.title} className="el-card p-8">
-              <h3 className="text-base font-medium text-black mb-2 tracking-tight">{b.title}</h3>
-              <p className="text-[15px] text-[#4e4e4e] tracking-[0.01em]">{b.description}</p>
-            </div>
-          ))}
+      <section className="max-w-7xl mx-auto px-6 py-3">
+        <div className="bg-white rounded-2xl px-10 py-16">
+          <SectionHeader eyebrow="// WHY SCIENSA" headline="Why engineers choose Sciensa" subheadline="Hard problems, real impact, and a culture that invests in your growth." />
+          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {benefits.map((b) => (
+              <div key={b.title} className="el-card p-8">
+                <h3 className="text-base font-medium text-black mb-2 tracking-tight">{b.title}</h3>
+                <p className="text-[15px] text-[#4e4e4e] tracking-[0.01em]">{b.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Jobs */}
-      <section className="bg-[#f5f5f5]">
-        <div className="max-w-7xl mx-auto px-6 py-24">
+      <section className="max-w-7xl mx-auto px-6 py-3">
+        <div className="bg-white rounded-2xl px-10 py-16">
           <SectionHeader eyebrow="// OPEN POSITIONS" headline="Open positions" />
           <div className="mt-10">
             <JobFilter
@@ -61,11 +57,13 @@ export default function Careers() {
         </div>
       </section>
 
-      <CTABanner
-        headline="Don't see your role? Reach out anyway."
-        subheadline="We're always interested in meeting exceptional engineers, architects and leaders. Send us a note."
-        primary={{ label: "Get in touch", href: "/contact" }}
-      />
+      <section className="max-w-7xl mx-auto px-6 py-3 pb-6">
+        <CTABanner
+          headline="Don't see your role? Reach out anyway."
+          subheadline="We're always interested in meeting exceptional engineers, architects and leaders. Send us a note."
+          primary={{ label: "Get in touch", href: "/contact" }}
+        />
+      </section>
     </>
   );
 }

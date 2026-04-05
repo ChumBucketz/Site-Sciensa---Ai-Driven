@@ -2,6 +2,7 @@ import { HeroSimple } from "@/components/sections/HeroSimple";
 import { SectionHeader } from "@/components/sections/SectionHeader";
 import { CTABanner } from "@/components/sections/CTABanner";
 import { Badge } from "@/components/ui/Badge";
+import { tagVariant } from "@/components/ui/tagColor";
 import { MonoLabel } from "@/components/ui/MonoLabel";
 
 const platforms = [
@@ -21,50 +22,40 @@ export default function Platforms() {
       />
 
       {/* Platform cards */}
-      <section className="max-w-7xl mx-auto px-6 pb-24">
-        <div className="flex flex-col gap-4">
-          {platforms.map((platform) => (
-            <div
-              key={platform.slug}
-              className="el-card-lg grid grid-cols-1 lg:grid-cols-2 overflow-hidden"
-            >
-              {/* Left */}
-              <div className="p-10 flex flex-col gap-4">
-                <div>
-                  <Badge variant="warm">{platform.type}</Badge>
+      <section className="max-w-7xl mx-auto px-6 py-3">
+        <div className="bg-white rounded-2xl px-10 py-16">
+          <div className="flex flex-col gap-4">
+            {platforms.map((platform, pi) => (
+              <div key={platform.slug} className="el-card-lg grid grid-cols-1 lg:grid-cols-2 overflow-hidden">
+                <div className="p-10 flex flex-col gap-4">
+                  <Badge variant={tagVariant(pi)}>{platform.type}</Badge>
+                  <div>
+                    <h2 className="text-2xl font-light text-black tracking-tight">{platform.label}</h2>
+                    <p className="text-[15px] text-[#777169] mt-1 tracking-[0.01em]">{platform.tagline}</p>
+                  </div>
+                  <p className="text-[15px] text-[#4e4e4e] leading-relaxed tracking-[0.01em]">{platform.description}</p>
                 </div>
-                <div>
-                  <h2 className="text-2xl font-light text-black tracking-tight">{platform.label}</h2>
-                  <p className="text-[15px] text-[#777169] mt-1 tracking-[0.01em]">{platform.tagline}</p>
+                <div className="p-10 bg-[#f5f5f5] flex flex-col justify-center">
+                  <MonoLabel className="block mb-5">Capabilities</MonoLabel>
+                  <ul className="space-y-3">
+                    {platform.highlights.map((h) => (
+                      <li key={h} className="flex items-center gap-3 text-[15px] text-[#4e4e4e] tracking-[0.01em]">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#777169] shrink-0" />
+                        {h}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <p className="text-[15px] text-[#4e4e4e] leading-relaxed tracking-[0.01em]">{platform.description}</p>
               </div>
-
-              {/* Right */}
-              <div className="p-10 bg-[#f5f5f5] flex flex-col justify-center">
-                <MonoLabel className="block mb-5">Capabilities</MonoLabel>
-                <ul className="space-y-3">
-                  {platform.highlights.map((h) => (
-                    <li key={h} className="flex items-center gap-3 text-[15px] text-[#4e4e4e] tracking-[0.01em]">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#777169] shrink-0" />
-                      {h}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Why platforms */}
-      <section className="bg-[#f5f5f5]">
-        <div className="max-w-7xl mx-auto px-6 py-24">
-          <SectionHeader
-            eyebrow="// WHY PROPRIETARY"
-            headline="Why proprietary platforms?"
-            subheadline="Built from real-world enterprise experience, our platforms encode proven patterns and accelerate delivery without sacrificing flexibility."
-          />
+      <section className="max-w-7xl mx-auto px-6 py-3">
+        <div className="bg-white rounded-2xl px-10 py-16">
+          <SectionHeader eyebrow="// WHY PROPRIETARY" headline="Why proprietary platforms?" subheadline="Built from real-world enterprise experience, our platforms encode proven patterns and accelerate delivery without sacrificing flexibility." />
           <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4">
             {[
               { title: "Faster time-to-market", description: "Pre-built modules and integrations reduce delivery timelines from months to weeks." },
@@ -80,11 +71,13 @@ export default function Platforms() {
         </div>
       </section>
 
-      <CTABanner
-        headline="Accelerate with our platforms"
-        subheadline="See how our enterprise platforms can compress your roadmap and amplify your engineering capacity."
-        primary={{ label: "Schedule a demo", href: "/contact" }}
-      />
+      <section className="max-w-7xl mx-auto px-6 py-3 pb-6">
+        <CTABanner
+          headline="Accelerate with our platforms"
+          subheadline="See how our enterprise platforms can compress your roadmap and amplify your engineering capacity."
+          primary={{ label: "Schedule a demo", href: "/contact" }}
+        />
+      </section>
     </>
   );
 }

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const columns = [
   {
@@ -38,8 +39,14 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           {/* Brand */}
           <div>
-            <Link href="/" className="text-white font-semibold text-base tracking-tight hover:opacity-70 transition-opacity">
-              Sciensa
+            <Link href="/" className="inline-block hover:opacity-70 transition-opacity">
+              <Image
+                src="/logos/Sciensa logo dark contrast.png"
+                alt="Sciensa"
+                width={120}
+                height={32}
+                className="h-7 w-auto"
+              />
             </Link>
             <p className="mt-4 text-[15px] text-white/50 leading-relaxed max-w-xs tracking-[0.01em]">
               AI-native engineering for the industries that can't afford to fail.

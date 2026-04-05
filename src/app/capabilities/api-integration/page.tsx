@@ -28,8 +28,8 @@ export default function APIIntegration() {
         subheadline="Enterprise APIs, legacy integration, event-driven messaging, orchestration layers, and secure connectivity — unifying your technology ecosystem."
       />
 
-      <section className="border-b border-[#e5e5e5]">
-        <div className="max-w-7xl mx-auto px-6 py-16">
+      <section className="max-w-7xl mx-auto px-6 py-3">
+        <div className="bg-white rounded-2xl px-10 py-12">
           <StatGrid stats={[
             { value: "500M+", label: "API calls managed/month" },
             { value: "99.99%", label: "Integration uptime" },
@@ -39,30 +39,32 @@ export default function APIIntegration() {
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto px-6 py-24">
-        <SectionHeader eyebrow="// WHAT WE BUILD" headline="Integration capabilities that connect" subheadline="From legacy mainframes to modern microservices — every system connected." />
-        <div className="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-4">
-          {capabilities.map((cap) => (
-            <div key={cap.title} className="el-card p-8 flex flex-col gap-4">
-              <div>
-                <h3 className="text-base font-medium text-black mb-2 tracking-tight">{cap.title}</h3>
-                <p className="text-[15px] text-[#4e4e4e] leading-relaxed tracking-[0.01em]">{cap.description}</p>
+      <section className="max-w-7xl mx-auto px-6 py-3">
+        <div className="bg-white rounded-2xl px-10 py-16">
+          <SectionHeader eyebrow="// WHAT WE BUILD" headline="Integration capabilities that connect" subheadline="From legacy mainframes to modern microservices — every system connected." />
+          <div className="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-4">
+            {capabilities.map((cap) => (
+              <div key={cap.title} className="el-card p-8 flex flex-col gap-4">
+                <div>
+                  <h3 className="text-base font-medium text-black mb-2 tracking-tight">{cap.title}</h3>
+                  <p className="text-[15px] text-[#4e4e4e] leading-relaxed tracking-[0.01em]">{cap.description}</p>
+                </div>
+                <ul className="grid grid-cols-2 gap-x-4 gap-y-1.5 mt-auto">
+                  {cap.items.map((item) => (
+                    <li key={item} className="text-xs text-[#777169] flex items-center gap-2">
+                      <span className="w-1 h-1 rounded-full bg-[#777169] shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <ul className="grid grid-cols-2 gap-x-4 gap-y-1.5 mt-auto">
-                {cap.items.map((item) => (
-                  <li key={item} className="text-xs text-[#777169] flex items-center gap-2">
-                    <span className="w-1 h-1 rounded-full bg-[#777169] shrink-0" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
-      <section className="bg-[#f5f5f5]">
-        <div className="max-w-7xl mx-auto px-6 py-24">
+      <section className="max-w-7xl mx-auto px-6 py-3">
+        <div className="bg-white rounded-2xl px-10 py-16">
           <SectionHeader eyebrow="// PROOF POINTS" headline="Results from the field" />
           <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4">
             {caseStudies.map((cs) => (
@@ -79,11 +81,13 @@ export default function APIIntegration() {
         </div>
       </section>
 
-      <CTABanner
-        headline="Ready to unify your technology ecosystem?"
-        subheadline="Talk to our integration engineering team about your connectivity challenges."
-        primary={{ label: "Start a conversation", href: "/contact" }}
-      />
+      <section className="max-w-7xl mx-auto px-6 py-3 pb-6">
+        <CTABanner
+          headline="Ready to unify your technology ecosystem?"
+          subheadline="Talk to our integration engineering team about your connectivity challenges."
+          primary={{ label: "Start a conversation", href: "/contact" }}
+        />
+      </section>
     </>
   );
 }

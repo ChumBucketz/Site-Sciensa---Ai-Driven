@@ -36,8 +36,8 @@ export default function FinancialServices() {
         subheadline="From core banking modernization to real-time payments and AI-driven risk intelligence — we build the mission-critical systems that financial institutions rely on to operate, innovate, and scale."
       />
 
-      <section className="border-b border-[#e5e5e5]">
-        <div className="max-w-7xl mx-auto px-6 py-16">
+      <section className="max-w-7xl mx-auto px-6 py-3">
+        <div className="bg-white rounded-2xl px-10 py-12">
           <StatGrid stats={[
             { value: "200+", label: "Financial services projects delivered" },
             { value: "40+", label: "Clients across banking, payments & insurance" },
@@ -47,34 +47,36 @@ export default function FinancialServices() {
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto px-6 py-24">
-        <SectionHeader
-          eyebrow="// WHAT WE DELIVER"
-          headline="End-to-end capabilities for financial institutions"
-          subheadline="Deep domain knowledge meets engineering precision — from strategy through production."
-        />
-        <div className="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-4">
-          {capabilities.map((cap) => (
-            <div key={cap.title} className="el-card p-8 flex flex-col gap-4">
-              <div>
-                <h3 className="text-base font-medium text-black mb-2 tracking-tight">{cap.title}</h3>
-                <p className="text-[15px] text-[#4e4e4e] leading-relaxed tracking-[0.01em]">{cap.description}</p>
+      <section className="max-w-7xl mx-auto px-6 py-3">
+        <div className="bg-white rounded-2xl px-10 py-16">
+          <SectionHeader
+            eyebrow="// WHAT WE DELIVER"
+            headline="End-to-end capabilities for financial institutions"
+            subheadline="Deep domain knowledge meets engineering precision — from strategy through production."
+          />
+          <div className="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-4">
+            {capabilities.map((cap) => (
+              <div key={cap.title} className="el-card p-8 flex flex-col gap-4">
+                <div>
+                  <h3 className="text-base font-medium text-black mb-2 tracking-tight">{cap.title}</h3>
+                  <p className="text-[15px] text-[#4e4e4e] leading-relaxed tracking-[0.01em]">{cap.description}</p>
+                </div>
+                <ul className="grid grid-cols-2 gap-x-4 gap-y-1.5 mt-auto">
+                  {cap.details.map((d) => (
+                    <li key={d} className="text-xs text-[#777169] flex items-center gap-2">
+                      <span className="w-1 h-1 rounded-full bg-[#777169] shrink-0" />
+                      {d}
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <ul className="grid grid-cols-2 gap-x-4 gap-y-1.5 mt-auto">
-                {cap.details.map((d) => (
-                  <li key={d} className="text-xs text-[#777169] flex items-center gap-2">
-                    <span className="w-1 h-1 rounded-full bg-[#777169] shrink-0" />
-                    {d}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
-      <section className="bg-[#f5f5f5]">
-        <div className="max-w-7xl mx-auto px-6 py-24">
+      <section className="max-w-7xl mx-auto px-6 py-3">
+        <div className="bg-white rounded-2xl px-10 py-16">
           <SectionHeader eyebrow="// PROOF POINTS" headline="Results that compound" subheadline="Selected outcomes from our work with leading financial institutions." />
           <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4">
             {caseStudies.map((cs) => (
@@ -91,28 +93,32 @@ export default function FinancialServices() {
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto px-6 py-24">
-        <SectionHeader eyebrow="// TECHNOLOGY STACK" headline="Battle-tested tooling" />
-        <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4">
-          {techStack.map((group) => (
-            <div key={group.category} className="el-card p-6">
-              <MonoLabel className="block mb-4">{group.category}</MonoLabel>
-              <ul className="space-y-2">
-                {group.items.map((item) => (
-                  <li key={item} className="text-[15px] text-[#4e4e4e] tracking-[0.01em]">{item}</li>
-                ))}
-              </ul>
-            </div>
-          ))}
+      <section className="max-w-7xl mx-auto px-6 py-3">
+        <div className="bg-white rounded-2xl px-10 py-16">
+          <SectionHeader eyebrow="// TECHNOLOGY STACK" headline="Battle-tested tooling" />
+          <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4">
+            {techStack.map((group) => (
+              <div key={group.category} className="el-card p-6">
+                <MonoLabel className="block mb-4">{group.category}</MonoLabel>
+                <ul className="space-y-2">
+                  {group.items.map((item) => (
+                    <li key={item} className="text-[15px] text-[#4e4e4e] tracking-[0.01em]">{item}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      <CTABanner
-        headline="Ready to modernize your financial infrastructure?"
-        subheadline="Schedule a briefing with our financial services engineering team to discuss your challenges and roadmap."
-        primary={{ label: "Schedule a briefing", href: "/contact" }}
-        secondary={{ label: "Other industries →", href: "/industries" }}
-      />
+      <section className="max-w-7xl mx-auto px-6 py-3 pb-6">
+        <CTABanner
+          headline="Ready to modernize your financial infrastructure?"
+          subheadline="Schedule a briefing with our financial services engineering team to discuss your challenges and roadmap."
+          primary={{ label: "Schedule a briefing", href: "/contact" }}
+          secondary={{ label: "Other industries →", href: "/industries" }}
+        />
+      </section>
     </>
   );
 }

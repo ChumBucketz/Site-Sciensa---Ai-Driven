@@ -1,11 +1,28 @@
 import { Hero } from "@/components/sections/Hero";
 import { SectionHeader } from "@/components/sections/SectionHeader";
 import { StatGrid } from "@/components/sections/StatGrid";
+import { IndustriesGrid } from "@/components/sections/IndustriesGrid";
+import { PlatformCarousel } from "@/components/sections/PlatformCarousel";
 import { CTABanner } from "@/components/sections/CTABanner";
 import { CardGrid, Card } from "@/components/sections/CardGrid";
-import { MonoLabel } from "@/components/ui/MonoLabel";
+import { CapabilitiesGrid } from "@/components/sections/CapabilitiesGrid";
+import { FadeIn } from "@/components/ui/FadeIn";
 import { Badge } from "@/components/ui/Badge";
+import { tagVariant } from "@/components/ui/tagColor";
+import { MockTerminal } from "@/components/mocks/MockTerminal";
+import { MockDashboard } from "@/components/mocks/MockDashboard";
+import { MockSquad } from "@/components/mocks/MockSquad";
+import Image from "next/image";
 import Link from "next/link";
+
+const logos = [
+  { src: "/logos/image 10.png", alt: "Genial Investimentos" },
+  { src: "/logos/image 11.png", alt: "Natura" },
+  { src: "/logos/image 12.png", alt: "PagNxt" },
+  { src: "/logos/image 14.png", alt: "Santander" },
+  { src: "/logos/image 23.png", alt: "Itaú" },
+  { src: "/logos/image 24.png", alt: "PicPay" },
+];
 
 export default function Home() {
   return (
@@ -23,9 +40,35 @@ export default function Home() {
         secondary={{ label: "Explore our capabilities", href: "/capabilities" }}
       />
 
+      {/* Logo ticker */}
+      <section className="max-w-7xl mx-auto px-6 py-3">
+        <FadeIn>
+        <p className="text-label text-[#777169] text-center mb-6">Trusted by leaders in complex industries</p>
+        <div className="overflow-hidden py-2" style={{ maskImage: "linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%)", WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%)" }}>
+          <div className="flex w-max animate-marquee gap-4">
+              {[...logos, ...logos].map((logo, i) => (
+                <div
+                  key={i}
+                  className="flex items-center justify-center w-36 h-16 shrink-0 sm:w-40 sm:h-[72px]"
+                >
+                  <Image
+                    src={logo.src}
+                    alt={logo.alt}
+                    width={120}
+                    height={40}
+                    className="object-contain max-h-9 w-auto"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </FadeIn>
+      </section>
+
       {/* Stats */}
-      <section className="border-b border-[#e5e5e5]">
-        <div className="max-w-7xl mx-auto px-6 py-16">
+      <section className="max-w-7xl mx-auto px-6 py-3">
+        <FadeIn>
+        <div className="bg-white rounded-2xl px-10 py-12">
           <p className="text-label text-[#777169] mb-10">
             Trusted by leaders in complex industries
           </p>
@@ -38,181 +81,151 @@ export default function Home() {
             ]}
           />
         </div>
+        </FadeIn>
       </section>
 
       {/* Why Sciensa */}
-      <section className="max-w-7xl mx-auto px-6 py-24">
-        <SectionHeader eyebrow="// WHY SCIENSA" headline="Forget technology services as you know them." />
-        <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4">
-          {[
-            {
-              title: "Intelligence Layer",
-              description: "Every solution ships with an embedded AI layer — from LLM orchestration to predictive pipelines — because intelligence shouldn't be an afterthought.",
-              stat: "200+",
-              statLabel: "AI models deployed",
-            },
-            {
-              title: "Domain Expertise",
-              description: "15+ years across financial services, healthcare, energy, retail, and telecom. We speak your industry's language and know its regulations.",
-              stat: "15+",
-              statLabel: "years of delivery",
-            },
-            {
-              title: "AI-Native Delivery",
-              description: "Cross-functional squads with AI engineers, data scientists, and domain specialists — not generic outsourcing, but purpose-built teams.",
-              stat: "40+",
-              statLabel: "active squads",
-            },
-          ].map((pillar) => (
-            <div key={pillar.title} className="el-card-lg p-8 flex flex-col gap-6">
-              <div>
-                <h3 className="text-base font-medium text-black mb-3 tracking-tight">{pillar.title}</h3>
-                <p className="text-[15px] text-[#4e4e4e] leading-relaxed tracking-[0.01em]">{pillar.description}</p>
-              </div>
-              <div className="mt-auto pt-5 border-t border-[#e5e5e5]">
-                <span className="text-2xl font-light text-black tracking-tight">{pillar.stat}</span>
-                <span className="block text-label text-[#777169] mt-1">{pillar.statLabel}</span>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Industry Studios */}
-      <section className="bg-[#f5f5f5]">
-        <div className="max-w-7xl mx-auto px-6 py-24">
-          <SectionHeader eyebrow="// INDUSTRY STUDIOS" headline="Industry Studios" />
-          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <section className="max-w-7xl mx-auto px-6 py-3">
+        <FadeIn>
+        <div className="bg-white rounded-2xl px-10 py-16">
+          <SectionHeader eyebrow="// WHY SCIENSA" headline="Forget technology services as you know them." />
+          <div className="mt-12 flex flex-col gap-6">
             {[
-              { title: "Financial Services", description: "Core banking, payments, credit platforms, open finance, and regulatory compliance at scale." },
-              { title: "Healthcare & Life Sciences", description: "Clinical data intelligence, telemedicine, and LGPD/HIPAA-compliant AI solutions." },
-              { title: "Energy & Mining", description: "Grid optimization, predictive maintenance, ESG analytics, and operational intelligence." },
-              { title: "Retail & E-commerce", description: "Omnichannel platforms, recommendation engines, and marketplace orchestration." },
-              { title: "Telecom", description: "Network analytics, billing modernization, churn prediction, and digital experience." },
-            ].map((industry) => (
-              <div key={industry.title} className="el-card p-8">
-                <h3 className="text-base font-medium text-black mb-3 tracking-tight">{industry.title}</h3>
-                <p className="text-[15px] text-[#4e4e4e] leading-relaxed tracking-[0.01em]">{industry.description}</p>
+              {
+                title: "Intelligence Layer",
+                description: "Every solution ships with an embedded AI layer — from LLM orchestration to predictive pipelines — because intelligence shouldn't be an afterthought.",
+                stat: "200+",
+                statLabel: "AI models deployed",
+                reverse: false,
+              },
+              {
+                title: "Domain Expertise",
+                description: "15+ years across financial services, healthcare, energy, retail, and telecom. We speak your industry's language and know its regulations.",
+                stat: "15+",
+                statLabel: "years of delivery",
+                reverse: true,
+              },
+              {
+                title: "AI-Native Delivery",
+                description: "Cross-functional squads with AI engineers, data scientists, and domain specialists — not generic outsourcing, but purpose-built teams.",
+                stat: "40+",
+                statLabel: "active squads",
+                reverse: false,
+              },
+            ].map((pillar) => (
+              <div
+                key={pillar.title}
+                className={`overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-6 py-[60px] ${pillar.reverse ? "lg:[&>*:first-child]:order-last" : ""}`}
+              >
+                {/* Animated mock */}
+                {pillar.title === "Intelligence Layer" && <MockTerminal />}
+                {pillar.title === "Domain Expertise" && <MockDashboard />}
+                {pillar.title === "AI-Native Delivery" && <MockSquad />}
+                {/* Text side */}
+                <div className="p-10 flex flex-col justify-center gap-6">
+                  <div>
+                    <h3 className="text-xl font-light text-black mb-3 tracking-tight">{pillar.title}</h3>
+                    <p className="text-[15px] text-[#4e4e4e] leading-relaxed tracking-[0.01em]">{pillar.description}</p>
+                  </div>
+                  <div className="pt-5 border-t border-[#e5e5e5]">
+                    <span className="text-3xl font-light text-black tracking-tight">{pillar.stat}</span>
+                    <span className="block text-label text-[#777169] mt-1">{pillar.statLabel}</span>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
         </div>
+        </FadeIn>
+      </section>
+
+      {/* Industry Studios */}
+      <section className="max-w-7xl mx-auto px-6 py-3">
+        <div className="bg-white rounded-2xl px-10 py-16">
+          <IndustriesGrid />
+        </div>
       </section>
 
       {/* Core Capabilities */}
-      <section className="max-w-7xl mx-auto px-6 py-24">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
-          <SectionHeader
-            eyebrow="// CAPABILITIES"
-            headline="Full-spectrum engineering for the AI era."
-            subheadline="From AI models to cloud infrastructure — every capability your enterprise needs."
-          />
-          <Link href="/capabilities" className="shrink-0 text-[15px] font-medium text-black hover:text-[#4e4e4e] transition-colors">
-            All capabilities →
-          </Link>
+      <section className="max-w-7xl mx-auto px-6 py-3">
+        <div className="bg-white rounded-2xl px-10 py-16">
+          <CapabilitiesGrid />
         </div>
-        <CardGrid cols={3}>
-          {[
-            { title: "AI Engineering", description: "Production-grade AI systems: LLM orchestration, computer vision, predictive models, and intelligent automation.", techs: ["PyTorch", "LangChain", "Hugging Face"] },
-            { title: "Data Intelligence", description: "Modern data platforms, real-time pipelines, lakehouse architectures, and self-service analytics.", techs: ["Spark", "Kafka", "Databricks"] },
-            { title: "Platform Engineering", description: "Cloud-native platforms, IDP toolchains, and golden paths for developer experience at scale.", techs: ["Kubernetes", "Terraform", "ArgoCD"] },
-            { title: "Product & Experience Engineering", description: "End-to-end product development — from discovery to delivery — with cross-functional squads.", techs: ["React", "TypeScript", "Next.js"] },
-            { title: "API & Integration Engineering", description: "API-first strategies, event-driven microservices, domain decomposition, and orchestration layers.", techs: ["Java", "Go", "GraphQL"] },
-            { title: "Cloud & DevSecOps", description: "Multi-cloud architectures, zero-trust security, FinOps, and regulatory compliance.", techs: ["AWS", "Azure", "GCP"] },
-          ].map((cap) => (
-            <Card key={cap.title}>
-              <h3 className="text-base font-medium text-black mb-3 tracking-tight">{cap.title}</h3>
-              <p className="text-[15px] text-[#4e4e4e] leading-relaxed mb-5 tracking-[0.01em]">{cap.description}</p>
-              <div className="flex flex-wrap gap-2">
-                {cap.techs.map((t) => (
-                  <Badge key={t} variant="default">{t}</Badge>
-                ))}
-              </div>
-            </Card>
-          ))}
-        </CardGrid>
       </section>
 
       {/* Platform Spotlight */}
-      <section className="bg-[#f5f5f5]">
-        <div className="max-w-7xl mx-auto px-6 py-24">
+      <section className="max-w-7xl mx-auto px-6 py-3">
+        <FadeIn>
+        <div className="bg-white rounded-2xl px-10 py-16">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
             <SectionHeader eyebrow="// PLATFORMS" headline="Proprietary platforms that accelerate delivery." />
             <Link href="/platforms" className="shrink-0 text-[15px] font-medium text-black hover:text-[#4e4e4e] transition-colors">
               All platforms →
             </Link>
           </div>
+          <PlatformCarousel />
+        </div>
+        </FadeIn>
+      </section>
+
+      {/* Reinvention Stories */}
+      <section className="max-w-7xl mx-auto px-6 py-3">
+        <FadeIn>
+        <div className="bg-white rounded-2xl px-10 py-16">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+            <SectionHeader eyebrow="// REINVENTION STORIES" headline="Outcomes that speak for themselves." />
+            <Link href="/case-studies" className="shrink-0 text-[15px] font-medium text-black hover:text-[#4e4e4e] transition-colors">
+              View all case studies →
+            </Link>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {[
-              { name: "Lumia AI", tag: "AI/ML", description: "AI/ML experimentation platform with model registry, automated pipelines, and intelligent observability.", features: ["Model Registry", "AutoML Pipelines", "AI Observability"] },
-              { name: "Amplify", tag: "ACCELERATION", description: "Digital acceleration platform for rapid delivery — from MVP to enterprise-grade products.", features: ["MVP Launchers", "Squad Templates", "Quality Gates"] },
-              { name: "Nexus", tag: "INTEGRATION", description: "Integration & orchestration platform connecting APIs, events, and data flows across ecosystems.", features: ["API Gateway", "Event Mesh", "Flow Designer"] },
-            ].map((platform) => (
-              <div key={platform.name} className="el-card-lg p-8 flex flex-col gap-4">
-                <div className="flex items-center justify-between">
-                  <h3 className="text-base font-medium text-black tracking-tight">{platform.name}</h3>
-                  <Badge variant="warm">{platform.tag}</Badge>
+              {
+                industry: "Financial Services",
+                title: "Re-architecting a Tier-1 bank's core lending platform",
+                bg: "bg-[#e5e3df]",
+                metrics: [{ value: "40%", label: "Faster time-to-market" }, { value: "99.99%", label: "Platform uptime" }, { value: "3×", label: "Throughput improvement" }],
+              },
+              {
+                industry: "Healthcare",
+                title: "Building an AI-powered clinical decision support system",
+                bg: "bg-[#dfe3e0]",
+                metrics: [{ value: "85%", label: "Diagnostic accuracy" }, { value: "60%", label: "Reduced report time" }, { value: "12", label: "Hospitals deployed" }],
+              },
+              {
+                industry: "Energy & Mining",
+                title: "Predictive maintenance platform for critical grid infrastructure",
+                bg: "bg-[#e3dfdf]",
+                metrics: [{ value: "35%", label: "Fewer unplanned outages" }, { value: "2.5×", label: "ROI in year one" }, { value: "50K+", label: "Assets monitored" }],
+              },
+            ].map((cs, ci) => (
+              <div key={cs.title} className="el-card flex flex-col overflow-hidden">
+                {/* Image placeholder */}
+                <div className={`${cs.bg} h-48 w-full shrink-0 rounded-t-2xl`} />
+                {/* Content */}
+                <div className="p-8 flex flex-col gap-4 flex-1">
+                  <Badge variant={tagVariant(ci)}>{cs.industry}</Badge>
+                  <h3 className="text-base font-medium leading-snug text-black tracking-tight">{cs.title}</h3>
+                  <div className="grid grid-cols-3 gap-3 mt-auto pt-5 border-t border-[#e5e5e5]">
+                    {cs.metrics.map((m) => (
+                      <div key={m.label}>
+                        <span className="text-xl font-light text-black tracking-tight block">{m.value}</span>
+                        <span className="text-xs text-[#777169] leading-snug">{m.label}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-                <p className="text-[15px] text-[#4e4e4e] leading-relaxed tracking-[0.01em]">{platform.description}</p>
-                <ul className="space-y-2 mt-auto">
-                  {platform.features.map((f) => (
-                    <li key={f} className="text-xs text-[#777169] flex items-center gap-2">
-                      <span className="w-1 h-1 rounded-full bg-[#777169] shrink-0" />
-                      {f}
-                    </li>
-                  ))}
-                </ul>
               </div>
             ))}
           </div>
         </div>
-      </section>
-
-      {/* Reinvention Stories */}
-      <section className="max-w-7xl mx-auto px-6 py-24">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
-          <SectionHeader eyebrow="// REINVENTION STORIES" headline="Outcomes that speak for themselves." />
-          <Link href="/case-studies" className="shrink-0 text-[15px] font-medium text-black hover:text-[#4e4e4e] transition-colors">
-            View all case studies →
-          </Link>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {[
-            {
-              industry: "Financial Services",
-              title: "Re-architecting a Tier-1 bank's core lending platform",
-              metrics: [{ value: "40%", label: "Faster time-to-market" }, { value: "99.99%", label: "Platform uptime" }, { value: "3×", label: "Throughput improvement" }],
-            },
-            {
-              industry: "Healthcare",
-              title: "Building an AI-powered clinical decision support system",
-              metrics: [{ value: "85%", label: "Diagnostic accuracy" }, { value: "60%", label: "Reduced report time" }, { value: "12", label: "Hospitals deployed" }],
-            },
-            {
-              industry: "Energy & Mining",
-              title: "Predictive maintenance platform for critical grid infrastructure",
-              metrics: [{ value: "35%", label: "Fewer unplanned outages" }, { value: "2.5×", label: "ROI in year one" }, { value: "50K+", label: "Assets monitored" }],
-            },
-          ].map((cs) => (
-            <div key={cs.title} className="el-card p-8 flex flex-col gap-5">
-              <Badge variant="warm">{cs.industry}</Badge>
-              <h3 className="text-base font-medium leading-snug text-black tracking-tight">{cs.title}</h3>
-              <div className="grid grid-cols-3 gap-3 mt-auto pt-5 border-t border-[#e5e5e5]">
-                {cs.metrics.map((m) => (
-                  <div key={m.label}>
-                    <span className="text-xl font-light text-black tracking-tight block">{m.value}</span>
-                    <span className="text-xs text-[#777169] leading-snug">{m.label}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
+        </FadeIn>
       </section>
 
       {/* Insights Preview */}
-      <section className="bg-[#f5f5f5]">
-        <div className="max-w-7xl mx-auto px-6 py-24">
+      <section className="max-w-7xl mx-auto px-6 py-3">
+        <FadeIn>
+        <div className="bg-white rounded-2xl px-10 py-16">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
             <SectionHeader eyebrow="// INSIGHTS" headline="Perspectives from the field." />
             <Link href="/insights" className="shrink-0 text-[15px] font-medium text-black hover:text-[#4e4e4e] transition-colors">
@@ -224,9 +237,9 @@ export default function Home() {
               { tag: "AI", title: "Why RAG Alone Isn't Enough for Enterprise AI", excerpt: "Moving beyond retrieval-augmented generation toward agent-based workflows that actually ship.", date: "Mar 2026", readTime: "6 min read" },
               { tag: "Engineering", title: "The Real Cost of Technical Debt in Financial Systems", excerpt: "A quantitative framework for measuring and prioritizing tech debt in regulated environments.", date: "Feb 2026", readTime: "8 min read" },
               { tag: "Cloud", title: "Multi-Cloud Is Not a Strategy — It's a Capability", excerpt: "How to build genuine portability without the overhead of lowest-common-denominator abstractions.", date: "Jan 2026", readTime: "5 min read" },
-            ].map((article) => (
+            ].map((article, ai) => (
               <div key={article.title} className="el-card p-8 flex flex-col gap-4">
-                <Badge variant="warm">{article.tag}</Badge>
+                <Badge variant={tagVariant(ai)}>{article.tag}</Badge>
                 <h3 className="text-base font-medium leading-snug text-black tracking-tight">{article.title}</h3>
                 <p className="text-[15px] text-[#4e4e4e] leading-relaxed flex-1 tracking-[0.01em]">{article.excerpt}</p>
                 <div className="flex items-center gap-4 text-xs text-[#777169]">
@@ -237,25 +250,30 @@ export default function Home() {
             ))}
           </div>
         </div>
+        </FadeIn>
       </section>
 
       {/* CTA */}
-      <CTABanner
-        eyebrow="// LET'S BUILD"
-        headline="Ready to engineer your next breakthrough?"
-        subheadline="From dedicated squads to accelerator programs and SaaS platforms — choose the engagement model that fits your ambition."
-        primary={{ label: "Start a conversation", href: "/contact" }}
-        secondary={{ label: "Learn about us →", href: "/about" }}
-      >
-        <blockquote className="border-l-2 border-white/20 pl-6 mt-2">
-          <p className="text-white/60 text-[15px] leading-relaxed italic max-w-xl">
-            "Sciensa delivered what our internal teams couldn't in 12 months — in under 90 days. Their AI-native approach changed how we think about engineering."
-          </p>
-          <cite className="block mt-3 text-xs text-white/30 tracking-wide not-italic">
-            — CTO, Fortune 500 Financial Services
-          </cite>
-        </blockquote>
-      </CTABanner>
+      <section className="max-w-7xl mx-auto px-6 py-3 pb-6">
+        <FadeIn>
+        <CTABanner
+          eyebrow="// LET'S BUILD"
+          headline="Ready to engineer your next breakthrough?"
+          subheadline="From dedicated squads to accelerator programs and SaaS platforms — choose the engagement model that fits your ambition."
+          primary={{ label: "Start a conversation", href: "/contact" }}
+          secondary={{ label: "Learn about us →", href: "/about" }}
+        >
+          <blockquote className="border-l-2 border-white/20 pl-6 mt-2">
+            <p className="text-white/60 text-[15px] leading-relaxed italic max-w-xl">
+              "Sciensa delivered what our internal teams couldn't in 12 months — in under 90 days. Their AI-native approach changed how we think about engineering."
+            </p>
+            <cite className="block mt-3 text-xs text-white/30 tracking-wide not-italic">
+              — CTO, Fortune 500 Financial Services
+            </cite>
+          </blockquote>
+        </CTABanner>
+        </FadeIn>
+      </section>
     </>
   );
 }

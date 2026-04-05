@@ -24,7 +24,7 @@ interface ButtonProps {
 const styles: Record<Variant, string> = {
   /* Primary — pure black pill, white text. Hover darkens imperceptibly. */
   "black-pill":
-    "inline-flex items-center justify-center gap-2 bg-black text-white px-5 py-2.5 rounded-[9999px] text-[15px] font-medium leading-tight tracking-normal transition-colors hover:bg-[#111111] active:bg-[#1a1a1a]",
+    "inline-flex items-center justify-center gap-2 bg-black text-white px-4 py-1.5 rounded-[9999px] text-[13px] font-medium leading-tight tracking-normal transition-colors hover:bg-[#111111] active:bg-[#1a1a1a]",
 
   /* Secondary — white with shadow-as-border. Hover: lightest warm gray (still AAA). */
   "white-pill":

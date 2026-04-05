@@ -27,8 +27,8 @@ export default function EnterpriseAI() {
         subheadline="Copilots, intelligent workflows, document understanding, and operational automation — enterprise AI integrated into your existing systems and processes."
       />
 
-      <section className="border-b border-[#e5e5e5]">
-        <div className="max-w-7xl mx-auto px-6 py-16">
+      <section className="max-w-7xl mx-auto px-6 py-3">
+        <div className="bg-white rounded-2xl px-10 py-12">
           <StatGrid stats={[
             { value: "60%", label: "Avg. process automation rate" },
             { value: "85%", label: "Manual effort reduction" },
@@ -38,36 +38,38 @@ export default function EnterpriseAI() {
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto px-6 py-24">
-        <SectionHeader eyebrow="// BUILDING BLOCKS" headline="What we deliver" subheadline="AI embedded in your operations — not bolted on." />
-        <div className="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-4">
-          {modules.map((mod) => (
-            <div key={mod.title} className="el-card p-8 flex flex-col gap-4">
-              <div>
-                <h3 className="text-base font-medium text-black mb-2 tracking-tight">{mod.title}</h3>
-                <p className="text-[15px] text-[#4e4e4e] leading-relaxed tracking-[0.01em]">{mod.description}</p>
+      <section className="max-w-7xl mx-auto px-6 py-3">
+        <div className="bg-white rounded-2xl px-10 py-16">
+          <SectionHeader eyebrow="// BUILDING BLOCKS" headline="What we deliver" subheadline="AI embedded in your operations — not bolted on." />
+          <div className="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-4">
+            {modules.map((mod) => (
+              <div key={mod.title} className="el-card p-8 flex flex-col gap-4">
+                <div>
+                  <h3 className="text-base font-medium text-black mb-2 tracking-tight">{mod.title}</h3>
+                  <p className="text-[15px] text-[#4e4e4e] leading-relaxed tracking-[0.01em]">{mod.description}</p>
+                </div>
+                <ul className="grid grid-cols-2 gap-x-4 gap-y-1.5 mt-auto">
+                  {mod.items.map((item) => (
+                    <li key={item} className="text-xs text-[#777169] flex items-center gap-2">
+                      <span className="w-1 h-1 rounded-full bg-[#777169] shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <ul className="grid grid-cols-2 gap-x-4 gap-y-1.5 mt-auto">
-                {mod.items.map((item) => (
-                  <li key={item} className="text-xs text-[#777169] flex items-center gap-2">
-                    <span className="w-1 h-1 rounded-full bg-[#777169] shrink-0" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
+            ))}
+            <div className="el-card p-8 bg-[#f5f5f5] flex flex-col justify-center gap-3">
+              <p className="text-xs font-medium uppercase tracking-widest text-[#777169]">Powered by</p>
+              <p className="text-xl font-light text-black tracking-tight">Lumia AI Platform</p>
+              <p className="text-[15px] text-[#4e4e4e] leading-relaxed tracking-[0.01em]">Enterprise AI platform with model registry, RAG orchestration, and production-grade guardrails.</p>
+              <Badge variant="warm" className="w-fit">AI Platform</Badge>
             </div>
-          ))}
-          <div className="el-card p-8 bg-[#f5f5f5] flex flex-col justify-center gap-3">
-            <p className="text-xs font-medium uppercase tracking-widest text-[#777169]">Powered by</p>
-            <p className="text-xl font-light text-black tracking-tight">Lumia AI Platform</p>
-            <p className="text-[15px] text-[#4e4e4e] leading-relaxed tracking-[0.01em]">Enterprise AI platform with model registry, RAG orchestration, and production-grade guardrails.</p>
-            <Badge variant="warm" className="w-fit">AI Platform</Badge>
           </div>
         </div>
       </section>
 
-      <section className="bg-[#f5f5f5]">
-        <div className="max-w-7xl mx-auto px-6 py-24">
+      <section className="max-w-7xl mx-auto px-6 py-3">
+        <div className="bg-white rounded-2xl px-10 py-16">
           <SectionHeader eyebrow="// PROOF POINTS" headline="Results from the field" />
           <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4">
             {caseStudies.map((cs) => (
@@ -84,12 +86,14 @@ export default function EnterpriseAI() {
         </div>
       </section>
 
-      <CTABanner
-        headline="Ready to embed AI into your operations?"
-        subheadline="Talk to our AI engineering team about your automation and intelligence challenges."
-        primary={{ label: "Start a conversation", href: "/contact" }}
-        secondary={{ label: "Explore Lumia AI →", href: "/platforms/lumia-ai" }}
-      />
+      <section className="max-w-7xl mx-auto px-6 py-3 pb-6">
+        <CTABanner
+          headline="Ready to embed AI into your operations?"
+          subheadline="Talk to our AI engineering team about your automation and intelligence challenges."
+          primary={{ label: "Start a conversation", href: "/contact" }}
+          secondary={{ label: "Explore Lumia AI →", href: "/platforms/lumia-ai" }}
+        />
+      </section>
     </>
   );
 }

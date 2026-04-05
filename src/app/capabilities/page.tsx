@@ -20,33 +20,37 @@ export default function Capabilities() {
         subheadline="Six core disciplines that cover the full technology stack — from infrastructure to experience — with the rigor of mission-critical systems."
       />
 
-      <section className="max-w-7xl mx-auto px-6 pb-24">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-          {capabilities.map((cap) => (
-            <div key={cap.slug} className="el-card p-10 flex flex-col gap-5">
-              <div>
-                <MonoLabel className="block mb-3">{cap.label}</MonoLabel>
-                <h2 className="text-xl font-light text-black mb-3 tracking-tight">{cap.headline}</h2>
-                <p className="text-[15px] text-[#4e4e4e] leading-relaxed tracking-[0.01em]">{cap.description}</p>
+      <section className="max-w-7xl mx-auto px-6 py-3">
+        <div className="bg-white rounded-2xl px-10 py-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            {capabilities.map((cap) => (
+              <div key={cap.slug} className="el-card p-10 flex flex-col gap-5">
+                <div>
+                  <MonoLabel className="block mb-3">{cap.label}</MonoLabel>
+                  <h2 className="text-xl font-light text-black mb-3 tracking-tight">{cap.headline}</h2>
+                  <p className="text-[15px] text-[#4e4e4e] leading-relaxed tracking-[0.01em]">{cap.description}</p>
+                </div>
+                <ul className="grid grid-cols-2 gap-x-4 gap-y-2 mt-2">
+                  {cap.subcapabilities.map((sub) => (
+                    <li key={sub} className="text-xs text-[#777169] flex items-center gap-2">
+                      <span className="w-1 h-1 rounded-full bg-[#777169] shrink-0" />
+                      {sub}
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <ul className="grid grid-cols-2 gap-x-4 gap-y-2 mt-2">
-                {cap.subcapabilities.map((sub) => (
-                  <li key={sub} className="text-xs text-[#777169] flex items-center gap-2">
-                    <span className="w-1 h-1 rounded-full bg-[#777169] shrink-0" />
-                    {sub}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
-      <CTABanner
-        headline="Need a specific capability?"
-        subheadline="Our teams combine multiple disciplines to solve your most complex engineering challenges."
-        primary={{ label: "Talk to our team", href: "/contact" }}
-      />
+      <section className="max-w-7xl mx-auto px-6 py-3 pb-6">
+        <CTABanner
+          headline="Need a specific capability?"
+          subheadline="Our teams combine multiple disciplines to solve your most complex engineering challenges."
+          primary={{ label: "Talk to our team", href: "/contact" }}
+        />
+      </section>
     </>
   );
 }
