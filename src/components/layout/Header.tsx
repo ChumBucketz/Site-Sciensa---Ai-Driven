@@ -18,24 +18,48 @@ const platformItems = [
     description: "AI-powered delivery acceleration platform.",
     href: "/platforms/amplify",
     gradient: "linear-gradient(135deg, #22AEA4 0%, #5EB359 100%)",
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    ),
   },
   {
     label: "Lumia AI",
     description: "Enterprise LLM orchestration and agent framework.",
     href: "/platforms/lumia-ai",
     gradient: "linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)",
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="12" r="4" fill="white" opacity="0.9"/>
+        <path d="M12 2v3M12 19v3M2 12h3M19 12h3" stroke="white" strokeWidth="1.5" strokeLinecap="round" opacity="0.5"/>
+      </svg>
+    ),
   },
   {
     label: "CodeGenius",
     description: "AI-native code generation and review at scale.",
     href: "/platforms/codegenius",
-    gradient: "linear-gradient(135deg, #f59e0b 0%, #ef4444 100%)",
+    gradient: "linear-gradient(135deg, #7c3aed 0%, #ec4899 100%)",
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+        <path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3M3 16v3a2 2 0 002 2h3m8 0h3a2 2 0 002-2v-3" stroke="white" strokeWidth="1.8" strokeLinecap="round" opacity="0.8"/>
+        <path d="M9 9l2 2 4-4" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    ),
   },
   {
     label: "SmartCollect",
     description: "Intelligent collections and credit lifecycle management.",
     href: "/platforms/smartcollect",
-    gradient: "linear-gradient(135deg, #0ea5e9 0%, #6366f1 100%)",
+    gradient: "linear-gradient(135deg, #ec4899 0%, #f97316 100%)",
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" stroke="white" strokeWidth="1.6" opacity="0.5"/>
+        <path d="M12 6v6l4 2" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M8 14s1 2 4 2 4-2 4-2" stroke="white" strokeWidth="1.6" strokeLinecap="round"/>
+      </svg>
+    ),
   },
 ];
 
@@ -124,18 +148,25 @@ function PlatformMegaMenu({ onClose }: { onClose: () => void }) {
           <Link key={p.href} href={p.href} onClick={onClose}
             className="group p-2 rounded-xl hover:bg-white transition-colors"
           >
-            {/* Image placeholder */}
             <div
-              className="h-28 w-full rounded-lg mb-3 relative overflow-hidden"
+              className="h-28 w-full rounded-lg mb-3 relative overflow-hidden flex items-center justify-center"
               style={{ background: p.gradient }}
             >
-              {/* Subtle grid on card */}
+              {/* Dots grid */}
               <div className="absolute inset-0 opacity-10"
                 style={{
-                  backgroundImage: "linear-gradient(rgba(255,255,255,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.4) 1px, transparent 1px)",
-                  backgroundSize: "20px 20px",
+                  backgroundImage: "radial-gradient(circle, rgba(255,255,255,0.7) 1px, transparent 1px)",
+                  backgroundSize: "16px 16px",
                 }}
               />
+              {/* Icon */}
+              <div className="relative flex flex-col items-center gap-2">
+                <div className="w-10 h-10 rounded-full flex items-center justify-center"
+                  style={{ background: "rgba(255,255,255,0.18)", backdropFilter: "blur(4px)" }}>
+                  {p.icon}
+                </div>
+                <span className="text-[11px] font-medium text-white/80 tracking-wide">{p.label}</span>
+              </div>
             </div>
             <p className="text-[14px] font-medium text-black group-hover:text-[#22AEA4] transition-colors tracking-tight">{p.label}</p>
             <p className="text-[12px] text-[#777169] leading-snug mt-0.5">{p.description}</p>
