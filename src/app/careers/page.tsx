@@ -28,7 +28,7 @@ export default function Careers() {
       <HeroSimple
         eyebrow="Careers"
         headline="Build what actually runs"
-        subheadline="Join 500+ engineers building mission-critical platforms for financial services, healthcare, retail and more."
+        subheadline="Join 500+ engineers building mission-critical platforms for financial services, healthcare, retail and more."        video="/Videos/0_Circuit_Board_Technology_3840x2160.mov"
       />
 
       <section className="max-w-7xl mx-auto px-6 py-3">

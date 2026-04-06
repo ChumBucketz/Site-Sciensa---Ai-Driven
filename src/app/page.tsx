@@ -183,25 +183,33 @@ export default function Home() {
               {
                 industry: "Financial Services",
                 title: "Re-architecting a Tier-1 bank's core lending platform",
-                bg: "bg-[#e5e3df]",
+                image: "/images/A (1).jpg",
                 metrics: [{ value: "40%", label: "Faster time-to-market" }, { value: "99.99%", label: "Platform uptime" }, { value: "3×", label: "Throughput improvement" }],
               },
               {
                 industry: "Healthcare",
                 title: "Building an AI-powered clinical decision support system",
-                bg: "bg-[#dfe3e0]",
+                image: "/images/A (2).jpg",
                 metrics: [{ value: "85%", label: "Diagnostic accuracy" }, { value: "60%", label: "Reduced report time" }, { value: "12", label: "Hospitals deployed" }],
               },
               {
                 industry: "Energy & Mining",
                 title: "Predictive maintenance platform for critical grid infrastructure",
-                bg: "bg-[#e3dfdf]",
+                image: "/images/A (3).jpg",
                 metrics: [{ value: "35%", label: "Fewer unplanned outages" }, { value: "2.5×", label: "ROI in year one" }, { value: "50K+", label: "Assets monitored" }],
               },
             ].map((cs, ci) => (
               <div key={cs.title} className="el-card flex flex-col overflow-hidden">
-                {/* Image placeholder */}
-                <div className={`${cs.bg} h-48 w-full shrink-0 rounded-t-2xl`} />
+                {/* Image */}
+                <div className="h-48 w-full shrink-0 rounded-t-2xl overflow-hidden relative">
+                  <Image
+                    src={cs.image}
+                    alt={cs.title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                </div>
                 {/* Content */}
                 <div className="p-8 flex flex-col gap-4 flex-1">
                   <Badge variant={tagVariant(ci)}>{cs.industry}</Badge>

@@ -1,6 +1,11 @@
 import { HeroSimple } from "@/components/sections/HeroSimple";
+import { SectionHeader } from "@/components/sections/SectionHeader";
+import { StatGrid } from "@/components/sections/StatGrid";
 import { CTABanner } from "@/components/sections/CTABanner";
 import { Badge } from "@/components/ui/Badge";
+import { MonoLabel } from "@/components/ui/MonoLabel";
+import { Button } from "@/components/ui/Button";
+import { FadeIn } from "@/components/ui/FadeIn";
 import { tagVariant } from "@/components/ui/tagColor";
 
 const caseStudies = [
@@ -19,39 +24,101 @@ export default function CaseStudies() {
         eyebrow="Case Studies"
         headline="Real results from complex builds"
         subheadline="How we help leaders in financial services, retail, healthcare and other regulated industries design, build and scale mission-critical platforms."
+        video="/Videos/0_Gold_Abstract_3840x2160.mp4"
       />
 
+      {/* Aggregate impact stats */}
       <section className="max-w-7xl mx-auto px-6 py-3">
-        <div className="bg-white rounded-2xl px-10 py-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-            {caseStudies.map((cs, ci) => (
-              <div key={cs.slug} className="el-card p-10 flex flex-col gap-5">
-                <div className="flex items-center gap-3">
-                  <Badge variant={tagVariant(ci)}>{cs.industry}</Badge>
-                  <span className="text-xs text-[#777169]">{cs.client}</span>
-                </div>
-                <h2 className="text-lg font-light leading-snug text-black tracking-tight">{cs.title}</h2>
-                <p className="text-[15px] text-[#4e4e4e] leading-relaxed flex-1 tracking-[0.01em]">{cs.summary}</p>
-                <div className="grid grid-cols-3 gap-4 pt-5 border-t border-[#e5e5e5]">
-                  {cs.metrics.map((m) => (
-                    <div key={m.label}>
-                      <span className="text-xl font-light text-black tracking-tight block">{m.value}</span>
-                      <span className="text-xs text-[#777169] leading-snug">{m.label}</span>
-                    </div>
-                  ))}
+        <FadeIn>
+          <div className="bg-white rounded-2xl px-10 py-12">
+            <p className="text-label text-[#777169] mb-10">Aggregate impact across engagements</p>
+            <StatGrid stats={[
+              { value: "120+", label: "Enterprise clients" },
+              { value: "R$1.2B+", label: "Recovered annually" },
+              { value: "200+", label: "Hospitals connected" },
+              { value: "99.99%", label: "Uptime delivered" },
+            ]} />
+          </div>
+        </FadeIn>
+      </section>
+
+      {/* Featured case study */}
+      <section className="max-w-7xl mx-auto px-6 py-3">
+        <FadeIn>
+          <div className="bg-black text-white rounded-2xl p-10 md:p-14">
+            <MonoLabel className="text-white/40 block mb-6">Featured engagement</MonoLabel>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+              <div>
+                <Badge variant="brand" className="mb-4">Financial Services</Badge>
+                <h2 className="text-heading text-white mt-2 mb-4">
+                  Next-gen digital banking platform for 12M+ users
+                </h2>
+                <p className="text-[15px] text-white/60 leading-relaxed tracking-[0.01em]">
+                  End-to-end modernization of a legacy core banking front-end into a cloud-native digital banking platform — serving 12 million active users, deploying 40× per week, and maintaining 99.99% uptime.
+                </p>
+                <div className="mt-8">
+                  <Button variant="white-pill" href="/contact">
+                    Discuss a similar challenge →
+                  </Button>
                 </div>
               </div>
-            ))}
+              <div className="grid grid-cols-3 gap-6 content-center">
+                {[
+                  { value: "12M+", label: "Active users" },
+                  { value: "99.99%", label: "Uptime" },
+                  { value: "40×", label: "Deployments/week" },
+                  { value: "6 mo", label: "Time to production" },
+                  { value: "3×", label: "Throughput improvement" },
+                  { value: "−40%", label: "Infra cost reduction" },
+                ].map((m) => (
+                  <div key={m.label}>
+                    <span className="text-2xl font-light text-white tracking-tight block">{m.value}</span>
+                    <span className="text-xs text-white/40 leading-snug">{m.label}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
-        </div>
+        </FadeIn>
+      </section>
+
+      {/* Case study grid */}
+      <section className="max-w-7xl mx-auto px-6 py-3">
+        <FadeIn>
+          <div className="bg-white rounded-2xl px-10 py-16">
+            <SectionHeader eyebrow="// ALL ENGAGEMENTS" headline="Outcomes that speak for themselves." />
+            <div className="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-4">
+              {caseStudies.map((cs, ci) => (
+                <div key={cs.slug} className="el-card p-10 flex flex-col gap-5">
+                  <div className="flex items-center gap-3">
+                    <Badge variant={tagVariant(ci)}>{cs.industry}</Badge>
+                    <span className="text-xs text-[#777169]">{cs.client}</span>
+                  </div>
+                  <h2 className="text-lg font-light leading-snug text-black tracking-tight">{cs.title}</h2>
+                  <p className="text-[15px] text-[#4e4e4e] leading-relaxed flex-1 tracking-[0.01em]">{cs.summary}</p>
+                  <div className="grid grid-cols-3 gap-4 pt-5 border-t border-[#e5e5e5]">
+                    {cs.metrics.map((m) => (
+                      <div key={m.label}>
+                        <span className="text-xl font-light text-black tracking-tight block">{m.value}</span>
+                        <span className="text-xs text-[#777169] leading-snug">{m.label}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </FadeIn>
       </section>
 
       <section className="max-w-7xl mx-auto px-6 py-3 pb-6">
-        <CTABanner
-          headline="Ready to build your next case study?"
-          subheadline="Let's discuss how Sciensa can help you design and deliver mission-critical platforms."
-          primary={{ label: "Start a conversation", href: "/contact" }}
-        />
+        <FadeIn>
+          <CTABanner
+            headline="Ready to build your next case study?"
+            subheadline="Let's discuss how Sciensa can help you design and deliver mission-critical platforms."
+            primary={{ label: "Start a conversation", href: "/contact" }}
+          />
+        </FadeIn>
       </section>
     </>
   );

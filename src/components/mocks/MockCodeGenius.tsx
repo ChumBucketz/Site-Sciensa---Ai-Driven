@@ -49,7 +49,9 @@ const assignments = [
 
 const LOOP_AT = 8000;
 
-type Column = typeof initialColumns[0];
+type Avatar = { id: string; name: string; color: string };
+type Card = { id: number; title: string; tags: string[]; assigned: Avatar | null };
+type Column = { label: string; cards: Card[] };
 
 function useInView(ref: React.RefObject<HTMLElement | null>) {
   const [inView, setInView] = useState(false);
@@ -75,7 +77,7 @@ export function MockCodeGenius() {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref as React.RefObject<HTMLElement>);
   const [columns, setColumns] = useState<Column[]>(initialColumns.map(col => ({
-    ...col, cards: col.cards.map(c => ({ ...c }))
+    ...col, cards: col.cards.map(c => ({ ...c, assigned: null as Avatar | null }))
   })));
   const [key, setKey] = useState(0);
   const [justAssigned, setJustAssigned] = useState<number | null>(null);

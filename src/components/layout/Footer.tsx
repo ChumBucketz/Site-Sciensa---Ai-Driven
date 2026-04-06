@@ -41,7 +41,7 @@ export function Footer() {
           <div>
             <Link href="/" className="inline-block hover:opacity-70 transition-opacity">
               <Image
-                src="/logos/Sciensa logo dark contrast.png"
+                src="/logos/Logo Sciensa Dark.svg"
                 alt="Sciensa"
                 width={120}
                 height={32}

@@ -34,7 +34,7 @@ export default function About() {
       <HeroSimple
         eyebrow="About Sciensa"
         headline="Engineering what matters most"
-        subheadline="Sciensa is a technology engineering firm that designs, builds and operates mission-critical platforms for the most demanding industries in Latin America and beyond."
+        subheadline="Sciensa is a technology engineering firm that designs, builds and operates mission-critical platforms for the most demanding industries in Latin America and beyond."        video="/Videos/0_Abstract_Art_Abstract_Background_3840x2160.mov"
       />
 
       {/* Stats */}

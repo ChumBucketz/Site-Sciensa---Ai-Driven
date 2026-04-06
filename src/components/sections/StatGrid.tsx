@@ -32,15 +32,16 @@ function useCountUp(target: number | null, duration = 1200, active: boolean) {
     let start: number | null = null;
     const isFloat = target % 1 !== 0;
 
+    const end = target;
     function step(ts: number) {
       if (!start) start = ts;
       const progress = Math.min((ts - start) / duration, 1);
       // ease out cubic
       const eased = 1 - Math.pow(1 - progress, 3);
-      const current = eased * target;
+      const current = eased * end;
       setCount(isFloat ? Math.round(current * 10) / 10 : Math.floor(current));
       if (progress < 1) requestAnimationFrame(step);
-      else setCount(target);
+      else setCount(end);
     }
 
     requestAnimationFrame(step);

@@ -1,94 +1,64 @@
-import { HeroSimple } from "@/components/sections/HeroSimple";
-import { StatGrid } from "@/components/sections/StatGrid";
-import { SectionHeader } from "@/components/sections/SectionHeader";
-import { CTABanner } from "@/components/sections/CTABanner";
-import { Badge } from "@/components/ui/Badge";
+import { PlatformDetailTemplate, type PlatformDetailData } from "@/components/templates/PlatformDetailTemplate";
 
-const modules = [
-  { title: "Onboarding & KYC", description: "Automated onboarding with real-time identity verification — account opening in under 5 minutes.", items: ["eKYC verification", "Biometric ID capture", "Document validation", "Real-time decisioning"] },
-  { title: "Digital Accounts PF/PJ", description: "Complete accounts with balance management, statements, and enterprise-grade transactions.", items: ["Checking & savings", "Multi-product catalog", "Real-time ledger", "Account lifecycle"] },
-  { title: "PIX & Payments", description: "Full PIX stack with 100% Bacen compliance — plus bulk billing and payment orchestration.", items: ["PIX instant payments", "Bulk billing", "Payment orchestration", "100% Bacen compliance"] },
-  { title: "Risk & Compliance", description: "Real-time risk management with limits, anti-fraud, credit analysis, and regulatory compliance.", items: ["Anti-fraud engine", "Credit analysis", "Dynamic limits", "Regulatory reporting"] },
-  { title: "Portal & Mobile", description: "White-label internet banking and native mobile apps with complete banking experience.", items: ["Responsive web portal", "iOS & Android apps", "White-label theming", "Push notifications"] },
-  { title: "Open Banking & Cards", description: "OpenAPI 3.0 integration layer and full card management — virtual and physical.", items: ["Open Banking APIs", "Virtual & physical cards", "Limit management", "Ecosystem integration"] },
-];
-
-const caseStudies = [
-  { client: "iFood Pago", title: "Digital Bank Launch", result: "Stood up the entire banking operation rapidly, enabling strategic account rollout for iFood Pago's top partners — from zero to live in record time.", tags: ["Digital Banking", "Platform", "Go-Live"] },
-  { client: "Mid-Size Bank", title: "Core Modernization", result: "Replaced legacy core with Amplify modules, cutting operational cost by 50% and enabling new product launches in weeks instead of quarters.", tags: ["Modernization", "Cost Reduction"] },
-  { client: "Financial Institution", title: "PJ Digital Account", result: "Launched a complete PJ digital account product in 8 weeks, reaching 10k+ active business accounts within the first quarter.", tags: ["PJ Accounts", "Time-to-Market"] },
-];
+const data: PlatformDetailData = {
+  eyebrow: "Platforms / Amplify",
+  headline: "Accelerate your digital banking with Amplify",
+  subheadline: "A modular platform that compresses digital banking launches from months to weeks — covering onboarding, accounts, payments, cards, and composable financial journeys.",
+  video: "/Videos/0_Circuit_Board_Technology_3840x2160.mov",
+  stats: [
+    { value: "10×", label: "Faster time-to-market" },
+    { value: "50%", label: "Lower development cost" },
+    { value: "6×", label: "Project ROI" },
+    { value: "40%", label: "Higher NPS" },
+  ],
+  approach: {
+    sectionLabel: "// WHY AMPLIFY",
+    sectionHeadline: "Built from real bank deployments.",
+    rows: [
+      {
+        title: "Modules that come pre-compliant",
+        description: "Every Amplify module ships with BACEN compliance, LGPD controls, and Open Finance APIs pre-built. You don't need to engineer regulatory compliance — we already did, across 20+ production deployments.",
+        stat: "100%",
+        statLabel: "Regulatory compliance across all Amplify deployments",
+        reverse: false,
+        items: ["BACEN automated reporting", "LGPD data handling", "FAPI-compliant Open Finance APIs", "PIX 100% Bacen compliance"],
+      },
+      {
+        title: "Composable, not monolithic",
+        description: "Don't need cards yet? Launch without them. Need to add PJ accounts in quarter two? Just activate the module. Amplify's composable architecture lets you launch what you need now and grow incrementally.",
+        stat: "8 wks",
+        statLabel: "Fastest full-stack launch with Amplify",
+        reverse: true,
+        items: ["Module-by-module activation", "API-first, no vendor lock-in", "White-label theming per brand", "Coexists with existing core banking"],
+      },
+    ],
+  },
+  modules: {
+    sectionLabel: "// PLATFORM MODULES",
+    sectionHeadline: "Everything you need to launch",
+    sectionSubheadline: "Pre-built, battle-tested modules for digital banking — composable and white-label.",
+    items: [
+      { title: "Onboarding & KYC", description: "Automated onboarding with real-time identity verification — account opening in under 5 minutes.", tags: ["eKYC", "Biometrics", "Real-time Decisioning"] },
+      { title: "Digital Accounts PF/PJ", description: "Complete accounts with balance management, statements, and enterprise-grade transactions.", tags: ["Checking & Savings", "Multi-product", "Real-time Ledger"] },
+      { title: "PIX & Payments", description: "Full PIX stack with 100% Bacen compliance — plus bulk billing and payment orchestration.", tags: ["PIX Instant", "Bulk Billing", "Orchestration"] },
+      { title: "Risk & Compliance", description: "Real-time risk management with limits, anti-fraud, credit analysis, and regulatory compliance.", tags: ["Anti-fraud", "Credit Analysis", "Dynamic Limits"] },
+      { title: "Portal & Mobile", description: "White-label internet banking and native mobile apps with complete banking experience.", tags: ["Responsive Web", "iOS & Android", "White-label"] },
+      { title: "Open Banking & Cards", description: "OpenAPI 3.0 integration layer and full card management — virtual and physical.", tags: ["Open Banking APIs", "Virtual Cards", "Physical Cards"] },
+    ],
+  },
+  caseStudies: [
+    { client: "iFood Pago", title: "Digital Bank Launch", result: "Stood up the entire banking operation rapidly, enabling strategic account rollout for iFood Pago's top partners — from zero to live in record time.", tags: ["Digital Banking", "Platform"] },
+    { client: "Mid-Size Bank", title: "Core Modernization", result: "Replaced legacy core with Amplify modules, cutting operational cost by 50% and enabling new product launches in weeks instead of quarters.", tags: ["Modernization", "Cost Reduction"] },
+    { client: "Financial Institution", title: "PJ Digital Account", result: "Launched a complete PJ digital account product in 8 weeks, reaching 10k+ active business accounts within the first quarter.", tags: ["PJ Accounts", "Time-to-Market"] },
+  ],
+  cta: {
+    headline: "Ready to accelerate your digital banking?",
+    subheadline: "Schedule a briefing to see how Amplify can compress your roadmap and reduce cost.",
+    primary: { label: "Schedule a briefing", href: "/contact" },
+    secondary: { label: "All platforms →", href: "/platforms" },
+  },
+};
 
 export default function Amplify() {
-  return (
-    <>
-      <HeroSimple
-        eyebrow="Platforms / Amplify"
-        headline="Accelerate your digital banking with Amplify"
-        subheadline="A modular platform that compresses digital banking launches from months to weeks — covering onboarding, accounts, payments, cards, and composable financial journeys."
-      />
-
-      <section className="max-w-7xl mx-auto px-6 py-3">
-        <div className="bg-white rounded-2xl px-10 py-12">
-          <StatGrid stats={[
-            { value: "10×", label: "Faster time-to-market" },
-            { value: "50%", label: "Lower development cost" },
-            { value: "6×", label: "Project ROI" },
-            { value: "40%", label: "Higher NPS" },
-          ]} />
-        </div>
-      </section>
-
-      <section className="max-w-7xl mx-auto px-6 py-3">
-        <div className="bg-white rounded-2xl px-10 py-16">
-          <SectionHeader eyebrow="// PLATFORM MODULES" headline="Everything you need to launch" subheadline="Pre-built, battle-tested modules for digital banking — composable and white-label." />
-          <div className="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-4">
-            {modules.map((mod) => (
-              <div key={mod.title} className="el-card p-8 flex flex-col gap-4">
-                <div>
-                  <h3 className="text-base font-medium text-black mb-2 tracking-tight">{mod.title}</h3>
-                  <p className="text-[15px] text-[#4e4e4e] leading-relaxed tracking-[0.01em]">{mod.description}</p>
-                </div>
-                <ul className="grid grid-cols-2 gap-x-4 gap-y-1.5 mt-auto">
-                  {mod.items.map((item) => (
-                    <li key={item} className="text-xs text-[#777169] flex items-center gap-2">
-                      <span className="w-1 h-1 rounded-full bg-[#777169] shrink-0" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="max-w-7xl mx-auto px-6 py-3">
-        <div className="bg-white rounded-2xl px-10 py-16">
-          <SectionHeader eyebrow="// PROOF POINTS" headline="Results from the field" />
-          <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4">
-            {caseStudies.map((cs) => (
-              <div key={cs.title} className="el-card p-8 flex flex-col gap-4">
-                <p className="text-xs text-[#777169] tracking-[0.01em]">{cs.client}</p>
-                <h3 className="text-base font-medium text-black tracking-tight">{cs.title}</h3>
-                <p className="text-[15px] text-[#4e4e4e] leading-relaxed tracking-[0.01em] flex-1">{cs.result}</p>
-                <div className="flex flex-wrap gap-2 mt-auto">
-                  {cs.tags.map((tag) => <Badge key={tag} variant="default">{tag}</Badge>)}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="max-w-7xl mx-auto px-6 py-3 pb-6">
-        <CTABanner
-          headline="Ready to accelerate your digital banking?"
-          subheadline="Schedule a briefing to see how Amplify can compress your roadmap and reduce cost."
-          primary={{ label: "Schedule a briefing", href: "/contact" }}
-          secondary={{ label: "All platforms →", href: "/platforms" }}
-        />
-      </section>
-    </>
-  );
+  return <PlatformDetailTemplate data={data} />;
 }

@@ -19,7 +19,7 @@ export default function Insights() {
       <HeroSimple
         eyebrow="Insights"
         headline="Thinking from the engineering floor"
-        subheadline="Articles, whitepapers and reports on AI, platforms, data, engineering and digital transformation in complex industries."
+        subheadline="Articles, whitepapers and reports on AI, platforms, data, engineering and digital transformation in complex industries."        video="/Videos/0_Speed_Lines_Motion_Blur_3840x2160.mp4"
       />
 
       <section className="max-w-7xl mx-auto px-6 py-3">

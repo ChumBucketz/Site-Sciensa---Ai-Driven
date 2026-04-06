@@ -6,7 +6,7 @@ import { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/Button";
 import {
   BrainCircuit, Layers, Database, Plug, Cloud, Sparkles,
-  Landmark, CreditCard, Bot, ShoppingBag, Network, Cpu,
+  Landmark, CreditCard, Bot, Network, Cpu,
   BadgeDollarSign, ShoppingCart, HeartPulse, Zap, Radio, Truck,
 } from "lucide-react";
 
@@ -288,189 +288,287 @@ function MobileAccordion({ label, children }: { label: string; children: React.R
 
 export function Header() {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
-  const [mobileOpen, setMobileOpen] = useState(false);
+
+  // Desktop panel animation: 2-phase open (expand → fade-in), 2-phase close (fade-out → collapse)
+  const [panelMounted, setPanelMounted] = useState(false);   // controls render
+  const [panelExpanded, setPanelExpanded] = useState(false); // controls max-height
+  const [panelContent, setPanelContent] = useState(false);   // controls inner opacity
+  const [displayedMenu, setDisplayedMenu] = useState<string | null>(null);
+
+  // Mobile menu — same 2-phase logic
+  const [mobileMounted, setMobileMounted] = useState(false);
+  const [mobileExpanded, setMobileExpanded] = useState(false);
+  const [mobileContent, setMobileContent] = useState(false);
+
   const [scrolled, setScrolled] = useState(false);
-  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const hoverTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const t1 = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const t2 = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
-    function onScroll() {
-      setScrolled(window.scrollY > 12);
-    }
+    function onScroll() { setScrolled(window.scrollY > 12); }
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  function clearTimers() {
+    if (hoverTimer.current) clearTimeout(hoverTimer.current);
+    if (t1.current) clearTimeout(t1.current);
+    if (t2.current) clearTimeout(t2.current);
+  }
+
+  // ── Desktop panel ──
   function openMenu(key: string) {
-    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    clearTimers();
     setActiveMenu(key);
+
+    if (panelMounted) {
+      // Already open — just swap content instantly, no height change
+      setDisplayedMenu(key);
+    } else {
+      // Phase 1: mount + expand height
+      setDisplayedMenu(key);
+      setPanelMounted(true);
+      requestAnimationFrame(() => {
+        setPanelExpanded(true);
+        // Phase 2: after expand, fade in content
+        t1.current = setTimeout(() => setPanelContent(true), 200);
+      });
+    }
   }
 
   function closeMenu() {
-    timeoutRef.current = setTimeout(() => setActiveMenu(null), 80);
+    hoverTimer.current = setTimeout(() => {
+      clearTimers();
+      setActiveMenu(null);
+      // Phase 1: fade out content
+      setPanelContent(false);
+      // Phase 2: collapse height
+      t1.current = setTimeout(() => {
+        setPanelExpanded(false);
+        // Phase 3: unmount
+        t2.current = setTimeout(() => {
+          setPanelMounted(false);
+          setDisplayedMenu(null);
+        }, 240);
+      }, 160);
+    }, 80);
+  }
+
+  // ── Mobile menu ──
+  function toggleMobile() {
+    clearTimers();
+    if (mobileMounted) {
+      // Close: fade content → collapse → unmount
+      setMobileContent(false);
+      t1.current = setTimeout(() => {
+        setMobileExpanded(false);
+        t2.current = setTimeout(() => setMobileMounted(false), 240);
+      }, 160);
+    } else {
+      // Open: mount → expand → fade content
+      setMobileMounted(true);
+      requestAnimationFrame(() => {
+        setMobileExpanded(true);
+        t1.current = setTimeout(() => setMobileContent(true), 200);
+      });
+    }
   }
 
   function closeAll() {
+    clearTimers();
     setActiveMenu(null);
-    setMobileOpen(false);
+    setPanelContent(false);
+    t1.current = setTimeout(() => {
+      setPanelExpanded(false);
+      t2.current = setTimeout(() => { setPanelMounted(false); setDisplayedMenu(null); }, 240);
+    }, 160);
+    setMobileContent(false);
+    setTimeout(() => {
+      setMobileExpanded(false);
+      setTimeout(() => setMobileMounted(false), 240);
+    }, 160);
   }
 
   return (
-    <header
-      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
-      style={{
-        background: scrolled ? "rgba(245,245,245,0.90)" : "rgba(245,245,245,1)",
-        backdropFilter: scrolled ? "blur(40px) saturate(180%)" : "none",
-        WebkitBackdropFilter: scrolled ? "blur(40px) saturate(180%)" : "none",
-        boxShadow: scrolled ? "0 1px 0 rgba(0,0,0,0.08), 0 4px 16px rgba(0,0,0,0.05)" : "none",
-      }}
-    >
-      <div className="max-w-7xl mx-auto px-6 h-14 flex items-center justify-between gap-8">
-        {/* Logo */}
-        <Link href="/" className="shrink-0 hover:opacity-80 transition-opacity" onClick={closeAll}>
-          <Image src="/logos/Sciensa logo.png" alt="Sciensa" width={120} height={32} className="h-7 w-auto" priority />
-        </Link>
-
-        {/* Desktop nav */}
-        <nav className="hidden md:flex items-center ml-auto">
-          <Link href="/about" className="px-3 py-2 text-[13px] font-medium text-[#4e4e4e] hover:text-black rounded-[4px] hover:bg-[#f5f5f5] transition-colors tracking-[0.01em]">
-            About
+    <div className="fixed top-0 left-0 right-0 z-50">
+      {/* ── Navbar bar ── */}
+      <header
+        className="transition-all duration-300"
+        style={{
+          background: scrolled ? "rgba(245,245,245,0.82)" : "rgba(245,245,245,0.75)",
+          backdropFilter: "blur(40px) saturate(180%)",
+          WebkitBackdropFilter: "blur(40px) saturate(180%)",
+          boxShadow: scrolled ? "0 1px 0 rgba(0,0,0,0.08), 0 4px 16px rgba(0,0,0,0.05)" : "none",
+        }}
+      >
+        <div className="max-w-7xl mx-auto px-6 h-14 flex items-center justify-between gap-8">
+          {/* Logo */}
+          <Link href="/" className="shrink-0 hover:opacity-80 transition-opacity" onClick={closeAll}>
+            <Image src="/logos/Logo Sciensa.svg" alt="Sciensa" width={120} height={32} className="h-7 w-auto" priority />
           </Link>
 
-          {megaMenus.map((menu) => (
-            <NavItem
-              key={menu.href}
-              label={menu.label}
-              href={menu.href}
-              open={activeMenu === menu.label}
-              onEnter={() => openMenu(menu.label)}
-              onLeave={closeMenu}
-            />
-          ))}
-
-          <NavItem
-            label="Platforms"
-            href="/platforms"
-            open={activeMenu === "Platforms"}
-            onEnter={() => openMenu("Platforms")}
-            onLeave={closeMenu}
-          />
-
-          <Link href="/insights" className="px-3 py-2 text-[13px] font-medium text-[#4e4e4e] hover:text-black rounded-[4px] hover:bg-[#f5f5f5] transition-colors tracking-[0.01em]">
-            Insights
-          </Link>
-        </nav>
-
-        {/* CTA */}
-        <div className="hidden md:flex items-center gap-2.5 shrink-0 ml-4">
-          <Link href="/case-studies" className="text-[13px] font-medium text-[#777169] hover:text-black transition-colors tracking-[0.01em]">
-            Case studies
-          </Link>
-          <Button href="/contact" variant="black-pill">Contact us</Button>
-        </div>
-
-        {/* Mobile hamburger */}
-        <button className="md:hidden p-2 text-black" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Toggle menu">
-          {mobileOpen ? (
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path d="M4 4L16 16M16 4L4 16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-            </svg>
-          ) : (
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path d="M3 6h14M3 10h14M3 14h14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-            </svg>
-          )}
-        </button>
-      </div>
-
-      {/* ── Desktop mega menu panel ── */}
-      {activeMenu && (
-        <div
-          className="hidden md:block absolute top-full left-0 right-0"
-          style={{
-            background: scrolled ? "rgba(245,245,245,0.90)" : "rgba(245,245,245,1)",
-            backdropFilter: scrolled ? "blur(40px) saturate(180%)" : "none",
-            WebkitBackdropFilter: scrolled ? "blur(40px) saturate(180%)" : "none",
-            boxShadow: "0 1px 0 rgba(0,0,0,0.06), rgba(0,0,0,0.04) 0px 8px 24px, rgba(0,0,0,0.04) 0px 2px 6px",
-          }}
-          onMouseEnter={() => { if (timeoutRef.current) clearTimeout(timeoutRef.current); }}
-          onMouseLeave={closeMenu}
-        >
-          <div className="max-w-7xl mx-auto">
-            {activeMenu === "Platforms" && (
-              <PlatformMegaMenu onClose={closeAll} />
-            )}
-            {megaMenus.map((menu) =>
-              activeMenu === menu.label ? (
-                <ColumnMegaMenu key={menu.label} columns={menu.columns} href={menu.href} label={menu.label} onClose={closeAll} />
-              ) : null
-            )}
-          </div>
-        </div>
-      )}
-
-      {/* ── Mobile menu ── */}
-      {mobileOpen && (
-        <div className="md:hidden max-h-[80vh] overflow-y-auto"
-          style={{
-            background: scrolled ? "rgba(245,245,245,0.90)" : "rgba(245,245,245,1)",
-            backdropFilter: scrolled ? "blur(40px) saturate(180%)" : "none",
-            WebkitBackdropFilter: scrolled ? "blur(40px) saturate(180%)" : "none",
-          }}
-        >
-          <div className="px-4 py-2">
-            <Link href="/about" className="block px-3 py-3.5 text-[15px] font-medium text-[#4e4e4e] border-b border-[#f0f0f0]" onClick={closeAll}>About</Link>
+          {/* Desktop nav */}
+          <nav className="hidden md:flex items-center ml-auto">
+            <Link href="/about" className="px-3 py-2 text-[13px] font-medium text-[#4e4e4e] hover:text-black rounded-[4px] hover:bg-[#f5f5f5] transition-colors tracking-[0.01em]">
+              About
+            </Link>
 
             {megaMenus.map((menu) => (
-              <MobileAccordion key={menu.label} label={menu.label}>
-                {menu.columns.map((col) => (
-                  <div key={col.title} className="mt-2">
-                    <p className="px-3 py-1 text-[11px] font-medium uppercase tracking-[0.1em] text-[#777169]">{col.title}</p>
-                    {col.links.map((link) => {
-                      const Icon = "icon" in link ? link.icon : null;
-                      return (
-                        <Link key={link.href} href={link.href} onClick={closeAll}
-                          className="flex items-center gap-2.5 px-3 py-2.5 text-[15px] text-[#4e4e4e] hover:text-black rounded-[6px] hover:bg-[#f5f5f5] transition-colors"
-                        >
-                          {Icon && <Icon size={15} className="shrink-0 text-[#bbb]" />}
-                          {link.label}
-                        </Link>
-                      );
-                    })}
-                  </div>
-                ))}
-                <Link href={menu.href} onClick={closeAll} className="block px-3 mt-3 text-[13px] font-medium text-[#22AEA4] hover:underline">
-                  All {menu.label.toLowerCase()} →
-                </Link>
-              </MobileAccordion>
+              <NavItem
+                key={menu.href}
+                label={menu.label}
+                href={menu.href}
+                open={activeMenu === menu.label}
+                onEnter={() => openMenu(menu.label)}
+                onLeave={closeMenu}
+              />
             ))}
 
-            <MobileAccordion label="Platforms">
-              <div className="space-y-2 pt-1">
-                {platformItems.map((p) => (
-                  <Link key={p.href} href={p.href} onClick={closeAll} className="flex items-center gap-3 px-3 py-2 rounded-[8px] hover:bg-[#f5f5f5] transition-colors">
-                    <div className="w-10 h-10 rounded-lg shrink-0" style={{ background: p.gradient }} />
-                    <div>
-                      <p className="text-[14px] font-medium text-black">{p.label}</p>
-                      <p className="text-[12px] text-[#777169] leading-snug">{p.description}</p>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            </MobileAccordion>
+            <NavItem
+              label="Platforms"
+              href="/platforms"
+              open={activeMenu === "Platforms"}
+              onEnter={() => openMenu("Platforms")}
+              onLeave={closeMenu}
+            />
 
-            <Link href="/insights" className="block px-3 py-3.5 text-[15px] font-medium text-[#4e4e4e] border-b border-[#f0f0f0]" onClick={closeAll}>Insights</Link>
-            <Link href="/case-studies" className="block px-3 py-3.5 text-[15px] font-medium text-[#4e4e4e] border-b border-[#f0f0f0]" onClick={closeAll}>Case studies</Link>
+            <Link href="/insights" className="px-3 py-2 text-[13px] font-medium text-[#4e4e4e] hover:text-black rounded-[4px] hover:bg-[#f5f5f5] transition-colors tracking-[0.01em]">
+              Insights
+            </Link>
+          </nav>
 
-            <div className="pt-3 pb-4">
-              <Link href="/contact" onClick={closeAll}
-                className="block px-4 py-3 text-[15px] font-medium text-white bg-black rounded-full text-center hover:bg-[#111] transition-colors"
-              >
-                Contact us
-              </Link>
+          {/* CTA */}
+          <div className="hidden md:flex items-center gap-2.5 shrink-0 ml-4">
+            <Link href="/case-studies" className="text-[13px] font-medium text-[#777169] hover:text-black transition-colors tracking-[0.01em]">
+              Case studies
+            </Link>
+            <Button href="/contact" variant="black-pill">Contact us</Button>
+          </div>
+
+          {/* Mobile hamburger */}
+          <button className="md:hidden p-2 text-black" onClick={toggleMobile} aria-label="Toggle menu">
+            {mobileMounted ? (
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M4 4L16 16M16 4L4 16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+              </svg>
+            ) : (
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M3 6h14M3 10h14M3 14h14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+              </svg>
+            )}
+          </button>
+        </div>
+      </header>
+
+      {/* ── Desktop mega menu — 2-phase: expand then fade-in content ── */}
+      {panelMounted && (
+        <div
+          className="hidden md:block overflow-hidden"
+          style={{
+            background: "rgba(245,245,245,0.82)",
+            backdropFilter: "blur(40px) saturate(180%)",
+            WebkitBackdropFilter: "blur(40px) saturate(180%)",
+            boxShadow: panelExpanded ? "0 1px 0 rgba(0,0,0,0.06), 0px 8px 24px rgba(0,0,0,0.04), 0px 2px 6px rgba(0,0,0,0.04)" : "none",
+            maxHeight: panelExpanded ? "600px" : "0px",
+            transition: "max-height 220ms cubic-bezier(0.4,0,0.2,1), box-shadow 220ms ease",
+          }}
+          onMouseEnter={() => { if (hoverTimer.current) clearTimeout(hoverTimer.current); }}
+          onMouseLeave={closeMenu}
+        >
+          <div
+            style={{
+              opacity: panelContent ? 1 : 0,
+              transition: "opacity 160ms ease",
+            }}
+          >
+            <div className="max-w-7xl mx-auto">
+              {displayedMenu === "Platforms" && <PlatformMegaMenu onClose={closeAll} />}
+              {megaMenus.map((menu) =>
+                displayedMenu === menu.label ? (
+                  <ColumnMegaMenu key={menu.label} columns={menu.columns} href={menu.href} label={menu.label} onClose={closeAll} />
+                ) : null
+              )}
             </div>
           </div>
         </div>
       )}
-    </header>
+
+      {/* ── Mobile menu — same 2-phase logic ── */}
+      {mobileMounted && (
+        <div
+          className="md:hidden overflow-hidden"
+          style={{
+            background: "rgba(245,245,245,0.82)",
+            backdropFilter: "blur(40px) saturate(180%)",
+            WebkitBackdropFilter: "blur(40px) saturate(180%)",
+            maxHeight: mobileExpanded ? "80vh" : "0px",
+            transition: "max-height 240ms cubic-bezier(0.4,0,0.2,1)",
+          }}
+        >
+          <div
+            style={{
+              opacity: mobileContent ? 1 : 0,
+              transition: "opacity 160ms ease",
+              overflowY: "auto",
+              maxHeight: "80vh",
+            }}
+          >
+            <div className="px-4 py-2">
+              <Link href="/about" className="block px-3 py-3.5 text-[15px] font-medium text-[#4e4e4e] border-b border-[#f0f0f0]" onClick={closeAll}>About</Link>
+
+              {megaMenus.map((menu) => (
+                <MobileAccordion key={menu.label} label={menu.label}>
+                  {menu.columns.map((col) => (
+                    <div key={col.title} className="mt-2">
+                      <p className="px-3 py-1 text-[11px] font-medium uppercase tracking-[0.1em] text-[#777169]">{col.title}</p>
+                      {col.links.map((link) => {
+                        const Icon = "icon" in link ? link.icon : null;
+                        return (
+                          <Link key={link.href} href={link.href} onClick={closeAll}
+                            className="flex items-center gap-2.5 px-3 py-2.5 text-[15px] text-[#4e4e4e] hover:text-black rounded-[6px] hover:bg-[#f5f5f5] transition-colors"
+                          >
+                            {Icon && <Icon size={15} className="shrink-0 text-[#bbb]" />}
+                            {link.label}
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  ))}
+                  <Link href={menu.href} onClick={closeAll} className="block px-3 mt-3 text-[13px] font-medium text-[#22AEA4] hover:underline">
+                    All {menu.label.toLowerCase()} →
+                  </Link>
+                </MobileAccordion>
+              ))}
+
+              <MobileAccordion label="Platforms">
+                <div className="space-y-2 pt-1">
+                  {platformItems.map((p) => (
+                    <Link key={p.href} href={p.href} onClick={closeAll} className="flex items-center gap-3 px-3 py-2 rounded-[8px] hover:bg-[#f5f5f5] transition-colors">
+                      <div className="w-10 h-10 rounded-lg shrink-0" style={{ background: p.gradient }} />
+                      <div>
+                        <p className="text-[14px] font-medium text-black">{p.label}</p>
+                        <p className="text-[12px] text-[#777169] leading-snug">{p.description}</p>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </MobileAccordion>
+
+              <Link href="/insights" className="block px-3 py-3.5 text-[15px] font-medium text-[#4e4e4e] border-b border-[#f0f0f0]" onClick={closeAll}>Insights</Link>
+              <Link href="/case-studies" className="block px-3 py-3.5 text-[15px] font-medium text-[#4e4e4e] border-b border-[#f0f0f0]" onClick={closeAll}>Case studies</Link>
+
+              <div className="pt-3 pb-4">
+                <Link href="/contact" onClick={closeAll}
+                  className="block px-4 py-3 text-[15px] font-medium text-white bg-black rounded-full text-center hover:bg-[#111] transition-colors"
+                >
+                  Contact us
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
   );
 }

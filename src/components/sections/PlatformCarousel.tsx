@@ -6,6 +6,7 @@ import { tagVariant } from "@/components/ui/tagColor";
 import { MockLumiaChat } from "@/components/mocks/MockLumiaChat";
 import { MockAmplify } from "@/components/mocks/MockAmplify";
 import { MockCodeGenius } from "@/components/mocks/MockCodeGenius";
+import { MockSmartCollect } from "@/components/mocks/MockSmartCollect";
 
 const platforms = [
   {
@@ -60,31 +61,43 @@ export function PlatformCarousel() {
           {platforms.map((platform, pi) => (
             <div key={platform.name} className="w-full shrink-0">
               {/* Image area */}
-              <div className={`${platform.bg} w-full h-[400px] md:h-[600px] relative rounded-2xl overflow-hidden`}>
+              <div className="w-full h-[400px] md:h-[600px] relative rounded-2xl overflow-hidden">
+                {/* Dot grid background — shared across all platforms */}
+                <div className="absolute inset-0" style={{
+                  background: "#f7f7f5",
+                  backgroundImage: "radial-gradient(circle, rgba(0,0,0,0.12) 1px, transparent 1px)",
+                  backgroundSize: "24px 24px",
+                }} />
+
                 {platform.name === "CodeGenius" && (
-                  <div className="absolute inset-0 flex items-center justify-center"
-                    style={{ background: "linear-gradient(160deg, #e8f5d0 0%, #f0f9e4 50%, #eaf7d8 100%)" }}>
+                  <div className="absolute inset-0 flex items-center justify-center">
                     <div className="relative hidden md:block w-[700px] h-[400px] rounded-[24px] overflow-hidden"
-                      style={{ boxShadow: "0 0 0 1px rgba(94,179,89,0.2), 0 32px 64px rgba(0,0,0,0.1)" }}>
+                      style={{ boxShadow: "0 0 0 1px rgba(0,0,0,0.08), 0 32px 64px rgba(0,0,0,0.12)" }}>
                       <MockCodeGenius />
                     </div>
                   </div>
                 )}
                 {platform.name === "Amplify" && (
-                  <div className="absolute inset-0 flex items-center justify-center"
-                    style={{ background: "linear-gradient(160deg, #d4f0ee 0%, #e8f7f6 50%, #ceecea 100%)" }}>
+                  <div className="absolute inset-0 flex items-center justify-center">
                     <div className="relative hidden md:block w-[700px] h-[400px] rounded-[24px] overflow-hidden"
-                      style={{ boxShadow: "0 0 0 1px rgba(34,174,164,0.18), 0 32px 64px rgba(0,0,0,0.08)" }}>
+                      style={{ boxShadow: "0 0 0 1px rgba(0,0,0,0.08), 0 32px 64px rgba(0,0,0,0.12)" }}>
                       <MockAmplify />
                     </div>
                   </div>
                 )}
                 {platform.name === "Lumia AI" && (
-                  <div className="absolute inset-0 flex items-center justify-center"
-                    style={{ background: "linear-gradient(160deg, #ede8fb 0%, #f3f0fd 50%, #e9e4ff 100%)" }}>
+                  <div className="absolute inset-0 flex items-center justify-center">
                     <div className="relative hidden md:block w-[700px] h-[460px] rounded-[24px] overflow-hidden"
-                      style={{ boxShadow: "0 0 0 1px rgba(139,92,246,0.18), 0 32px 64px rgba(0,0,0,0.08)" }}>
+                      style={{ boxShadow: "0 0 0 1px rgba(0,0,0,0.08), 0 32px 64px rgba(0,0,0,0.12)" }}>
                       <MockLumiaChat />
+                    </div>
+                  </div>
+                )}
+                {platform.name === "SmartCollect" && (
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="relative hidden md:block w-[700px] h-[420px] rounded-[24px] overflow-hidden"
+                      style={{ boxShadow: "0 0 0 1px rgba(0,0,0,0.08), 0 32px 64px rgba(0,0,0,0.12)" }}>
+                      <MockSmartCollect />
                     </div>
                   </div>
                 )}

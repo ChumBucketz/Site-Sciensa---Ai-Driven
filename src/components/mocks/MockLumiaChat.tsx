@@ -3,12 +3,12 @@
 import { useEffect, useRef, useState } from "react";
 
 const messages = [
-  { from: "user", text: "Oi! Quero fazer uma transferência de R$ 2.500 pra minha conta no Nubank.", delay: 400 },
-  { from: "lumia", text: "Olá! Claro, posso te ajudar com isso. Qual é a chave Pix do destinatário?", delay: 1400 },
-  { from: "user", text: "CPF: 123.456.789-00", delay: 2600 },
-  { from: "lumia", text: "Encontrei a conta de João Silva no Nubank. Confirmo os dados:\n• Valor: R$ 2.500,00\n• Destino: João Silva — Nubank\n• Tipo: Pix instantâneo\n\nDeseja confirmar?", delay: 3600 },
-  { from: "user", text: "Sim, confirmar!", delay: 5200 },
-  { from: "lumia", text: "✓ Transferência realizada com sucesso! O comprovante foi enviado para o seu e-mail.", delay: 6000, success: true },
+  { from: "user", text: "Hi! I'd like to transfer $2,500 to my savings account.", delay: 400 },
+  { from: "lumia", text: "Sure, I can help with that. What's the destination account or routing details?", delay: 1400 },
+  { from: "user", text: "Account: 987654321 — Routing: 021000021", delay: 2600 },
+  { from: "lumia", text: "Found the account. Here's a summary:\n• Amount: $2,500.00\n• Destination: Chase Savings ···4321\n• Type: Instant transfer\n\nWould you like to confirm?", delay: 3600 },
+  { from: "user", text: "Yes, confirm!", delay: 5200 },
+  { from: "lumia", text: "✓ Transfer completed successfully! A confirmation has been sent to your email.", delay: 6000, success: true },
 ];
 
 const LOOP_AT = 9000;
@@ -40,6 +40,18 @@ export function MockLumiaChat() {
   }, [visible, typing]);
 
   useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const block = (e: Event) => e.preventDefault();
+    el.addEventListener("wheel", block, { passive: false });
+    el.addEventListener("touchmove", block, { passive: false });
+    return () => {
+      el.removeEventListener("wheel", block);
+      el.removeEventListener("touchmove", block);
+    };
+  }, []);
+
+  useEffect(() => {
     if (!inView) return;
     const timers: ReturnType<typeof setTimeout>[] = [];
     messages.forEach((msg, i) => {
@@ -62,7 +74,7 @@ export function MockLumiaChat() {
         </div>
         <div>
           <p className="text-[13px] font-medium text-black">Lumia AI</p>
-          <p className="text-[10px] text-[#777169]">Assistente bancário inteligente</p>
+          <p className="text-[10px] text-[#777169]">Intelligent banking assistant</p>
         </div>
         <div className="ml-auto flex items-center gap-1.5">
           <span className="w-1.5 h-1.5 rounded-full bg-[#28c840] animate-pulse" />
@@ -71,13 +83,17 @@ export function MockLumiaChat() {
       </div>
 
       {/* Messages */}
-      <div ref={scrollRef} key={key} className="flex-1 overflow-y-auto px-4 py-4 flex flex-col gap-2.5" style={{ scrollbarWidth: "none" }}>
+      <div ref={scrollRef} key={key} className="flex-1 overflow-y-scroll px-4 py-4 flex flex-col gap-2.5" style={{ scrollbarWidth: "none" }}
+        onWheel={(e) => e.stopPropagation()}
+        onTouchMove={(e) => e.stopPropagation()}
+      >
         {messages.map((msg, i) => {
           const show = visible.includes(i);
+          if (!show) return null;
           const isUser = msg.from === "user";
           return (
             <div key={i} className={`flex ${isUser ? "justify-end" : "justify-start"}`}
-              style={{ opacity: show ? 1 : 0, transform: show ? "translateY(0)" : "translateY(6px)", transition: "opacity 0.3s ease, transform 0.3s ease" }}>
+              style={{ opacity: 1, transform: "translateY(0)", animation: "fadeSlideIn 0.3s ease" }}>
               <div
                 className="max-w-[78%] px-3.5 py-2.5 text-[12px] leading-relaxed whitespace-pre-line"
                 style={{
@@ -109,7 +125,7 @@ export function MockLumiaChat() {
       {/* Input */}
       <div className="px-4 pb-4 pt-2 shrink-0 bg-white border-t border-[#f0f0f0]">
         <div className="flex items-center gap-2 bg-[#f5f5f5] rounded-full px-4 py-2.5">
-          <span className="text-[12px] text-[#aaa] flex-1">Escreva uma mensagem...</span>
+          <span className="text-[12px] text-[#aaa] flex-1">Write a message...</span>
           <div className="w-6 h-6 rounded-full bg-[#e9e4ff] flex items-center justify-center shrink-0">
             <svg width="10" height="10" viewBox="0 0 16 16" fill="none">
               <path d="M2 8L14 8M14 8L9 3M14 8L9 13" stroke="#8b5cf6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
