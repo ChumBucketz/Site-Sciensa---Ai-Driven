@@ -90,18 +90,18 @@ export function SolutionDetailTemplate({ data }: { data: SolutionDetailData }) {
       />
 
       {/* Stats */}
-      <section className="max-w-7xl mx-auto px-6 py-3">
+      <section className="max-w-7xl mx-auto px-4 md:px-6 py-3">
         <FadeIn>
-          <div className="bg-white rounded-2xl px-10 py-12">
+          <div className="bg-white rounded-2xl px-5 md:px-10 py-12">
             <StatGrid stats={data.stats} />
           </div>
         </FadeIn>
       </section>
 
       {/* Approach alternating rows */}
-      <section className="max-w-7xl mx-auto px-6 py-3">
+      <section className="max-w-7xl mx-auto px-4 md:px-6 py-3">
         <FadeIn>
-          <div className="bg-white rounded-2xl px-10 py-16">
+          <div className="bg-white rounded-2xl px-5 md:px-10 py-16">
             <SectionHeader eyebrow={data.approach.sectionLabel} headline={data.approach.sectionHeadline} />
             <div className="mt-12 flex flex-col gap-0">
               {data.approach.rows.map((row) => (
@@ -128,9 +128,9 @@ export function SolutionDetailTemplate({ data }: { data: SolutionDetailData }) {
       </section>
 
       {/* Building blocks */}
-      <section className="max-w-7xl mx-auto px-6 py-3">
+      <section className="max-w-7xl mx-auto px-4 md:px-6 py-3">
         <FadeIn>
-          <div className="bg-white rounded-2xl px-10 py-16">
+          <div className="bg-white rounded-2xl px-5 md:px-10 py-16">
             <SectionHeader
               eyebrow={data.modules.sectionLabel}
               headline={data.modules.sectionHeadline}
@@ -162,9 +162,9 @@ export function SolutionDetailTemplate({ data }: { data: SolutionDetailData }) {
       </section>
 
       {/* Case studies */}
-      <section className="max-w-7xl mx-auto px-6 py-3">
+      <section className="max-w-7xl mx-auto px-4 md:px-6 py-3">
         <FadeIn>
-          <div className="bg-white rounded-2xl px-10 py-16">
+          <div className="bg-white rounded-2xl px-5 md:px-10 py-16">
             <SectionHeader eyebrow="// PROOF POINTS" headline="Results from the field" />
             <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4">
               {data.caseStudies.map((cs) => (
@@ -183,7 +183,7 @@ export function SolutionDetailTemplate({ data }: { data: SolutionDetailData }) {
       </section>
 
       {/* CTA */}
-      <section className="max-w-7xl mx-auto px-6 py-3 pb-6">
+      <section className="max-w-7xl mx-auto px-4 md:px-6 py-3 pb-6">
         <FadeIn>
           <CTABanner
             headline={data.cta.headline}

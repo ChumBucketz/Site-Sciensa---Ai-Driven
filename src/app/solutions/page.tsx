@@ -57,9 +57,9 @@ export default function Solutions() {
       />
 
       {/* Stats */}
-      <section className="max-w-7xl mx-auto px-6 py-3">
+      <section className="max-w-7xl mx-auto px-4 md:px-6 py-3">
         <FadeIn>
-          <div className="bg-white rounded-2xl px-10 py-12">
+          <div className="bg-white rounded-2xl px-5 md:px-10 py-12">
             <StatGrid stats={[
               { value: "6", label: "Solution areas" },
               { value: "120+", label: "Enterprise clients" },
@@ -71,7 +71,7 @@ export default function Solutions() {
       </section>
 
       {/* Featured: Enterprise AI */}
-      <section className="max-w-7xl mx-auto px-6 py-3">
+      <section className="max-w-7xl mx-auto px-4 md:px-6 py-3">
         <FadeIn>
           <div className="bg-black text-white rounded-2xl p-10 md:p-14">
             <MonoLabel className="text-white/40 block mb-6">Most requested</MonoLabel>
@@ -101,9 +101,9 @@ export default function Solutions() {
       </section>
 
       {/* How it works */}
-      <section className="max-w-7xl mx-auto px-6 py-3">
+      <section className="max-w-7xl mx-auto px-4 md:px-6 py-3">
         <FadeIn>
-          <div className="bg-white rounded-2xl px-10 py-16">
+          <div className="bg-white rounded-2xl px-5 md:px-10 py-16">
             <SectionHeader eyebrow="// HOW WE WORK" headline="From problem to production." />
             <div className="mt-12 flex flex-col gap-0">
               {howItWorks.map((phase) => (
@@ -151,9 +151,9 @@ export default function Solutions() {
       </section>
 
       {/* All solutions grid */}
-      <section className="max-w-7xl mx-auto px-6 py-3">
+      <section className="max-w-7xl mx-auto px-4 md:px-6 py-3">
         <FadeIn>
-          <div className="bg-white rounded-2xl px-10 py-16">
+          <div className="bg-white rounded-2xl px-5 md:px-10 py-16">
             <SectionHeader eyebrow="// ALL SOLUTIONS" headline="Six areas. Measurable outcomes." />
             <div className="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-4">
               {solutions.map((solution) => (
@@ -186,7 +186,7 @@ export default function Solutions() {
         </FadeIn>
       </section>
 
-      <section className="max-w-7xl mx-auto px-6 py-3 pb-6">
+      <section className="max-w-7xl mx-auto px-4 md:px-6 py-3 pb-6">
         <FadeIn>
           <CTABanner
             headline="Build what complexity demands"

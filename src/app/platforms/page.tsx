@@ -44,9 +44,9 @@ export default function Platforms() {
       />
 
       {/* Stats */}
-      <section className="max-w-7xl mx-auto px-6 py-3">
+      <section className="max-w-7xl mx-auto px-4 md:px-6 py-3">
         <FadeIn>
-          <div className="bg-white rounded-2xl px-10 py-12">
+          <div className="bg-white rounded-2xl px-5 md:px-10 py-12">
             <StatGrid stats={[
               { value: "4", label: "Proprietary platforms" },
               { value: "20+", label: "Enterprise deployments" },
@@ -58,9 +58,9 @@ export default function Platforms() {
       </section>
 
       {/* Why platforms alternating rows */}
-      <section className="max-w-7xl mx-auto px-6 py-3">
+      <section className="max-w-7xl mx-auto px-4 md:px-6 py-3">
         <FadeIn>
-          <div className="bg-white rounded-2xl px-10 py-16">
+          <div className="bg-white rounded-2xl px-5 md:px-10 py-16">
             <SectionHeader eyebrow="// WHY PROPRIETARY" headline="Built from the inside out." />
             <div className="mt-12 flex flex-col gap-0">
               {differentiators.map((diff) => (
@@ -108,9 +108,9 @@ export default function Platforms() {
       </section>
 
       {/* Platform cards */}
-      <section className="max-w-7xl mx-auto px-6 py-3">
+      <section className="max-w-7xl mx-auto px-4 md:px-6 py-3">
         <FadeIn>
-          <div className="bg-white rounded-2xl px-10 py-16">
+          <div className="bg-white rounded-2xl px-5 md:px-10 py-16">
             <SectionHeader eyebrow="// ALL PLATFORMS" headline="Four platforms. One ecosystem." />
             <div className="mt-10 flex flex-col gap-4">
               {platforms.map((platform, pi) => (
@@ -142,9 +142,9 @@ export default function Platforms() {
       </section>
 
       {/* Why platforms 3-col */}
-      <section className="max-w-7xl mx-auto px-6 py-3">
+      <section className="max-w-7xl mx-auto px-4 md:px-6 py-3">
         <FadeIn>
-          <div className="bg-white rounded-2xl px-10 py-16">
+          <div className="bg-white rounded-2xl px-5 md:px-10 py-16">
             <SectionHeader eyebrow="// THE PLATFORM ADVANTAGE" headline="Why our clients choose platforms over custom-only builds." />
             <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
@@ -162,7 +162,7 @@ export default function Platforms() {
         </FadeIn>
       </section>
 
-      <section className="max-w-7xl mx-auto px-6 py-3 pb-6">
+      <section className="max-w-7xl mx-auto px-4 md:px-6 py-3 pb-6">
         <FadeIn>
           <CTABanner
             headline="Accelerate with our platforms"

@@ -59,9 +59,9 @@ export default function Capabilities() {
       />
 
       {/* Stats */}
-      <section className="max-w-7xl mx-auto px-6 py-3">
+      <section className="max-w-7xl mx-auto px-4 md:px-6 py-3">
         <FadeIn>
-          <div className="bg-white rounded-2xl px-10 py-12">
+          <div className="bg-white rounded-2xl px-5 md:px-10 py-12">
             <StatGrid stats={[
               { value: "6", label: "Core disciplines" },
               { value: "500+", label: "Engineers" },
@@ -73,9 +73,9 @@ export default function Capabilities() {
       </section>
 
       {/* Approach pillars */}
-      <section className="max-w-7xl mx-auto px-6 py-3">
+      <section className="max-w-7xl mx-auto px-4 md:px-6 py-3">
         <FadeIn>
-          <div className="bg-white rounded-2xl px-10 py-16">
+          <div className="bg-white rounded-2xl px-5 md:px-10 py-16">
             <SectionHeader eyebrow="// OUR APPROACH" headline="What makes our engineering different." />
             <div className="mt-12 flex flex-col gap-6">
               {pillars.map((pillar) => (
@@ -151,9 +151,9 @@ export default function Capabilities() {
       </section>
 
       {/* Capability cards */}
-      <section className="max-w-7xl mx-auto px-6 py-3">
+      <section className="max-w-7xl mx-auto px-4 md:px-6 py-3">
         <FadeIn>
-          <div className="bg-white rounded-2xl px-10 py-16">
+          <div className="bg-white rounded-2xl px-5 md:px-10 py-16">
             <SectionHeader eyebrow="// ALL CAPABILITIES" headline="Six disciplines. One team." />
             <div className="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-4">
               {capabilities.map((cap) => (
@@ -178,7 +178,7 @@ export default function Capabilities() {
         </FadeIn>
       </section>
 
-      <section className="max-w-7xl mx-auto px-6 py-3 pb-6">
+      <section className="max-w-7xl mx-auto px-4 md:px-6 py-3 pb-6">
         <FadeIn>
           <CTABanner
             headline="Need a specific capability?"
