@@ -4,7 +4,7 @@ const data: SolutionDetailData = {
   eyebrow: "Solutions / Payments Modernization",
   headline: "Re-engineering payments for speed, compliance, and scale",
   subheadline: "Next-generation payment platforms covering orchestration, settlement, reconciliation, and multi-rail processing — designed for real-time and regulatory compliance.",
-  video: "/Videos/0_Triangle_Tunnel_Neon_3840x2160.mp4",
+  video: "https://res.cloudinary.com/dshrkq1up/video/upload/q_auto/f_auto/v1775486826/0_Triangle_Tunnel_Neon_3840x2160_1_zyn7ch.mp4",
   stats: [
     { value: "15K", label: "TPS processed" },
     { value: "<200ms", label: "P99 latency" },

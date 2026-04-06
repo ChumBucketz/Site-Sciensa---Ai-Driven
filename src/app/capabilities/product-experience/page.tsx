@@ -4,7 +4,7 @@ const data: CapabilityDetailData = {
   eyebrow: "Capabilities / Product & Experience Engineering",
   headline: "Digital products that perform at enterprise scale",
   subheadline: "Discovery for complex products, design systems, enterprise front-ends, digital journeys, and channel enablement — crafting experiences that serve business goals.",
-  video: "/Videos/0_Technology_Futuristic_3840x2160.mp4",
+  video: "https://res.cloudinary.com/dshrkq1up/video/upload/q_auto/f_auto/v1775486835/0_Technology_Futuristic_3840x2160_1_fydegq.mp4",
   stats: [
     { value: "50+", label: "Digital products shipped" },
     { value: "28pts", label: "Avg. NPS improvement" },

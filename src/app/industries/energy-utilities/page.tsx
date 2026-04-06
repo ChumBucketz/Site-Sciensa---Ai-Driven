@@ -4,7 +4,7 @@ const data: IndustryDetailData = {
   eyebrow: "Industries / Energy & Utilities",
   headline: "Intelligent infrastructure for critical operations",
   subheadline: "Real-time data platforms, predictive maintenance, trading systems, and process automation — for industries where uptime is non-negotiable.",
-  video: "/Videos/7020046_Tunnel_Hexagon_1920x1080.mp4",
+  video: "https://res.cloudinary.com/dshrkq1up/video/upload/q_auto/f_auto/v1775486140/7020046_Tunnel_Hexagon_1920x1080_ajcc34.mp4",
   stats: [
     { value: "50K+", label: "Assets monitored" },
     { value: "35%", label: "Fewer unplanned outages" },

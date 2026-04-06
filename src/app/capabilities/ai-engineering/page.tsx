@@ -4,7 +4,7 @@ const data: CapabilityDetailData = {
   eyebrow: "Capabilities / AI Engineering",
   headline: "Applied AI engineering for the enterprise",
   subheadline: "We design, build, and operationalize AI systems that create measurable business value — from computer vision to generative AI agents.",
-  video: "/Videos/0_Technology_Futuristic_3840x2160.mp4",
+  video: "https://res.cloudinary.com/dshrkq1up/video/upload/q_auto/f_auto/v1775486835/0_Technology_Futuristic_3840x2160_1_fydegq.mp4",
   stats: [
     { value: "150+", label: "AI models in production" },
     { value: "85%", label: "Avg. accuracy improvement" },

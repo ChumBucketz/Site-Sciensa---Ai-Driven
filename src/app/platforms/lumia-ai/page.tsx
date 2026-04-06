@@ -4,7 +4,7 @@ const data: PlatformDetailData = {
   eyebrow: "Platforms / Lumia AI",
   headline: "Intelligence layer for the enterprise",
   subheadline: "An applied intelligence layer that powers copilots, internal assistants, contextual intelligence, workflow automation, and enterprise knowledge — embedded across journeys and operations.",
-  video: "/Videos/0_Circuit_Board_Technology_3840x2160.mov",
+  video: "https://res.cloudinary.com/dshrkq1up/video/upload/q_auto/f_auto/v1775486834/0_Circuit_Board_Technology_3840x2160_rbiidg.mp4",
   stats: [
     { value: "60%", label: "Avg. automation rate" },
     { value: "80%", label: "Knowledge query resolution" },

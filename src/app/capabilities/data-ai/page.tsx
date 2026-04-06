@@ -4,7 +4,7 @@ const data: CapabilityDetailData = {
   eyebrow: "Capabilities / Data & AI",
   headline: "Data platforms that power intelligent decisions",
   subheadline: "From data pipelines and real-time analytics to feature stores and governance — we operationalize data as a strategic asset.",
-  video: "/Videos/0_Technology_Futuristic_3840x2160.mp4",
+  video: "https://res.cloudinary.com/dshrkq1up/video/upload/q_auto/f_auto/v1775486835/0_Technology_Futuristic_3840x2160_1_fydegq.mp4",
   stats: [
     { value: "200+", label: "Data pipelines in production" },
     { value: "10TB+", label: "Data processed daily" },

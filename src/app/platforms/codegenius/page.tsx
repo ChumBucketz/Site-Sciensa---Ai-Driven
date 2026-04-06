@@ -4,7 +4,7 @@ const data: PlatformDetailData = {
   eyebrow: "Platforms / CodeGenius",
   headline: "AI-accelerated engineering for serious teams",
   subheadline: "Accelerates software engineering with AI — boosting productivity, code quality, testing, refactoring, documentation, and assisted development across the engineering lifecycle.",
-  video: "/Videos/0_Circuit_Board_Technology_3840x2160.mov",
+  video: "https://res.cloudinary.com/dshrkq1up/video/upload/q_auto/f_auto/v1775486834/0_Circuit_Board_Technology_3840x2160_rbiidg.mp4",
   stats: [
     { value: "35%", label: "Faster review cycles" },
     { value: "40%", label: "Higher test coverage" },

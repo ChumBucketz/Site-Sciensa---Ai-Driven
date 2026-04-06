@@ -53,7 +53,7 @@ export default function Solutions() {
         eyebrow="Solutions"
         headline="What our clients actually buy"
         subheadline="Problem-oriented solutions that combine our capabilities, platforms, and industry expertise into outcomes you can measure."
-        video="/Videos/0_Triangle_Tunnel_Neon_3840x2160.mp4"
+        video="https://res.cloudinary.com/dshrkq1up/video/upload/q_auto/f_auto/v1775486826/0_Triangle_Tunnel_Neon_3840x2160_1_zyn7ch.mp4"
       />
 
       {/* Stats */}

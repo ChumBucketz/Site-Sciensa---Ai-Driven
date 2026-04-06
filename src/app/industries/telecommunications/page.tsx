@@ -4,7 +4,7 @@ const data: IndustryDetailData = {
   eyebrow: "Industries / Telecommunications",
   headline: "Modern platforms for connectivity at scale",
   subheadline: "BSS/OSS modernization, self-service digital channels, billing architecture, and AI-powered operations — for telecom operators reimagining customer experience.",
-  video: "/Videos/7020046_Tunnel_Hexagon_1920x1080.mp4",
+  video: "https://res.cloudinary.com/dshrkq1up/video/upload/q_auto/f_auto/v1775486140/7020046_Tunnel_Hexagon_1920x1080_ajcc34.mp4",
   stats: [
     { value: "50%", label: "Faster order-to-activation" },
     { value: "70%", label: "Self-service containment" },

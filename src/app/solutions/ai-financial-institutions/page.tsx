@@ -4,7 +4,7 @@ const data: SolutionDetailData = {
   eyebrow: "Solutions / AI for Financial Institutions",
   headline: "AI purpose-built for regulated financial environments",
   subheadline: "Fraud detection, risk intelligence, credit analysis, anti-money laundering, and compliance automation — AI tuned for the precision demands of financial services.",
-  video: "/Videos/0_Triangle_Tunnel_Neon_3840x2160.mp4",
+  video: "https://res.cloudinary.com/dshrkq1up/video/upload/q_auto/f_auto/v1775486826/0_Triangle_Tunnel_Neon_3840x2160_1_zyn7ch.mp4",
   stats: [
     { value: "<50ms", label: "Fraud scoring latency" },
     { value: "60%", label: "Fraud loss reduction" },

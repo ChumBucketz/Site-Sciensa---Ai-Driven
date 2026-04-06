@@ -4,7 +4,7 @@ const data: IndustryDetailData = {
   eyebrow: "Industries / Mobility & Logistics",
   headline: "Orchestrating movement with software precision",
   subheadline: "Operational platforms, tracking & orchestration systems, mobility marketplaces, and AI-driven efficiency — for companies that move the world.",
-  video: "/Videos/7020046_Tunnel_Hexagon_1920x1080.mp4",
+  video: "https://res.cloudinary.com/dshrkq1up/video/upload/q_auto/f_auto/v1775486140/7020046_Tunnel_Hexagon_1920x1080_ajcc34.mp4",
   stats: [
     { value: "1M+", label: "Daily trips managed" },
     { value: "50K+", label: "Daily shipments processed" },

@@ -4,7 +4,7 @@ const data: IndustryDetailData = {
   eyebrow: "Industries / Retail & E-Commerce",
   headline: "Platforms that move at the pace of commerce",
   subheadline: "Marketplace orchestration, pricing intelligence, loyalty personalization, and payment flows — engineered for the speed and complexity of modern retail.",
-  video: "/Videos/7020046_Tunnel_Hexagon_1920x1080.mp4",
+  video: "https://res.cloudinary.com/dshrkq1up/video/upload/q_auto/f_auto/v1775486140/7020046_Tunnel_Hexagon_1920x1080_ajcc34.mp4",
   stats: [
     { value: "$2B+", label: "GMV on platforms we built" },
     { value: "3,000+", label: "Sellers managed" },

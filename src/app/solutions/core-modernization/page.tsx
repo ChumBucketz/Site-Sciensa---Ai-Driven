@@ -4,7 +4,7 @@ const data: SolutionDetailData = {
   eyebrow: "Solutions / Core Modernization",
   headline: "From legacy constraints to modern architectures",
   subheadline: "Strangler patterns, data migration, API wrapping, and incremental modernization — transforming monolithic core systems without business disruption.",
-  video: "/Videos/0_Triangle_Tunnel_Neon_3840x2160.mp4",
+  video: "https://res.cloudinary.com/dshrkq1up/video/upload/q_auto/f_auto/v1775486826/0_Triangle_Tunnel_Neon_3840x2160_1_zyn7ch.mp4",
   stats: [
     { value: "20+", label: "Core systems modernized" },
     { value: "0", label: "Data loss incidents" },

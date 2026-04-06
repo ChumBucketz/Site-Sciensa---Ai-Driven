@@ -4,7 +4,7 @@ const data: CapabilityDetailData = {
   eyebrow: "Capabilities / Cloud & DevSecOps",
   headline: "Secure, scalable, and operationally reliable",
   subheadline: "Cloud foundations, CI/CD automation, security by design, infrastructure scalability, and operational reliability — engineering trust into every deployment.",
-  video: "/Videos/0_Technology_Futuristic_3840x2160.mp4",
+  video: "https://res.cloudinary.com/dshrkq1up/video/upload/q_auto/f_auto/v1775486835/0_Technology_Futuristic_3840x2160_1_fydegq.mp4",
   stats: [
     { value: "99.99%", label: "Uptime delivered" },
     { value: "60%", label: "Avg. infra cost reduction" },

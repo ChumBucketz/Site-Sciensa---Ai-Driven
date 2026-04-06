@@ -4,7 +4,7 @@ const data: IndustryDetailData = {
   eyebrow: "Industries / Financial Services",
   headline: "Engineering trust at transaction speed",
   subheadline: "From core banking modernization to real-time payments and AI-driven risk intelligence — we build the mission-critical systems that financial institutions rely on to operate, innovate, and scale.",
-  video: "/Videos/7020046_Tunnel_Hexagon_1920x1080.mp4",
+  video: "https://res.cloudinary.com/dshrkq1up/video/upload/q_auto/f_auto/v1775486140/7020046_Tunnel_Hexagon_1920x1080_ajcc34.mp4",
   stats: [
     { value: "200+", label: "Financial services projects delivered" },
     { value: "40+", label: "Clients across banking, payments & insurance" },

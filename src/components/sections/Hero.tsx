@@ -49,7 +49,7 @@ export function Hero({ eyebrow, headlines, subheadline, primary, secondary }: He
         {/* Video background */}
         <video
           className="absolute inset-0 w-full h-full object-cover"
-          src="/videos/hf_20260328_105406_16f4600d-7a92-4292-b96e-b19156c7830a (1).mp4"
+          src="https://res.cloudinary.com/dshrkq1up/video/upload/q_auto/f_auto/v1775486815/hf_20260328_105406_16f4600d-7a92-4292-b96e-b19156c7830a_1_1_nt49o4.mp4"
           autoPlay
           muted
           loop

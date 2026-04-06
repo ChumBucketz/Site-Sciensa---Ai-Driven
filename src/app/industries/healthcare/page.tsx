@@ -4,7 +4,7 @@ const data: IndustryDetailData = {
   eyebrow: "Industries / Healthcare & Life Sciences",
   headline: "Digital systems for regulated health ecosystems",
   subheadline: "Interoperable health platforms, patient-centric digital journeys, and responsible AI — built to meet the operational and regulatory demands of healthcare.",
-  video: "/Videos/7020046_Tunnel_Hexagon_1920x1080.mp4",
+  video: "https://res.cloudinary.com/dshrkq1up/video/upload/q_auto/f_auto/v1775486140/7020046_Tunnel_Hexagon_1920x1080_ajcc34.mp4",
   stats: [
     { value: "200+", label: "Hospitals connected" },
     { value: "50M+", label: "Patient records synced" },

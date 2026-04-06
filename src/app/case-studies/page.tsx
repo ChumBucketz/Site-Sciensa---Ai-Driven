@@ -24,7 +24,7 @@ export default function CaseStudies() {
         eyebrow="Case Studies"
         headline="Real results from complex builds"
         subheadline="How we help leaders in financial services, retail, healthcare and other regulated industries design, build and scale mission-critical platforms."
-        video="/Videos/0_Gold_Abstract_3840x2160.mp4"
+        video="https://res.cloudinary.com/dshrkq1up/video/upload/q_auto/f_auto/v1775486149/0_Gold_Abstract_3840x2160_sjzjia.mp4"
       />
 
       {/* Aggregate impact stats */}

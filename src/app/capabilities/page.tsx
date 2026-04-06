@@ -55,7 +55,7 @@ export default function Capabilities() {
         eyebrow="Capabilities"
         headline="Engineering depth across every layer"
         subheadline="Six core disciplines that cover the full technology stack — from infrastructure to experience — with the rigor of mission-critical systems."
-        video="/Videos/0_Technology_Futuristic_3840x2160.mp4"
+        video="https://res.cloudinary.com/dshrkq1up/video/upload/q_auto/f_auto/v1775486835/0_Technology_Futuristic_3840x2160_1_fydegq.mp4"
       />
 
       {/* Stats */}

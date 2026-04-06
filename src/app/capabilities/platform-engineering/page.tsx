@@ -4,7 +4,7 @@ const data: CapabilityDetailData = {
   eyebrow: "Capabilities / Platform Engineering",
   headline: "Architectures built for scale and resilience",
   subheadline: "Microservices, event-driven architectures, platform modernization, and distributed systems — engineering the backbone of enterprise digital operations.",
-  video: "/Videos/0_Technology_Futuristic_3840x2160.mp4",
+  video: "https://res.cloudinary.com/dshrkq1up/video/upload/q_auto/f_auto/v1775486835/0_Technology_Futuristic_3840x2160_1_fydegq.mp4",
   stats: [
     { value: "80+", label: "Platforms modernized" },
     { value: "99.99%", label: "Uptime delivered" },

@@ -8,7 +8,7 @@ export default function Contact() {
       <HeroSimple
         eyebrow="Contact"
         headline="Let's start a conversation"
-        subheadline="Whether you're planning a new platform, exploring AI, or just want to talk engineering — we'd love to hear from you."        video="/Videos/0_Abstract_Background_3840x2160.mp4"
+        subheadline="Whether you're planning a new platform, exploring AI, or just want to talk engineering — we'd love to hear from you."        video="https://res.cloudinary.com/dshrkq1up/video/upload/q_auto/f_auto/v1775486156/0_Abstract_Background_3840x2160_eu366r.mp4"
       />
 
       <section className="max-w-7xl mx-auto px-6 py-3 pb-6">

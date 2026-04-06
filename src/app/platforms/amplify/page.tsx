@@ -4,7 +4,7 @@ const data: PlatformDetailData = {
   eyebrow: "Platforms / Amplify",
   headline: "Accelerate your digital banking with Amplify",
   subheadline: "A modular platform that compresses digital banking launches from months to weeks — covering onboarding, accounts, payments, cards, and composable financial journeys.",
-  video: "/Videos/0_Circuit_Board_Technology_3840x2160.mov",
+  video: "https://res.cloudinary.com/dshrkq1up/video/upload/q_auto/f_auto/v1775486834/0_Circuit_Board_Technology_3840x2160_rbiidg.mp4",
   stats: [
     { value: "10×", label: "Faster time-to-market" },
     { value: "50%", label: "Lower development cost" },

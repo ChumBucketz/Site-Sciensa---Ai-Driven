@@ -40,7 +40,7 @@ export default function Industries() {
         eyebrow="Industries"
         headline="Deep engineering for complex markets"
         subheadline="We apply financial-grade engineering rigor to every industry we serve — solving the problems others call impossible."
-        video="/Videos/7020046_Tunnel_Hexagon_1920x1080.mp4"
+        video="https://res.cloudinary.com/dshrkq1up/video/upload/q_auto/f_auto/v1775486140/7020046_Tunnel_Hexagon_1920x1080_ajcc34.mp4"
       />
 
       {/* Stats */}

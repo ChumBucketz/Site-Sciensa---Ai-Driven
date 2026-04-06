@@ -4,7 +4,7 @@ const data: PlatformDetailData = {
   eyebrow: "Platforms / SmartCollect",
   headline: "Intelligent collection & recovery at scale",
   subheadline: "Applied intelligence for collections, recovery, and operational efficiency — with automated prioritization, segmentation, experience optimization, and operational intelligence.",
-  video: "/Videos/0_Circuit_Board_Technology_3840x2160.mov",
+  video: "https://res.cloudinary.com/dshrkq1up/video/upload/q_auto/f_auto/v1775486834/0_Circuit_Board_Technology_3840x2160_rbiidg.mp4",
   stats: [
     { value: "R$1.2B", label: "Annual recovery enabled" },
     { value: "8M+", label: "Accounts managed" },

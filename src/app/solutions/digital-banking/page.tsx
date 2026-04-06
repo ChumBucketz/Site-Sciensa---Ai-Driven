@@ -4,7 +4,7 @@ const data: SolutionDetailData = {
   eyebrow: "Solutions / Digital Banking",
   headline: "Modern banking architectures for digital-first institutions",
   subheadline: "End-to-end digital banking platforms — from account opening and KYC to card management and self-service channels — built on event-driven, API-first architectures.",
-  video: "/Videos/0_Triangle_Tunnel_Neon_3840x2160.mp4",
+  video: "https://res.cloudinary.com/dshrkq1up/video/upload/q_auto/f_auto/v1775486826/0_Triangle_Tunnel_Neon_3840x2160_1_zyn7ch.mp4",
   stats: [
     { value: "12M+", label: "Users on platforms we built" },
     { value: "8 wks", label: "Fastest go-live with Amplify" },

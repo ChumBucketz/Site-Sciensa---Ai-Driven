@@ -4,7 +4,7 @@ const data: SolutionDetailData = {
   eyebrow: "Solutions / Enterprise AI",
   headline: "AI that works inside your enterprise, not beside it",
   subheadline: "Copilots, intelligent workflows, document understanding, and operational automation — enterprise AI integrated into your existing systems and processes.",
-  video: "/Videos/0_Triangle_Tunnel_Neon_3840x2160.mp4",
+  video: "https://res.cloudinary.com/dshrkq1up/video/upload/q_auto/f_auto/v1775486826/0_Triangle_Tunnel_Neon_3840x2160_1_zyn7ch.mp4",
   stats: [
     { value: "60%", label: "Avg. process automation rate" },
     { value: "85%", label: "Manual effort reduction" },
