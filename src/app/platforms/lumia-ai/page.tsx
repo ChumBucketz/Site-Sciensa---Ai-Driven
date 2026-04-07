@@ -4,7 +4,9 @@ const data: PlatformDetailData = {
   eyebrow: "Platforms / Lumia AI",
   headline: "Intelligence layer for the enterprise",
   subheadline: "An applied intelligence layer that powers copilots, internal assistants, contextual intelligence, workflow automation, and enterprise knowledge — embedded across journeys and operations.",
-  video: "https://res.cloudinary.com/dshrkq1up/video/upload/q_auto/f_auto/v1775486834/0_Circuit_Board_Technology_3840x2160_rbiidg.mp4",
+  video: "https://res.cloudinary.com/dshrkq1up/video/upload/q_auto/f_auto/hf_20260217_030345_246c0224-10a4-422c-b324-070b7c0eceda_nmr23l.mp4",
+  logo: "/logos/Lumia logo.png",
+  accentColor: "#8b5cf6",
   stats: [
     { value: "60%", label: "Avg. automation rate" },
     { value: "80%", label: "Knowledge query resolution" },

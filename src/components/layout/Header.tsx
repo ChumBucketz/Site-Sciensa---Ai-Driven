@@ -18,48 +18,28 @@ const platformItems = [
     description: "AI-powered delivery acceleration platform.",
     href: "/platforms/amplify",
     gradient: "linear-gradient(135deg, #22AEA4 0%, #5EB359 100%)",
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-      </svg>
-    ),
+    symbol: "/logos/Amplify.png",
   },
   {
     label: "Lumia AI",
     description: "Enterprise LLM orchestration and agent framework.",
     href: "/platforms/lumia-ai",
     gradient: "linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)",
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-        <circle cx="12" cy="12" r="4" fill="white" opacity="0.9"/>
-        <path d="M12 2v3M12 19v3M2 12h3M19 12h3" stroke="white" strokeWidth="1.5" strokeLinecap="round" opacity="0.5"/>
-      </svg>
-    ),
+    symbol: "/logos/Lumia.png",
   },
   {
     label: "CodeGenius",
     description: "AI-native code generation and review at scale.",
     href: "/platforms/codegenius",
     gradient: "linear-gradient(135deg, #7c3aed 0%, #ec4899 100%)",
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-        <path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3M3 16v3a2 2 0 002 2h3m8 0h3a2 2 0 002-2v-3" stroke="white" strokeWidth="1.8" strokeLinecap="round" opacity="0.8"/>
-        <path d="M9 9l2 2 4-4" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-      </svg>
-    ),
+    symbol: "/logos/Code Genious.png",
   },
   {
     label: "SmartCollect",
     description: "Intelligent collections and credit lifecycle management.",
     href: "/platforms/smartcollect",
     gradient: "linear-gradient(135deg, #ec4899 0%, #f97316 100%)",
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" stroke="white" strokeWidth="1.6" opacity="0.5"/>
-        <path d="M12 6v6l4 2" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M8 14s1 2 4 2 4-2 4-2" stroke="white" strokeWidth="1.6" strokeLinecap="round"/>
-      </svg>
-    ),
+    symbol: null,
   },
 ];
 
@@ -159,11 +139,14 @@ function PlatformMegaMenu({ onClose }: { onClose: () => void }) {
                   backgroundSize: "16px 16px",
                 }}
               />
-              {/* Icon */}
+              {/* Symbol */}
               <div className="relative flex flex-col items-center gap-2">
                 <div className="w-10 h-10 rounded-full flex items-center justify-center"
                   style={{ background: "rgba(255,255,255,0.18)", backdropFilter: "blur(4px)" }}>
-                  {p.icon}
+                  {p.symbol
+                    ? <Image src={p.symbol} alt={p.label} width={24} height={24} className="object-contain" />
+                    : <span className="text-white font-bold text-sm">{p.label[0]}</span>
+                  }
                 </div>
                 <span className="text-[11px] font-medium text-white/80 tracking-wide">{p.label}</span>
               </div>
@@ -323,8 +306,10 @@ export function Header() {
     setActiveMenu(key);
 
     if (panelMounted) {
-      // Already open — just swap content instantly, no height change
+      // Already open (or mid-close) — swap content and ensure panel is visible
       setDisplayedMenu(key);
+      setPanelExpanded(true);
+      setPanelContent(true);
     } else {
       // Phase 1: mount + expand height
       setDisplayedMenu(key);
@@ -545,7 +530,12 @@ export function Header() {
                 <div className="space-y-2 pt-1">
                   {platformItems.map((p) => (
                     <Link key={p.href} href={p.href} onClick={closeAll} className="flex items-center gap-3 px-3 py-2 rounded-[8px] hover:bg-[#f5f5f5] transition-colors">
-                      <div className="w-10 h-10 rounded-lg shrink-0" style={{ background: p.gradient }} />
+                      <div className="w-10 h-10 rounded-lg shrink-0 flex items-center justify-center overflow-hidden" style={{ background: p.gradient }}>
+                        {p.symbol
+                          ? <Image src={p.symbol} alt={p.label} width={24} height={24} className="object-contain" />
+                          : <span className="text-white font-bold text-sm">{p.label[0]}</span>
+                        }
+                      </div>
                       <div>
                         <p className="text-[14px] font-medium text-black">{p.label}</p>
                         <p className="text-[12px] text-[#777169] leading-snug">{p.description}</p>

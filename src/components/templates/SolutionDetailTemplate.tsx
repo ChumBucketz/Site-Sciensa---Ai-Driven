@@ -1,6 +1,5 @@
-import { HeroSimple } from "@/components/sections/HeroSimple";
+import { HeroCategory } from "@/components/sections/HeroCategory";
 import { SectionHeader } from "@/components/sections/SectionHeader";
-import { StatGrid } from "@/components/sections/StatGrid";
 import { CTABanner } from "@/components/sections/CTABanner";
 import { Badge } from "@/components/ui/Badge";
 import { FadeIn } from "@/components/ui/FadeIn";
@@ -82,21 +81,13 @@ function ApproachVisual({ items }: { items: string[] }) {
 export function SolutionDetailTemplate({ data }: { data: SolutionDetailData }) {
   return (
     <>
-      <HeroSimple
+      <HeroCategory
         eyebrow={data.eyebrow}
         headline={data.headline}
         subheadline={data.subheadline}
         video={data.video}
+        stats={data.stats}
       />
-
-      {/* Stats */}
-      <section className="max-w-7xl mx-auto px-4 md:px-6 py-3">
-        <FadeIn>
-          <div className="bg-white rounded-2xl px-5 md:px-10 py-12">
-            <StatGrid stats={data.stats} />
-          </div>
-        </FadeIn>
-      </section>
 
       {/* Approach alternating rows */}
       <section className="max-w-7xl mx-auto px-4 md:px-6 py-3">

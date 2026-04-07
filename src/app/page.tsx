@@ -4,7 +4,6 @@ import { StatGrid } from "@/components/sections/StatGrid";
 import { IndustriesGrid } from "@/components/sections/IndustriesGrid";
 import { PlatformCarousel } from "@/components/sections/PlatformCarousel";
 import { CTABanner } from "@/components/sections/CTABanner";
-import { CardGrid, Card } from "@/components/sections/CardGrid";
 import { CapabilitiesGrid } from "@/components/sections/CapabilitiesGrid";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { Badge } from "@/components/ui/Badge";
@@ -183,19 +182,19 @@ export default function Home() {
               {
                 industry: "Financial Services",
                 title: "Re-architecting a Tier-1 bank's core lending platform",
-                image: "/images/A (1).jpg",
+                image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80",
                 metrics: [{ value: "40%", label: "Faster time-to-market" }, { value: "99.99%", label: "Platform uptime" }, { value: "3×", label: "Throughput improvement" }],
               },
               {
                 industry: "Healthcare",
                 title: "Building an AI-powered clinical decision support system",
-                image: "/images/A (2).jpg",
+                image: "https://images.unsplash.com/photo-1559757175-5700dde675bc?w=800&q=80",
                 metrics: [{ value: "85%", label: "Diagnostic accuracy" }, { value: "60%", label: "Reduced report time" }, { value: "12", label: "Hospitals deployed" }],
               },
               {
                 industry: "Energy & Mining",
                 title: "Predictive maintenance platform for critical grid infrastructure",
-                image: "/images/A (3).jpg",
+                image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&q=80",
                 metrics: [{ value: "35%", label: "Fewer unplanned outages" }, { value: "2.5×", label: "ROI in year one" }, { value: "50K+", label: "Assets monitored" }],
               },
             ].map((cs, ci) => (

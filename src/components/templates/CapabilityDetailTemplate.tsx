@@ -1,6 +1,5 @@
-import { HeroSimple } from "@/components/sections/HeroSimple";
+import { HeroSplit } from "@/components/sections/HeroSplit";
 import { SectionHeader } from "@/components/sections/SectionHeader";
-import { StatGrid } from "@/components/sections/StatGrid";
 import { CTABanner } from "@/components/sections/CTABanner";
 import { Badge } from "@/components/ui/Badge";
 import { FadeIn } from "@/components/ui/FadeIn";
@@ -76,21 +75,14 @@ function ApproachVisual({ items }: { items: string[] }) {
 export function CapabilityDetailTemplate({ data }: { data: CapabilityDetailData }) {
   return (
     <>
-      <HeroSimple
+      <HeroSplit
         eyebrow={data.eyebrow}
         headline={data.headline}
         subheadline={data.subheadline}
+        stats={data.stats}
+        items={data.approach.rows[0]?.items ?? []}
         video={data.video}
       />
-
-      {/* Stats */}
-      <section className="max-w-7xl mx-auto px-4 md:px-6 py-3">
-        <FadeIn>
-          <div className="bg-white rounded-2xl px-5 md:px-10 py-12">
-            <StatGrid stats={data.stats} />
-          </div>
-        </FadeIn>
-      </section>
 
       {/* Approach alternating rows */}
       <section className="max-w-7xl mx-auto px-4 md:px-6 py-3">

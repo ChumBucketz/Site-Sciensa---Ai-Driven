@@ -28,7 +28,7 @@ export function HeroSimple({ eyebrow, headline, subheadline, actions, video }: H
         ref={ref}
         onMouseMove={handleMouseMove}
         onMouseLeave={() => setMouse(null)}
-        className="relative overflow-hidden rounded-2xl h-[280px] md:h-[340px] px-10 md:px-16"
+        className="relative overflow-hidden rounded-2xl h-[400px] md:h-[340px] px-10 md:px-16"
       >
         {/* Video */}
         <video

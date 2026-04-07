@@ -1,6 +1,5 @@
-import { HeroSimple } from "@/components/sections/HeroSimple";
+import { HeroPlatform } from "@/components/sections/HeroPlatform";
 import { SectionHeader } from "@/components/sections/SectionHeader";
-import { StatGrid } from "@/components/sections/StatGrid";
 import { CTABanner } from "@/components/sections/CTABanner";
 import { Badge } from "@/components/ui/Badge";
 import { FadeIn } from "@/components/ui/FadeIn";
@@ -10,6 +9,8 @@ export interface PlatformDetailData {
   headline: string;
   subheadline: string;
   video: string;
+  logo?: string;
+  accentColor?: string;
   stats: { value: string; label: string }[];
   approach: {
     sectionLabel: string;
@@ -76,21 +77,15 @@ function ApproachVisual({ items }: { items: string[] }) {
 export function PlatformDetailTemplate({ data }: { data: PlatformDetailData }) {
   return (
     <>
-      <HeroSimple
+      <HeroPlatform
         eyebrow={data.eyebrow}
         headline={data.headline}
         subheadline={data.subheadline}
+        logo={data.logo}
+        accentColor={data.accentColor}
+        stats={data.stats}
         video={data.video}
       />
-
-      {/* Stats */}
-      <section className="max-w-7xl mx-auto px-4 md:px-6 py-3">
-        <FadeIn>
-          <div className="bg-white rounded-2xl px-5 md:px-10 py-12">
-            <StatGrid stats={data.stats} />
-          </div>
-        </FadeIn>
-      </section>
 
       {/* Approach alternating rows */}
       <section className="max-w-7xl mx-auto px-4 md:px-6 py-3">

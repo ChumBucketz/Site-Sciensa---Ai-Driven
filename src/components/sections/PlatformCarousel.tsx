@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
 import { Badge } from "@/components/ui/Badge";
 import { tagVariant } from "@/components/ui/tagColor";
 import { MockLumiaChat } from "@/components/mocks/MockLumiaChat";
@@ -14,7 +16,9 @@ const platforms = [
     tag: "AI/ML",
     description: "AI/ML experimentation platform with model registry, automated pipelines, and intelligent observability.",
     features: ["Model Registry", "AutoML Pipelines", "AI Observability"],
-    bg: "bg-[#e5e3df]",
+    logo: "/logos/Lumia logo.png",
+    bg: "#e9e4ff",
+    dots: "rgba(139,92,246,0.18)",
     href: "/platforms/lumia-ai",
   },
   {
@@ -22,7 +26,9 @@ const platforms = [
     tag: "ACCELERATION",
     description: "Digital acceleration platform for rapid delivery — from MVP to enterprise-grade products.",
     features: ["MVP Launchers", "Squad Templates", "Quality Gates"],
-    bg: "bg-[#dfe3e0]",
+    logo: "/logos/Amplify Logo.png",
+    bg: "#F0FDF4",
+    dots: "rgba(34,174,164,0.18)",
     href: "/platforms/amplify",
   },
   {
@@ -30,7 +36,9 @@ const platforms = [
     tag: "ENGINEERING",
     description: "AI-accelerated engineering — boosting productivity, code quality, testing, and documentation.",
     features: ["Developer Productivity", "Automated Testing", "Code Review AI"],
-    bg: "bg-[#e3dfdf]",
+    logo: "/logos/Code Genious logo.png",
+    bg: "#ececfd",
+    dots: "rgba(99,102,241,0.18)",
     href: "/platforms/codegenius",
   },
   {
@@ -38,7 +46,9 @@ const platforms = [
     tag: "AI SOLUTION",
     description: "Applied intelligence for collections, recovery, and operational efficiency at scale.",
     features: ["Automated Prioritization", "Recovery Intelligence", "BACEN Compliance"],
-    bg: "bg-[#dfe0e3]",
+    logo: null,
+    bg: "#fef1f7",
+    dots: "rgba(236,72,153,0.18)",
     href: "/platforms/smartcollect",
   },
 ];
@@ -62,11 +72,12 @@ export function PlatformCarousel() {
             <div key={platform.name} className="w-full shrink-0">
               {/* Image area */}
               <div className="w-full h-[400px] md:h-[600px] relative rounded-2xl overflow-hidden">
-                {/* Dot grid background — shared across all platforms */}
+                {/* Dot grid background — per-platform identity color */}
                 <div className="absolute inset-0" style={{
-                  background: "#f7f7f5",
-                  backgroundImage: "radial-gradient(circle, rgba(0,0,0,0.12) 1px, transparent 1px)",
+                  background: platform.bg,
+                  backgroundImage: `radial-gradient(circle, ${platform.dots} 1px, transparent 1px)`,
                   backgroundSize: "24px 24px",
+                  transition: "background 500ms ease",
                 }} />
 
                 {platform.name === "CodeGenius" && (
@@ -108,7 +119,10 @@ export function PlatformCarousel() {
                     style={{ boxShadow: "rgba(0,0,0,0.08) 0px 0px 0px 1px, rgba(0,0,0,0.06) 0px 4px 12px" }}
                   >
                     <div className="flex items-center justify-between">
-                      <h3 className="text-base font-medium text-black tracking-tight">{platform.name}</h3>
+                      {platform.logo
+                        ? <Image src={platform.logo} alt={platform.name} width={120} height={36} className="object-contain h-7 w-auto" />
+                        : <h3 className="text-base font-medium text-black tracking-tight">{platform.name}</h3>
+                      }
                       <Badge variant={tagVariant(pi)}>{platform.tag}</Badge>
                     </div>
                     <p className="text-[14px] text-[#4e4e4e] leading-relaxed tracking-[0.01em]">{platform.description}</p>
@@ -120,6 +134,15 @@ export function PlatformCarousel() {
                         </li>
                       ))}
                     </ul>
+                    <Link
+                      href={platform.href}
+                      className="mt-1 inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-black text-white text-[13px] font-medium hover:bg-[#222] transition-colors self-start"
+                    >
+                      Explore {platform.name}
+                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                        <path d="M2.5 6h7M6.5 3l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </Link>
                   </div>
                 </div>
               </div>
