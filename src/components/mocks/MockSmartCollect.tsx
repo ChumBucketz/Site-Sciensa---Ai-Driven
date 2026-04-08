@@ -77,7 +77,7 @@ export function MockNextdue() {
         </div>
         <div>
           <p className="text-[13px] font-medium text-black">Nextdue</p>
-          <p className="text-[10px] text-[rgb(58, 179, 181)]">AI collections engine</p>
+          <p className="text-[10px] text-[#717171]">AI collections engine</p>
         </div>
         <div className="ml-auto flex items-center gap-2">
           <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full"

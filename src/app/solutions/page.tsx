@@ -118,7 +118,7 @@ export default function Solutions() {
                       <span className="w-3 h-3 rounded-full bg-[#ff5f57]" />
                       <span className="w-3 h-3 rounded-full bg-[#febc2e]" />
                       <span className="w-3 h-3 rounded-full bg-[#28c840]" />
-                      <span className="ml-3 text-[11px] text-[rgb(58, 179, 181)] font-mono">phase.{phase.title.toLowerCase().replace(/ /g, "_")}</span>
+                      <span className="ml-3 text-[11px] text-[#717171] font-mono">phase.{phase.title.toLowerCase().replace(/ /g, "_")}</span>
                     </div>
                     <div className="flex-1 p-5 flex flex-col gap-2.5 justify-center">
                       {phase.steps.map((step, i) => (
@@ -140,7 +140,7 @@ export default function Solutions() {
                     </div>
                     <div className="pt-5 border-t border-[#e5e5e5]">
                       <span className="text-3xl font-light text-black tracking-tight">{phase.stat}</span>
-                      <span className="block text-label text-[rgb(58, 179, 181)] mt-1">{phase.statLabel}</span>
+                      <span className="block text-label text-[#717171] mt-1">{phase.statLabel}</span>
                     </div>
                   </div>
                 </div>
@@ -165,8 +165,8 @@ export default function Solutions() {
                   </div>
                   <ul className="space-y-2">
                     {solution.buildingBlocks.map((block) => (
-                      <li key={block} className="text-xs text-[rgb(58, 179, 181)] flex items-center gap-2">
-                        <span className="w-1 h-1 rounded-full bg-[rgb(58, 179, 181)] shrink-0" />
+                      <li key={block} className="text-xs text-[#717171] flex items-center gap-2">
+                        <span className="w-1 h-1 rounded-full bg-[#717171] shrink-0" />
                         {block}
                       </li>
                     ))}

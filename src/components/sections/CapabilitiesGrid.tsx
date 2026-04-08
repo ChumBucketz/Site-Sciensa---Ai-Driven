@@ -87,7 +87,7 @@ export function CapabilitiesGrid() {
       {/* Left — sticky text + filters */}
       <div className="lg:sticky lg:top-24">
         <FadeIn>
-          <p className="text-[11px] font-medium uppercase tracking-[0.1em] text-[rgb(58, 179, 181)] mb-4">// CAPABILITIES</p>
+          <p className="text-[11px] font-medium uppercase tracking-[0.1em] text-[#717171] mb-4">// CAPABILITIES</p>
           <h2 className="text-heading text-black mb-4" style={{ maxWidth: "22ch" }}>
             Full-spectrum engineering for the AI era.
           </h2>

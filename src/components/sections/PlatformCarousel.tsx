@@ -130,8 +130,8 @@ export function PlatformCarousel() {
                     <p className="text-[14px] text-[#4e4e4e] leading-relaxed tracking-[0.01em]">{platform.description}</p>
                     <ul className="flex flex-wrap gap-x-4 gap-y-1">
                       {platform.features.map((f) => (
-                        <li key={f} className="text-xs text-[rgb(58, 179, 181)] flex items-center gap-1.5">
-                          <span className="w-1 h-1 rounded-full bg-[rgb(58, 179, 181)] shrink-0" />
+                        <li key={f} className="text-xs text-[#717171] flex items-center gap-1.5">
+                          <span className="w-1 h-1 rounded-full bg-[#717171] shrink-0" />
                           {f}
                         </li>
                       ))}

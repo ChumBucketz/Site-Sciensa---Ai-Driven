@@ -31,7 +31,7 @@ export default function CaseStudies() {
       <section className="max-w-7xl mx-auto px-4 md:px-6 py-3">
         <FadeIn>
           <div className="bg-white rounded-2xl px-5 md:px-10 py-12">
-            <p className="text-label text-[rgb(58, 179, 181)] mb-10">Aggregate impact across engagements</p>
+            <p className="text-label text-[#717171] mb-10">Aggregate impact across engagements</p>
             <StatGrid stats={[
               { value: "120+", label: "Enterprise clients" },
               { value: "R$1.2B+", label: "Recovered annually" },
@@ -92,7 +92,7 @@ export default function CaseStudies() {
                 <div key={cs.slug} className="el-card p-10 flex flex-col gap-5">
                   <div className="flex items-center gap-3">
                     <Badge variant={tagVariant(ci)}>{cs.industry}</Badge>
-                    <span className="text-xs text-[rgb(58, 179, 181)]">{cs.client}</span>
+                    <span className="text-xs text-[#717171]">{cs.client}</span>
                   </div>
                   <h2 className="text-lg font-light leading-snug text-black tracking-tight">{cs.title}</h2>
                   <p className="text-[15px] text-[#4e4e4e] leading-relaxed flex-1 tracking-[0.01em]">{cs.summary}</p>
@@ -100,7 +100,7 @@ export default function CaseStudies() {
                     {cs.metrics.map((m) => (
                       <div key={m.label}>
                         <span className="text-xl font-light text-black tracking-tight block">{m.value}</span>
-                        <span className="text-xs text-[rgb(58, 179, 181)] leading-snug">{m.label}</span>
+                        <span className="text-xs text-[#717171] leading-snug">{m.label}</span>
                       </div>
                     ))}
                   </div>

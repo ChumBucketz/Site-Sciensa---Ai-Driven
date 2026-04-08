@@ -56,7 +56,7 @@ export function JobFilter({ departments, jobs }: JobFilterProps) {
                 {job.description}
               </p>
             </div>
-            <div className="shrink-0 flex flex-col items-start sm:items-end gap-1 text-xs text-[rgb(58, 179, 181)]">
+            <div className="shrink-0 flex flex-col items-start sm:items-end gap-1 text-xs text-[#717171]">
               <span>{job.location}</span>
               <span>{job.type}</span>
             </div>

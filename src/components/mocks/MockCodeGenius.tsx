@@ -122,7 +122,7 @@ export function MockCodeGenius() {
         </div>
         <div>
           <p className="text-[13px] font-medium text-black">CodeGenius</p>
-          <p className="text-[10px] text-[rgb(58, 179, 181)]">AI-native sprint board</p>
+          <p className="text-[10px] text-[#717171]">AI-native sprint board</p>
         </div>
         <div className="ml-auto flex items-center gap-1">
           {avatars.map((a) => (

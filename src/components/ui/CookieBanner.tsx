@@ -43,16 +43,16 @@ export function CookieBanner() {
         <div className="flex items-start gap-4 flex-1 min-w-0">
           <div className="w-9 h-9 rounded-full bg-[#f5f5f5] flex items-center justify-center shrink-0 mt-0.5">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-              <circle cx="12" cy="12" r="9" stroke="rgb(58, 179, 181)" strokeWidth="1.6"/>
-              <circle cx="9" cy="10" r="1.2" fill="rgb(58, 179, 181)"/>
-              <circle cx="14" cy="8" r="1" fill="rgb(58, 179, 181)"/>
-              <circle cx="15" cy="13" r="1.4" fill="rgb(58, 179, 181)"/>
-              <circle cx="10" cy="15" r="1" fill="rgb(58, 179, 181)"/>
+              <circle cx="12" cy="12" r="9" stroke="#717171" strokeWidth="1.6"/>
+              <circle cx="9" cy="10" r="1.2" fill="#717171"/>
+              <circle cx="14" cy="8" r="1" fill="#717171"/>
+              <circle cx="15" cy="13" r="1.4" fill="#717171"/>
+              <circle cx="10" cy="15" r="1" fill="#717171"/>
             </svg>
           </div>
           <div className="min-w-0">
             <p className="text-[13px] font-medium text-black tracking-tight">Cookies &amp; Privacy</p>
-            <p className="text-[12px] text-[rgb(58, 179, 181)] leading-relaxed mt-0.5">
+            <p className="text-[12px] text-[#717171] leading-relaxed mt-0.5">
               We use cookies to improve your experience and analyze site usage.
               By continuing, you agree to our{" "}
               <Link href="/privacy" className="text-black underline underline-offset-2 hover:text-[#22AEA4] transition-colors">
@@ -71,7 +71,7 @@ export function CookieBanner() {
         <div className="flex items-center gap-2 shrink-0">
           <button
             onClick={() => dismiss("declined")}
-            className="px-4 py-2 text-[12px] font-medium text-[rgb(58, 179, 181)] hover:text-black rounded-full hover:bg-[#f5f5f5] transition-colors tracking-[0.01em]"
+            className="px-4 py-2 text-[12px] font-medium text-[#717171] hover:text-black rounded-full hover:bg-[#f5f5f5] transition-colors tracking-[0.01em]"
           >
             Decline
           </button>

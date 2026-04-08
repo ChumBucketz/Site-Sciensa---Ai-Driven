@@ -4,6 +4,9 @@ import { Button } from "@/components/ui/Button";
 import { MonoLabel } from "@/components/ui/MonoLabel";
 import { ReactNode, useRef, useState } from "react";
 
+const VIDEO_URL =
+  "https://res.cloudinary.com/dshrkq1up/video/upload/q_auto/f_auto/v1775664054/hf_20260210_031346_d87182fb-b0af-4273-84d1-c6fd17d6bf0f_1_yvrlam.mp4";
+
 interface CTABannerProps {
   eyebrow?: string;
   headline: string;
@@ -41,7 +44,31 @@ export function CTABanner({
       onMouseLeave={handleMouseLeave}
       className="relative bg-black text-white rounded-2xl overflow-hidden"
     >
-      {/* Base grid — always visible */}
+      {/* Video background */}
+      <video
+        src={VIDEO_URL}
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+        style={{ opacity: 0.25 }}
+      />
+
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/60" />
+
+      {/* Animated motion gradient */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(ellipse 80% 60% at 10% 80%, rgba(255,255,255,0.05) 0%, transparent 60%), radial-gradient(ellipse 60% 50% at 90% 20%, rgba(255,255,255,0.04) 0%, transparent 60%)",
+          animation: "ctaGradientShift 8s ease-in-out infinite alternate",
+        }}
+      />
+
+      {/* Base dot grid */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -50,7 +77,7 @@ export function CTABanner({
         }}
       />
 
-      {/* Spotlight grid — mask does all the work, no opacity toggle = no flash */}
+      {/* Spotlight grid — follows cursor */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -99,6 +126,14 @@ export function CTABanner({
         </div>
         {children && <div className="mt-14">{children}</div>}
       </div>
+
+      <style>{`
+        @keyframes ctaGradientShift {
+          0%   { opacity: 1; transform: scale(1) translate(0%, 0%); }
+          50%  { opacity: 0.7; transform: scale(1.08) translate(2%, -2%); }
+          100% { opacity: 1; transform: scale(1.04) translate(-2%, 2%); }
+        }
+      `}</style>
     </section>
   );
 }

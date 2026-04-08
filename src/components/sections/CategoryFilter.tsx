@@ -48,7 +48,7 @@ export function CategoryFilter({ categories, articles }: CategoryFilterProps) {
               <span className="text-xs font-medium uppercase tracking-widest bg-[rgba(245,242,239,0.95)] text-[#4e4e4e] px-2.5 py-1 rounded-[4px] shadow-[rgba(0,0,0,0.06)_0px_0px_0px_1px]">
                 {article.type}
               </span>
-              <span className="text-xs text-[rgb(58, 179, 181)]">{article.category}</span>
+              <span className="text-xs text-[#717171]">{article.category}</span>
             </div>
             <h3 className="text-base font-medium leading-snug text-black tracking-tight">
               {article.title}
@@ -56,7 +56,7 @@ export function CategoryFilter({ categories, articles }: CategoryFilterProps) {
             <p className="text-[15px] text-[#4e4e4e] leading-relaxed flex-1 tracking-[0.01em]">
               {article.excerpt}
             </p>
-            <div className="flex items-center gap-4 text-xs text-[rgb(58, 179, 181)]">
+            <div className="flex items-center gap-4 text-xs text-[#717171]">
               <span>{article.date}</span>
               <span>{article.read_time}</span>
             </div>

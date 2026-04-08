@@ -68,7 +68,7 @@ export function MockAmplify() {
         </div>
         <div>
           <p className="text-[13px] font-medium text-black">Amplify</p>
-          <p className="text-[10px] text-[rgb(58, 179, 181)]">Digital acceleration platform</p>
+          <p className="text-[10px] text-[#717171]">Digital acceleration platform</p>
         </div>
         <div className="ml-auto flex items-center gap-2">
           <span className="text-[10px] font-medium px-2.5 py-1 rounded-full bg-[#f0fdf4] text-[#22AEA4] border border-[#bbf7d0]">3× faster delivery</span>
@@ -79,7 +79,7 @@ export function MockAmplify() {
       <div className="px-5 pt-3.5 pb-3 shrink-0 flex items-center justify-between border-b border-[#f5f5f5]">
         <div>
           <p className="text-[12px] font-medium text-black">Project Phoenix — Digital Banking MVP</p>
-          <p className="text-[11px] text-[rgb(58, 179, 181)] mt-0.5">6 phases · 5.5 weeks · Squad of 8</p>
+          <p className="text-[11px] text-[#717171] mt-0.5">6 phases · 5.5 weeks · Squad of 8</p>
         </div>
         <div className="flex items-center gap-1">
           {phases.map((_, i) => (
@@ -121,7 +121,7 @@ export function MockAmplify() {
                     <circle cx="12" cy="12" r="9" stroke="#aaa" strokeWidth="2"/>
                     <path d="M12 7v5l3 3" stroke="#aaa" strokeWidth="2" strokeLinecap="round"/>
                   </svg>
-                  <span className="text-[10px] text-[rgb(58, 179, 181)]">{phase.duration}</span>
+                  <span className="text-[10px] text-[#717171]">{phase.duration}</span>
                   {isDone && <span className="ml-auto text-[9px] font-medium text-[#22AEA4]">Done</span>}
                   {isActive && <span className="ml-auto text-[9px] font-medium text-[#22AEA4] animate-pulse">Live</span>}
                 </div>
@@ -137,7 +137,7 @@ export function MockAmplify() {
                       ) : (
                         <div className="w-1.5 h-1.5 rounded-full shrink-0 mt-[3px] bg-[#e5e5e5]" />
                       )}
-                      <span className="text-[10px] text-[rgb(58, 179, 181)] leading-tight">{task}</span>
+                      <span className="text-[10px] text-[#717171] leading-tight">{task}</span>
                     </div>
                   ))}
                 </div>

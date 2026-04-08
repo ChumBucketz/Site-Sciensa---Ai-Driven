@@ -25,12 +25,12 @@ export default function Contact() {
               <div>
                 <MonoLabel className="block mb-4">Office</MonoLabel>
                 <p className="text-base font-medium text-black tracking-tight">
-                  São Paulo, <span className="text-[rgb(58, 179, 181)] font-normal">Brazil</span>
+                  São Paulo, <span className="text-[#717171] font-normal">Brazil</span>
                 </p>
                 <p className="text-[15px] text-[#4e4e4e] mt-1 tracking-[0.01em]">
                   Alameda Campinas, 802 — Jardim Paulista
                 </p>
-                <p className="text-[14px] text-[rgb(58, 179, 181)] mt-0.5">São Paulo – SP, 01404-200</p>
+                <p className="text-[14px] text-[#717171] mt-0.5">São Paulo – SP, 01404-200</p>
               </div>
 
               {/* Google Maps embed */}

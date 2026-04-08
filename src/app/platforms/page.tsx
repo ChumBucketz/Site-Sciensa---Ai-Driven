@@ -75,7 +75,7 @@ export default function Platforms() {
                       <span className="w-3 h-3 rounded-full bg-[#ff5f57]" />
                       <span className="w-3 h-3 rounded-full bg-[#febc2e]" />
                       <span className="w-3 h-3 rounded-full bg-[#28c840]" />
-                      <span className="ml-3 text-[11px] text-[rgb(58, 179, 181)] font-mono">platform.properties</span>
+                      <span className="ml-3 text-[11px] text-[#717171] font-mono">platform.properties</span>
                     </div>
                     <div className="flex-1 p-5 flex flex-col gap-2.5 justify-center">
                       {diff.points.map((point) => (
@@ -97,7 +97,7 @@ export default function Platforms() {
                     </div>
                     <div className="pt-5 border-t border-[#e5e5e5]">
                       <span className="text-3xl font-light text-black tracking-tight">{diff.stat}</span>
-                      <span className="block text-label text-[rgb(58, 179, 181)] mt-1">{diff.statLabel}</span>
+                      <span className="block text-label text-[#717171] mt-1">{diff.statLabel}</span>
                     </div>
                   </div>
                 </div>
@@ -119,7 +119,7 @@ export default function Platforms() {
                     <Badge variant={tagVariant(pi)}>{platform.type}</Badge>
                     <div>
                       <h2 className="text-2xl font-light text-black tracking-tight">{platform.label}</h2>
-                      <p className="text-[15px] text-[rgb(58, 179, 181)] mt-1 tracking-[0.01em]">{platform.tagline}</p>
+                      <p className="text-[15px] text-[#717171] mt-1 tracking-[0.01em]">{platform.tagline}</p>
                     </div>
                     <p className="text-[15px] text-[#4e4e4e] leading-relaxed tracking-[0.01em]">{platform.description}</p>
                   </div>
@@ -128,7 +128,7 @@ export default function Platforms() {
                     <ul className="space-y-3">
                       {platform.highlights.map((h) => (
                         <li key={h} className="flex items-center gap-3 text-[15px] text-[#4e4e4e] tracking-[0.01em]">
-                          <span className="w-1.5 h-1.5 rounded-full bg-[rgb(58, 179, 181)] shrink-0" />
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#717171] shrink-0" />
                           {h}
                         </li>
                       ))}

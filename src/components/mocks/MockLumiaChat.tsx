@@ -74,11 +74,11 @@ export function MockLumiaChat() {
         </div>
         <div>
           <p className="text-[13px] font-medium text-black">Lumia AI</p>
-          <p className="text-[10px] text-[rgb(58, 179, 181)]">Intelligent banking assistant</p>
+          <p className="text-[10px] text-[#717171]">Intelligent banking assistant</p>
         </div>
         <div className="ml-auto flex items-center gap-1.5">
           <span className="w-1.5 h-1.5 rounded-full bg-[#28c840] animate-pulse" />
-          <span className="text-[10px] text-[rgb(58, 179, 181)]">online</span>
+          <span className="text-[10px] text-[#717171]">online</span>
         </div>
       </div>
 

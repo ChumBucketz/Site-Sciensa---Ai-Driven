@@ -40,7 +40,7 @@ export default function Home() {
       {/* Logo ticker */}
       <section className="max-w-7xl mx-auto px-4 md:px-6 py-3">
         <FadeIn>
-        <p className="text-label text-[rgb(58, 179, 181)] text-center mb-6">Trusted by leaders in complex industries</p>
+        <p className="text-label text-[#717171] text-center mb-6">Trusted by leaders in complex industries</p>
         <div className="overflow-hidden py-2" style={{ maskImage: "linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%)", WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%)" }}>
           <div className="flex w-max animate-marquee gap-4">
               {[...logos, ...logos].map((logo, i) => (
@@ -66,7 +66,7 @@ export default function Home() {
       <section className="max-w-7xl mx-auto px-4 md:px-6 py-3">
         <FadeIn>
         <div className="bg-white rounded-2xl px-5 md:px-10 py-12">
-          <p className="text-label text-[rgb(58, 179, 181)] mb-10">
+          <p className="text-label text-[#717171] mb-10">
             Trusted by leaders in complex industries
           </p>
           <StatGrid
@@ -126,7 +126,7 @@ export default function Home() {
                   </div>
                   <div className="pt-5 border-t border-[#e5e5e5]">
                     <span className="text-3xl font-light text-black tracking-tight">{pillar.stat}</span>
-                    <span className="block text-label text-[rgb(58, 179, 181)] mt-1">{pillar.statLabel}</span>
+                    <span className="block text-label text-[#717171] mt-1">{pillar.statLabel}</span>
                   </div>
                 </div>
               </div>

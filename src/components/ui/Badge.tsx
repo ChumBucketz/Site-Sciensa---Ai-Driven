@@ -18,7 +18,7 @@ export function Badge({ children, className = "", variant = "default" }: BadgePr
   return (
     <span
       className={`${base} ${variants[variant]} ${className}`}
-      style={variant === "brand" ? { background: "rgb(58, 179, 181)" } : undefined}
+      style={variant === "brand" ? { background: "#717171" } : undefined}
     >
       {children}
     </span>

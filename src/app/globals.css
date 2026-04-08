@@ -6,7 +6,7 @@
   /* ElevenLabs — warm achromatic palette */
   --color-text-primary:   #000000;
   --color-text-secondary: #4e4e4e;
-  --color-text-muted:     rgb(58, 179, 181);
+  --color-text-muted:     #717171;
 
   --color-surface:        #f5f5f5;
   --color-surface-2:      #ffffff;
@@ -78,7 +78,7 @@ body {
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: rgb(58, 179, 181);
+  color: #717171;
 }
 
 /* ElevenLabs card — multi-layer shadow */
