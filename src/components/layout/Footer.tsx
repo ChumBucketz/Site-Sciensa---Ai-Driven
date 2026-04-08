@@ -45,7 +45,7 @@ export function Footer() {
                 alt="Sciensa"
                 width={120}
                 height={32}
-                className="h-7 w-auto"
+                className="h-[50px] w-auto"
               />
             </Link>
             <p className="mt-4 text-[15px] text-white/50 leading-relaxed max-w-xs tracking-[0.01em]">

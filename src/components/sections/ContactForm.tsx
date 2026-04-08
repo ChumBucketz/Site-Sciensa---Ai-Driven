@@ -12,7 +12,7 @@ const inquiryTypes = [
 ];
 
 const inputCls =
-  "w-full border border-[#e5e5e5] rounded-[8px] px-4 py-2.5 text-[15px] bg-white text-black placeholder:text-[#777169] focus:outline-none focus:border-black focus:ring-1 focus:ring-black/20 transition-colors";
+  "w-full border border-[#e5e5e5] rounded-[8px] px-4 py-2.5 text-[15px] bg-white text-black placeholder:text-[rgb(58, 179, 181)] focus:outline-none focus:border-black focus:ring-1 focus:ring-black/20 transition-colors";
 
 export function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
@@ -43,7 +43,7 @@ export function ContactForm() {
       </div>
 
       <div>
-        <label className="block text-label text-[#777169] mb-1.5">Inquiry type</label>
+        <label className="block text-label text-[rgb(58, 179, 181)] mb-1.5">Inquiry type</label>
         <select name="inquiry" className={inputCls}>
           {inquiryTypes.map((t) => (
             <option key={t}>{t}</option>
@@ -52,7 +52,7 @@ export function ContactForm() {
       </div>
 
       <div>
-        <label className="block text-label text-[#777169] mb-1.5">Message</label>
+        <label className="block text-label text-[rgb(58, 179, 181)] mb-1.5">Message</label>
         <textarea
           name="message"
           rows={5}
@@ -82,7 +82,7 @@ function Field({
 }) {
   return (
     <div>
-      <label className="block text-label text-[#777169] mb-1.5">{label}</label>
+      <label className="block text-label text-[rgb(58, 179, 181)] mb-1.5">{label}</label>
       <input name={name} type={type} required={required} className={
         "w-full border border-[#e5e5e5] rounded-[8px] px-4 py-2.5 text-[15px] bg-white text-black focus:outline-none focus:border-black focus:ring-1 focus:ring-black/20 transition-colors"
       } />

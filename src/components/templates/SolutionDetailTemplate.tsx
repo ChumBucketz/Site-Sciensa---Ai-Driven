@@ -60,7 +60,7 @@ function ApproachVisual({ items }: { items: string[] }) {
         <span className="w-3 h-3 rounded-full bg-[#ff5f57]" />
         <span className="w-3 h-3 rounded-full bg-[#febc2e]" />
         <span className="w-3 h-3 rounded-full bg-[#28c840]" />
-        <span className="ml-3 text-[11px] text-[#777169] font-mono">solution.approach</span>
+        <span className="ml-3 text-[11px] text-[rgb(58, 179, 181)] font-mono">solution.approach</span>
       </div>
       <div className="flex-1 p-5 flex flex-col gap-2.5 justify-center">
         {items.map((item) => (
@@ -108,7 +108,7 @@ export function SolutionDetailTemplate({ data }: { data: SolutionDetailData }) {
                     </div>
                     <div className="pt-5 border-t border-[#e5e5e5]">
                       <span className="text-3xl font-light text-black tracking-tight">{row.stat}</span>
-                      <span className="block text-label text-[#777169] mt-1">{row.statLabel}</span>
+                      <span className="block text-label text-[rgb(58, 179, 181)] mt-1">{row.statLabel}</span>
                     </div>
                   </div>
                 </div>
@@ -141,7 +141,7 @@ export function SolutionDetailTemplate({ data }: { data: SolutionDetailData }) {
               ))}
               {data.modules.highlight && (
                 <div className="el-card p-8 bg-[#f5f5f5] flex flex-col justify-center gap-3">
-                  <p className="text-xs font-medium uppercase tracking-widest text-[#777169]">{data.modules.highlight.label}</p>
+                  <p className="text-xs font-medium uppercase tracking-widest text-[rgb(58, 179, 181)]">{data.modules.highlight.label}</p>
                   <p className="text-xl font-light text-black tracking-tight">{data.modules.highlight.title}</p>
                   <p className="text-[15px] text-[#4e4e4e] leading-relaxed tracking-[0.01em]">{data.modules.highlight.description}</p>
                   <Badge variant="warm">{data.modules.highlight.badge}</Badge>
@@ -160,7 +160,7 @@ export function SolutionDetailTemplate({ data }: { data: SolutionDetailData }) {
             <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4">
               {data.caseStudies.map((cs) => (
                 <div key={cs.title} className="el-card p-8 flex flex-col gap-4">
-                  <p className="text-xs text-[#777169] tracking-[0.01em]">{cs.client}</p>
+                  <p className="text-xs text-[rgb(58, 179, 181)] tracking-[0.01em]">{cs.client}</p>
                   <h3 className="text-base font-medium text-black tracking-tight">{cs.title}</h3>
                   <p className="text-[15px] text-[#4e4e4e] leading-relaxed tracking-[0.01em] flex-1">{cs.result}</p>
                   <div className="flex flex-wrap gap-2 mt-auto">

@@ -56,7 +56,7 @@ function ApproachVisual({ items }: { items: string[] }) {
         <span className="w-3 h-3 rounded-full bg-[#ff5f57]" />
         <span className="w-3 h-3 rounded-full bg-[#febc2e]" />
         <span className="w-3 h-3 rounded-full bg-[#28c840]" />
-        <span className="ml-3 text-[11px] text-[#777169] font-mono">platform.details</span>
+        <span className="ml-3 text-[11px] text-[rgb(58, 179, 181)] font-mono">platform.details</span>
       </div>
       <div className="flex-1 p-5 flex flex-col gap-2.5 justify-center">
         {items.map((item) => (
@@ -106,7 +106,7 @@ export function PlatformDetailTemplate({ data }: { data: PlatformDetailData }) {
                     </div>
                     <div className="pt-5 border-t border-[#e5e5e5]">
                       <span className="text-3xl font-light text-black tracking-tight">{row.stat}</span>
-                      <span className="block text-label text-[#777169] mt-1">{row.statLabel}</span>
+                      <span className="block text-label text-[rgb(58, 179, 181)] mt-1">{row.statLabel}</span>
                     </div>
                   </div>
                 </div>
@@ -150,7 +150,7 @@ export function PlatformDetailTemplate({ data }: { data: PlatformDetailData }) {
             <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4">
               {data.caseStudies.map((cs) => (
                 <div key={cs.title} className="el-card p-8 flex flex-col gap-4">
-                  <p className="text-xs text-[#777169] tracking-[0.01em]">{cs.client}</p>
+                  <p className="text-xs text-[rgb(58, 179, 181)] tracking-[0.01em]">{cs.client}</p>
                   <h3 className="text-base font-medium text-black tracking-tight">{cs.title}</h3>
                   <p className="text-[15px] text-[#4e4e4e] leading-relaxed tracking-[0.01em] flex-1">{cs.result}</p>
                   <div className="flex flex-wrap gap-2 mt-auto">

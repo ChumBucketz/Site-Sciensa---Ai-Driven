@@ -110,7 +110,7 @@ export function IndustriesGrid() {
       {/* Right — sticky text + filters */}
       <div className="lg:sticky lg:top-24">
         <FadeIn>
-          <p className="text-[11px] font-medium uppercase tracking-[0.1em] text-[#777169] mb-4">// INDUSTRY STUDIOS</p>
+          <p className="text-[11px] font-medium uppercase tracking-[0.1em] text-[rgb(58, 179, 181)] mb-4">// INDUSTRY STUDIOS</p>
           <h2 className="text-heading text-black mb-4" style={{ maxWidth: "22ch" }}>
             Deep expertise across the industries that matter.
           </h2>

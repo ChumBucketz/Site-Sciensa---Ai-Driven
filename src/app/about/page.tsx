@@ -8,7 +8,7 @@ const timeline = [
   { year: "2016", event: "Expanded platform engineering practice; first enterprise banking client." },
   { year: "2018", event: "Launched Data & AI practice; opened second office." },
   { year: "2020", event: "200+ engineers; established partnerships with AWS, Google Cloud and Azure." },
-  { year: "2022", event: "Launched Amplify and SmartCollect platforms; entered healthcare and retail verticals." },
+  { year: "2022", event: "Launched Amplify and Nextdue platforms; entered healthcare and retail verticals." },
   { year: "2024", event: "500+ engineers; launched Lumia AI and CodeGenius platforms; expanded to 6 industries." },
 ];
 
@@ -81,7 +81,7 @@ export default function About() {
                     )}
                   </div>
                   <div className="pt-1 pb-2">
-                    <span className="text-label text-[#777169] block mb-1">{item.year}</span>
+                    <span className="text-label text-[rgb(58, 179, 181)] block mb-1">{item.year}</span>
                     <p className="text-[15px] text-[#4e4e4e] leading-relaxed tracking-[0.01em]">{item.event}</p>
                   </div>
                 </div>
@@ -115,7 +115,7 @@ export default function About() {
               <div key={member.name} className="el-card p-8 flex flex-col gap-2">
                 <div className="w-10 h-10 rounded-full bg-[#f5f5f5] border border-[#e5e5e5] mb-2" />
                 <span className="text-base font-medium text-black tracking-tight">{member.name}</span>
-                <span className="text-[15px] text-[#777169] tracking-[0.01em]">{member.role}</span>
+                <span className="text-[15px] text-[rgb(58, 179, 181)] tracking-[0.01em]">{member.role}</span>
               </div>
             ))}
           </div>

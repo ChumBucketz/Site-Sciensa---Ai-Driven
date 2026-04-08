@@ -53,10 +53,10 @@ export function MockSquad() {
         <span className="w-3 h-3 rounded-full bg-[#ff5f57]" />
         <span className="w-3 h-3 rounded-full bg-[#febc2e]" />
         <span className="w-3 h-3 rounded-full bg-[#28c840]" />
-        <span className="ml-3 text-[11px] text-[#777169] font-mono">squad.live</span>
+        <span className="ml-3 text-[11px] text-[rgb(58, 179, 181)] font-mono">squad.live</span>
         <span className="ml-auto flex items-center gap-1">
           <span className="w-1.5 h-1.5 rounded-full bg-[#28c840] animate-pulse" />
-          <span className="text-[10px] text-[#777169]">live</span>
+          <span className="text-[10px] text-[rgb(58, 179, 181)]">live</span>
         </span>
       </div>
 
@@ -79,7 +79,7 @@ export function MockSquad() {
               </div>
               <div className="min-w-0">
                 <p className="text-[11px] font-medium text-black truncate">{r.role}</p>
-                <p className="text-[10px] text-[#777169] truncate">{r.task}</p>
+                <p className="text-[10px] text-[rgb(58, 179, 181)] truncate">{r.task}</p>
               </div>
               <span className="ml-auto w-1.5 h-1.5 rounded-full shrink-0" style={{ background: r.active ? "#28c840" : "#e5e5e5" }} />
             </div>
@@ -99,7 +99,7 @@ export function MockSquad() {
             >
               <span className="text-[#22AEA4] text-[11px] shrink-0">{u.icon}</span>
               <span className="text-[11px] text-[#4e4e4e] flex-1">{u.msg}</span>
-              <span className="text-[10px] text-[#777169] shrink-0">{u.time}</span>
+              <span className="text-[10px] text-[rgb(58, 179, 181)] shrink-0">{u.time}</span>
             </div>
           ))}
         </div>

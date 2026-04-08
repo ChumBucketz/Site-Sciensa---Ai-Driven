@@ -75,7 +75,7 @@ export default function Industries() {
                       <span className="w-3 h-3 rounded-full bg-[#ff5f57]" />
                       <span className="w-3 h-3 rounded-full bg-[#febc2e]" />
                       <span className="w-3 h-3 rounded-full bg-[#28c840]" />
-                      <span className="ml-3 text-[11px] text-[#777169] font-mono">industry.standards</span>
+                      <span className="ml-3 text-[11px] text-[rgb(58, 179, 181)] font-mono">industry.standards</span>
                     </div>
                     <div className="flex-1 p-5 flex flex-col gap-2.5 justify-center">
                       {rigor.items.map((item) => (
@@ -97,7 +97,7 @@ export default function Industries() {
                     </div>
                     <div className="pt-5 border-t border-[#e5e5e5]">
                       <span className="text-3xl font-light text-black tracking-tight">{rigor.stat}</span>
-                      <span className="block text-label text-[#777169] mt-1">{rigor.statLabel}</span>
+                      <span className="block text-label text-[rgb(58, 179, 181)] mt-1">{rigor.statLabel}</span>
                     </div>
                   </div>
                 </div>
@@ -152,8 +152,8 @@ export default function Industries() {
                   </div>
                   <ul className="space-y-2">
                     {industry.challenges.map((c) => (
-                      <li key={c} className="text-xs text-[#777169] flex items-center gap-2">
-                        <span className="w-1 h-1 rounded-full bg-[#777169] shrink-0" />
+                      <li key={c} className="text-xs text-[rgb(58, 179, 181)] flex items-center gap-2">
+                        <span className="w-1 h-1 rounded-full bg-[rgb(58, 179, 181)] shrink-0" />
                         {c}
                       </li>
                     ))}

@@ -21,32 +21,30 @@ export default function Contact() {
             </div>
 
             {/* Sidebar */}
-            <div className="lg:col-span-2 space-y-10">
+            <div className="lg:col-span-2 space-y-8">
               <div>
-                <MonoLabel className="block mb-3">Email</MonoLabel>
-                <a
-                  href="mailto:hello@sciensa.com"
-                  className="text-base font-medium text-black hover:text-[#4e4e4e] transition-colors"
-                >
-                  hello@sciensa.com
-                </a>
+                <MonoLabel className="block mb-4">Office</MonoLabel>
+                <p className="text-base font-medium text-black tracking-tight">
+                  São Paulo, <span className="text-[rgb(58, 179, 181)] font-normal">Brazil</span>
+                </p>
+                <p className="text-[15px] text-[#4e4e4e] mt-1 tracking-[0.01em]">
+                  Alameda Campinas, 802 — Jardim Paulista
+                </p>
+                <p className="text-[14px] text-[rgb(58, 179, 181)] mt-0.5">São Paulo – SP, 01404-200</p>
               </div>
 
-              <div>
-                <MonoLabel className="block mb-5">Offices</MonoLabel>
-                <div className="space-y-6">
-                  {[
-                    { city: "São Paulo", country: "Brazil", address: "Av. Paulista 1000, 12° andar — Bela Vista" },
-                    { city: "Remote", country: "Global", address: "Distributed team across Latin America, US & Europe" },
-                  ].map((office) => (
-                    <div key={office.city}>
-                      <p className="text-base font-medium text-black tracking-tight">
-                        {office.city}, <span className="text-[#777169] font-normal">{office.country}</span>
-                      </p>
-                      <p className="text-[15px] text-[#4e4e4e] mt-1 tracking-[0.01em]">{office.address}</p>
-                    </div>
-                  ))}
-                </div>
+              {/* Google Maps embed */}
+              <div className="overflow-hidden rounded-2xl border border-[#e5e5e5]" style={{ height: 300, position: "relative" }}>
+                <iframe
+                  title="Sciensa Office"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  loading="lazy"
+                  allowFullScreen
+                  referrerPolicy="no-referrer-when-downgrade"
+                  src="https://maps.google.com/maps?q=Alameda+Campinas,+802,+Jardim+Paulista,+S%C3%A3o+Paulo+SP+01404-200&output=embed&z=16"
+                />
               </div>
 
               <div className="el-card p-6">

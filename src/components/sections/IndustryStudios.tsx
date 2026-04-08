@@ -70,7 +70,7 @@ export function IndustryStudios() {
               }`}>
                 {ind.title}
               </p>
-              <p className="text-[13px] text-[#777169] leading-relaxed tracking-[0.01em] mt-0.5">
+              <p className="text-[13px] text-[rgb(58, 179, 181)] leading-relaxed tracking-[0.01em] mt-0.5">
                 {ind.description}
               </p>
             </button>
@@ -98,7 +98,7 @@ export function IndustryStudios() {
               }`}>
                 {ind.title}
               </p>
-              <p className="text-[13px] text-[#777169] leading-relaxed tracking-[0.01em] mt-1">
+              <p className="text-[13px] text-[rgb(58, 179, 181)] leading-relaxed tracking-[0.01em] mt-1">
                 {ind.description}
               </p>
             </button>

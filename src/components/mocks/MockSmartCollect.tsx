@@ -31,7 +31,7 @@ function scoreColor(score: number) {
   return { bar: "#fbbf24", text: "#92400e" };
 }
 
-export function MockSmartCollect() {
+export function MockNextdue() {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref as React.RefObject<HTMLElement>);
   const [revealed, setRevealed] = useState<number[]>([]);
@@ -76,8 +76,8 @@ export function MockSmartCollect() {
           </svg>
         </div>
         <div>
-          <p className="text-[13px] font-medium text-black">SmartCollect</p>
-          <p className="text-[10px] text-[#777169]">AI collections engine</p>
+          <p className="text-[13px] font-medium text-black">Nextdue</p>
+          <p className="text-[10px] text-[rgb(58, 179, 181)]">AI collections engine</p>
         </div>
         <div className="ml-auto flex items-center gap-2">
           <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full"

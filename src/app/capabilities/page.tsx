@@ -90,7 +90,7 @@ export default function Capabilities() {
                       <span className="w-3 h-3 rounded-full bg-[#ff5f57]" />
                       <span className="w-3 h-3 rounded-full bg-[#febc2e]" />
                       <span className="w-3 h-3 rounded-full bg-[#28c840]" />
-                      <span className="ml-3 text-[11px] text-[#777169] font-mono">
+                      <span className="ml-3 text-[11px] text-[rgb(58, 179, 181)] font-mono">
                         {pillar.layers ? "stack.layers" : pillar.pipeline ? "ai.pipeline" : "sre.checks"}
                       </span>
                     </div>
@@ -101,7 +101,7 @@ export default function Capabilities() {
                           <div className="flex-1 h-7 rounded-[6px] flex items-center px-3" style={{ background: `${layer.color}14`, border: `1px solid ${layer.color}22` }}>
                             <span className="text-[11px] font-medium" style={{ color: layer.color }}>{layer.label}</span>
                           </div>
-                          <span className="text-[10px] text-[#777169] font-mono w-4 text-right">{i + 1}</span>
+                          <span className="text-[10px] text-[rgb(58, 179, 181)] font-mono w-4 text-right">{i + 1}</span>
                         </div>
                       ))}
                       {pillar.pipeline && (
@@ -109,7 +109,7 @@ export default function Capabilities() {
                           {pillar.pipeline.map((step, i) => (
                             <div key={step} className="flex items-center gap-3">
                               <div className="w-6 h-6 rounded-full bg-[#f0f0f0] flex items-center justify-center shrink-0">
-                                <span className="text-[9px] text-[#777169] font-mono">{i + 1}</span>
+                                <span className="text-[9px] text-[rgb(58, 179, 181)] font-mono">{i + 1}</span>
                               </div>
                               <div className="flex-1 h-7 rounded-[6px] bg-[#f5f5f5] border border-[#e5e5e5] flex items-center px-3">
                                 <span className="text-[11px] text-[#4e4e4e]">{step}</span>
@@ -140,7 +140,7 @@ export default function Capabilities() {
                     </div>
                     <div className="pt-5 border-t border-[#e5e5e5]">
                       <span className="text-3xl font-light text-black tracking-tight">{pillar.stat}</span>
-                      <span className="block text-label text-[#777169] mt-1">{pillar.statLabel}</span>
+                      <span className="block text-label text-[rgb(58, 179, 181)] mt-1">{pillar.statLabel}</span>
                     </div>
                   </div>
                 </div>
@@ -165,8 +165,8 @@ export default function Capabilities() {
                   </div>
                   <ul className="grid grid-cols-2 gap-x-4 gap-y-2 mt-2">
                     {cap.subcapabilities.map((sub) => (
-                      <li key={sub} className="text-xs text-[#777169] flex items-center gap-2">
-                        <span className="w-1 h-1 rounded-full bg-[#777169] shrink-0" />
+                      <li key={sub} className="text-xs text-[rgb(58, 179, 181)] flex items-center gap-2">
+                        <span className="w-1 h-1 rounded-full bg-[rgb(58, 179, 181)] shrink-0" />
                         {sub}
                       </li>
                     ))}

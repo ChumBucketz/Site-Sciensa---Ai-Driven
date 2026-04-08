@@ -92,7 +92,7 @@ function StatItem({ stat, light }: { stat: Stat; light: boolean }) {
       </span>
       <span
         className="text-label"
-        style={{ color: light ? "rgba(255,255,255,0.4)" : "#777169" }}
+        style={{ color: light ? "rgba(255,255,255,0.4)" : "rgb(58, 179, 181)" }}
       >
         {stat.label}
       </span>

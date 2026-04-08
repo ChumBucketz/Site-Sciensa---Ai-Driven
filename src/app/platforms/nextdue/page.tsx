@@ -1,10 +1,11 @@
 import { PlatformDetailTemplate, type PlatformDetailData } from "@/components/templates/PlatformDetailTemplate";
 
 const data: PlatformDetailData = {
-  eyebrow: "Platforms / SmartCollect",
+  eyebrow: "Platforms / Nextdue",
   headline: "Intelligent collection & recovery at scale",
   subheadline: "Applied intelligence for collections, recovery, and operational efficiency — with automated prioritization, segmentation, experience optimization, and operational intelligence.",
-  video: "https://res.cloudinary.com/dshrkq1up/video/upload/q_auto/f_auto/hf_20260315_073750_51473149-4350-4920-ae24-c8214286f323_dqsbv8.mp4",
+  video: "https://res.cloudinary.com/dshrkq1up/video/upload/q_auto/f_auto/v1775486834/0_Circuit_Board_Technology_3840x2160_rbiidg.mp4",
+  logo: "/logos/nextdue logo.png",
   accentColor: "#f97316",
   stats: [
     { value: "R$1.2B", label: "Annual recovery enabled" },
@@ -18,7 +19,7 @@ const data: PlatformDetailData = {
     rows: [
       {
         title: "Prioritization based on propensity, not balance",
-        description: "Traditional collections sort by balance or delinquency days. SmartCollect's ML models score every account by recovery probability, contact propensity, and optimal contact timing — so agents work the right accounts, not just the biggest ones.",
+        description: "Traditional collections sort by balance or delinquency days. Nextdue's ML models score every account by recovery probability, contact propensity, and optimal contact timing — so agents work the right accounts, not just the biggest ones.",
         stat: "45%",
         statLabel: "Improvement in operational efficiency",
         reverse: false,
@@ -26,7 +27,7 @@ const data: PlatformDetailData = {
       },
       {
         title: "Self-cure that protects the relationship",
-        description: "The most efficient recovery is one where the customer cures themselves. SmartCollect's personalized digital journeys — tailored tone, channel, and offer by customer segment — drive voluntary payment without damaging the long-term relationship.",
+        description: "The most efficient recovery is one where the customer cures themselves. Nextdue's personalized digital journeys — tailored tone, channel, and offer by customer segment — drive voluntary payment without damaging the long-term relationship.",
         stat: "38%",
         statLabel: "Self-cure rate improvement",
         reverse: true,
@@ -48,18 +49,18 @@ const data: PlatformDetailData = {
     ],
   },
   caseStudies: [
-    { client: "Financial Conglomerate", title: "AI Collections at Scale", result: "SmartCollect platform recovering R$1.2B/year across 8M+ delinquent accounts with 45% operational efficiency improvement.", tags: ["Automated Prioritization", "Recovery Intelligence"] },
+    { client: "Financial Conglomerate", title: "AI Collections at Scale", result: "Nextdue platform recovering R$1.2B/year across 8M+ delinquent accounts with 45% operational efficiency improvement.", tags: ["Automated Prioritization", "Recovery Intelligence"] },
     { client: "Digital Lender", title: "Self-cure Optimization", result: "AI-personalized self-cure journeys increased voluntary payment rate by 38% while reducing operational cost per account by 55%.", tags: ["CX Optimization", "Intelligent Segmentation"] },
     { client: "Credit Card Issuer", title: "Early Delinquency Prevention", result: "Predictive risk scoring identified at-risk customers 30 days before delinquency — reducing NPL formation by 22%.", tags: ["Automated Prioritization", "Operational Efficiency"] },
   ],
   cta: {
     headline: "Ready to transform your collections operation?",
-    subheadline: "See how SmartCollect can improve recovery rates and operational efficiency.",
+    subheadline: "See how Nextdue can improve recovery rates and operational efficiency.",
     primary: { label: "Schedule a demo", href: "/contact" },
     secondary: { label: "All platforms →", href: "/platforms" },
   },
 };
 
-export default function SmartCollect() {
+export default function Nextdue() {
   return <PlatformDetailTemplate data={data} />;
 }

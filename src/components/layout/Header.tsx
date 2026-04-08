@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import { Button } from "@/components/ui/Button";
 import {
   BrainCircuit, Layers, Database, Plug, Cloud, Sparkles,
@@ -10,201 +10,159 @@ import {
   BadgeDollarSign, ShoppingCart, HeartPulse, Zap, Radio, Truck,
 } from "lucide-react";
 
-// ─── Menu data ────────────────────────────────────────────────────────────────
+// ─── Data ──────────────────────────────────────────────────────────────────────
 
 const platformItems = [
-  {
-    label: "Amplify",
-    description: "AI-powered delivery acceleration platform.",
-    href: "/platforms/amplify",
-    gradient: "linear-gradient(135deg, #22AEA4 0%, #5EB359 100%)",
-    symbol: "/logos/Amplify.png",
-  },
-  {
-    label: "Lumia AI",
-    description: "Enterprise LLM orchestration and agent framework.",
-    href: "/platforms/lumia-ai",
-    gradient: "linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)",
-    symbol: "/logos/Lumia.png",
-  },
-  {
-    label: "CodeGenius",
-    description: "AI-native code generation and review at scale.",
-    href: "/platforms/codegenius",
-    gradient: "linear-gradient(135deg, #7c3aed 0%, #ec4899 100%)",
-    symbol: "/logos/Code Genious.png",
-  },
-  {
-    label: "SmartCollect",
-    description: "Intelligent collections and credit lifecycle management.",
-    href: "/platforms/smartcollect",
-    gradient: "linear-gradient(135deg, #ec4899 0%, #f97316 100%)",
-    symbol: null,
-  },
+  { label: "Amplify", description: "AI-powered delivery acceleration.", href: "/platforms/amplify", gradient: "linear-gradient(135deg, #22AEA4 0%, #5EB359 100%)", symbol: "/logos/Amplify.png" },
+  { label: "Lumia AI", description: "Enterprise LLM orchestration.", href: "/platforms/lumia-ai", gradient: "linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)", symbol: "/logos/Lumia.png" },
+  // { label: "CodeGenius", description: "AI-native code generation at scale.", href: "/platforms/codegenius", gradient: "linear-gradient(135deg, #7c3aed 0%, #ec4899 100%)", symbol: "/logos/Code Genious.png" },
+  { label: "Nextdue", description: "Intelligent collections lifecycle.", href: "/platforms/nextdue", gradient: "linear-gradient(135deg, #ec4899 0%, #f97316 100%)", symbol: "/logos/nextdue symbol.png" },
 ];
 
 const megaMenus = [
   {
-    label: "Capabilities",
-    href: "/capabilities",
+    label: "Capabilities", href: "/capabilities",
     columns: [
-      {
-        title: "Engineering",
-        links: [
-          { label: "AI Engineering", href: "/capabilities/ai-engineering", icon: BrainCircuit },
-          { label: "Platform Engineering", href: "/capabilities/platform-engineering", icon: Layers },
-          { label: "API & Integration", href: "/capabilities/api-integration", icon: Plug },
-          { label: "Cloud & DevSecOps", href: "/capabilities/cloud-devsecops", icon: Cloud },
-        ],
-      },
-      {
-        title: "Product & Data",
-        links: [
-          { label: "Data & AI", href: "/capabilities/data-ai", icon: Database },
-          { label: "Product & Experience", href: "/capabilities/product-experience", icon: Sparkles },
-        ],
-      },
+      { title: "Engineering", links: [
+        { label: "AI Engineering", href: "/capabilities/ai-engineering", icon: BrainCircuit },
+        { label: "Platform Engineering", href: "/capabilities/platform-engineering", icon: Layers },
+        { label: "API & Integration", href: "/capabilities/api-integration", icon: Plug },
+        { label: "Cloud & DevSecOps", href: "/capabilities/cloud-devsecops", icon: Cloud },
+      ]},
+      { title: "Product & Data", links: [
+        { label: "Data & AI", href: "/capabilities/data-ai", icon: Database },
+        { label: "Product & Experience", href: "/capabilities/product-experience", icon: Sparkles },
+      ]},
     ],
   },
   {
-    label: "Solutions",
-    href: "/solutions",
+    label: "Solutions", href: "/solutions",
     columns: [
-      {
-        title: "Financial",
-        links: [
-          { label: "Digital Banking", href: "/solutions/digital-banking", icon: Landmark },
-          { label: "Payments Modernization", href: "/solutions/payments-modernization", icon: CreditCard },
-          { label: "AI for Financial Institutions", href: "/solutions/ai-financial-institutions", icon: BadgeDollarSign },
-          { label: "Core Modernization", href: "/solutions/core-modernization", icon: Cpu },
-        ],
-      },
-      {
-        title: "Enterprise",
-        links: [
-          { label: "Enterprise AI", href: "/solutions/enterprise-ai", icon: Bot },
-          { label: "Marketplace & Orchestration", href: "/solutions/marketplace-orchestration", icon: Network },
-        ],
-      },
+      { title: "Financial", links: [
+        { label: "Digital Banking", href: "/solutions/digital-banking", icon: Landmark },
+        { label: "Payments Modernization", href: "/solutions/payments-modernization", icon: CreditCard },
+        { label: "AI for Financial Institutions", href: "/solutions/ai-financial-institutions", icon: BadgeDollarSign },
+        { label: "Core Modernization", href: "/solutions/core-modernization", icon: Cpu },
+      ]},
+      { title: "Enterprise", links: [
+        { label: "Enterprise AI", href: "/solutions/enterprise-ai", icon: Bot },
+        { label: "Marketplace & Orchestration", href: "/solutions/marketplace-orchestration", icon: Network },
+      ]},
     ],
   },
   {
-    label: "Industries",
-    href: "/industries",
+    label: "Industries", href: "/industries",
     columns: [
-      {
-        title: "Finance & Commerce",
-        links: [
-          { label: "Financial Services", href: "/industries/financial-services", icon: BadgeDollarSign, primary: true },
-          { label: "Retail & E-Commerce", href: "/industries/retail-ecommerce", icon: ShoppingCart },
-        ],
-      },
-      {
-        title: "Infrastructure & Health",
-        links: [
-          { label: "Healthcare & Life Sciences", href: "/industries/healthcare", icon: HeartPulse },
-          { label: "Energy & Utilities", href: "/industries/energy-utilities", icon: Zap },
-          { label: "Telecommunications", href: "/industries/telecommunications", icon: Radio },
-          { label: "Mobility & Logistics", href: "/industries/mobility-logistics", icon: Truck },
-        ],
-      },
+      { title: "Finance & Commerce", links: [
+        { label: "Financial Services", href: "/industries/financial-services", icon: BadgeDollarSign },
+        { label: "Retail & E-Commerce", href: "/industries/retail-ecommerce", icon: ShoppingCart },
+      ]},
+      { title: "Infrastructure & Health", links: [
+        { label: "Healthcare & Life Sciences", href: "/industries/healthcare", icon: HeartPulse },
+        { label: "Energy & Utilities", href: "/industries/energy-utilities", icon: Zap },
+        { label: "Telecommunications", href: "/industries/telecommunications", icon: Radio },
+        { label: "Mobility & Logistics", href: "/industries/mobility-logistics", icon: Truck },
+      ]},
     ],
   },
 ];
 
-// ─── Desktop: Platform mega menu ──────────────────────────────────────────────
+// ─── Dropdown card shell ───────────────────────────────────────────────────────
 
-function PlatformMegaMenu({ onClose }: { onClose: () => void }) {
+function DropdownCard({ open, children }: { open: boolean; children: React.ReactNode }) {
   return (
-    <div className="py-6 px-8">
-      <div className="flex items-center justify-between mb-5">
-        <span className="text-[11px] font-medium uppercase tracking-[0.1em] text-[#777169]">Platforms</span>
-        <Link href="/platforms" className="text-[13px] font-medium text-[#4e4e4e] hover:text-black transition-colors" onClick={onClose}>
-          All platforms →
-        </Link>
-      </div>
-      <div className="grid grid-cols-4 gap-3">
-        {platformItems.map((p) => (
-          <Link key={p.href} href={p.href} onClick={onClose}
-            className="group p-2 rounded-xl hover:bg-white transition-colors"
-          >
-            <div
-              className="h-28 w-full rounded-lg mb-3 relative overflow-hidden flex items-center justify-center"
-              style={{ background: p.gradient }}
-            >
-              {/* Dots grid */}
-              <div className="absolute inset-0 opacity-10"
-                style={{
-                  backgroundImage: "radial-gradient(circle, rgba(255,255,255,0.7) 1px, transparent 1px)",
-                  backgroundSize: "16px 16px",
-                }}
-              />
-              {/* Symbol */}
-              <div className="relative flex flex-col items-center gap-2">
-                <div className="w-10 h-10 rounded-full flex items-center justify-center"
-                  style={{ background: "rgba(255,255,255,0.18)", backdropFilter: "blur(4px)" }}>
-                  {p.symbol
-                    ? <Image src={p.symbol} alt={p.label} width={24} height={24} className="object-contain" />
-                    : <span className="text-white font-bold text-sm">{p.label[0]}</span>
-                  }
-                </div>
-                <span className="text-[11px] font-medium text-white/80 tracking-wide">{p.label}</span>
-              </div>
-            </div>
-            <p className="text-[14px] font-medium text-black group-hover:text-[#22AEA4] transition-colors tracking-tight">{p.label}</p>
-            <p className="text-[12px] text-[#777169] leading-snug mt-0.5">{p.description}</p>
-          </Link>
-        ))}
+    <div
+      className="absolute top-[calc(100%+6px)] right-0 z-50 pointer-events-none"
+      style={{
+        opacity: open ? 1 : 0,
+        transform: open ? "translateY(0px)" : "translateY(-6px)",
+        transition: "opacity 150ms ease, transform 150ms ease",
+        pointerEvents: open ? "auto" : "none",
+      }}
+    >
+      <div
+        className="rounded-2xl bg-white p-5 min-w-[260px]"
+        style={{ boxShadow: "0 0 0 1px rgba(0,0,0,0.07), 0 8px 32px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.06)" }}
+      >
+        {children}
       </div>
     </div>
   );
 }
 
-// ─── Desktop: Column mega menu ────────────────────────────────────────────────
+// ─── Platform dropdown ─────────────────────────────────────────────────────────
 
-function ColumnMegaMenu({
-  columns,
-  href,
-  label,
-  onClose,
-}: {
-  columns: typeof megaMenus[0]["columns"];
-  href: string;
-  label: string;
-  onClose: () => void;
-}) {
+function PlatformDropdown({ open, onClose }: { open: boolean; onClose: () => void }) {
   return (
-    <div className="py-6 px-8">
-      <div className="flex items-center justify-between mb-5">
-        <span className="text-[11px] font-medium uppercase tracking-[0.1em] text-[#777169]">{label}</span>
-        <Link href={href} className="text-[13px] font-medium text-[#4e4e4e] hover:text-black transition-colors" onClick={onClose}>
-          All {label.toLowerCase()} →
+    <DropdownCard open={open}>
+      <div className="flex items-center justify-between mb-4">
+        <span className="text-[11px] font-medium uppercase tracking-[0.1em] text-[#9CA3AF]">Platforms</span>
+        <Link href="/platforms" onClick={onClose} className="text-[12px] font-medium text-[#4e4e4e] hover:text-black transition-colors whitespace-nowrap">
+          Learn more →
         </Link>
       </div>
-      <div className={`grid gap-8`} style={{ gridTemplateColumns: `repeat(${columns.length}, 1fr)` }}>
-        {columns.map((col) => (
-          <div key={col.title}>
-            <p className="text-[11px] font-medium uppercase tracking-[0.1em] text-[#777169] mb-3">{col.title}</p>
-            <ul className="space-y-1">
+      <div className="grid grid-cols-4 gap-2" style={{ minWidth: 480 }}>
+        {platformItems.map((p) => (
+          <Link key={p.href} href={p.href} onClick={onClose}
+            className="group flex flex-col rounded-xl overflow-hidden hover:bg-[#f5f5f5] transition-colors"
+          >
+            {/* Preview card */}
+            <div className="h-24 w-full relative overflow-hidden rounded-xl mb-2.5 flex items-center justify-center" style={{ background: p.gradient }}>
+              <div className="absolute inset-0 opacity-[0.15]" style={{
+                backgroundImage: "radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px)",
+                backgroundSize: "14px 14px",
+              }} />
+              <div className="relative w-10 h-10 rounded-full flex items-center justify-center">
+                {p.symbol
+                  ? <Image src={p.symbol} alt={p.label} width={48} height={48} className="object-contain brightness-0 invert" />
+                  : <span className="text-white font-bold text-sm">{p.label[0]}</span>
+                }
+              </div>
+            </div>
+            <div className="px-1 pb-2">
+              <p className="text-[13px] font-medium text-black leading-tight tracking-tight">{p.label}</p>
+              <p className="text-[11px] text-[#9CA3AF] leading-snug mt-0.5">{p.description}</p>
+            </div>
+          </Link>
+        ))}
+      </div>
+    </DropdownCard>
+  );
+}
+
+// ─── Column dropdown ───────────────────────────────────────────────────────────
+
+function ColumnDropdown({
+  open, onClose, columns, href, label,
+}: {
+  open: boolean; onClose: () => void;
+  columns: typeof megaMenus[0]["columns"];
+  href: string; label: string;
+}) {
+  return (
+    <DropdownCard open={open}>
+      <div className="flex items-center justify-between mb-4">
+        <span className="text-[11px] font-medium uppercase tracking-[0.1em] text-[#9CA3AF]">{label}</span>
+        <Link href={href} onClick={onClose} className="text-[12px] font-medium text-[#4e4e4e] hover:text-black transition-colors">
+          All →
+        </Link>
+      </div>
+      <div className="flex">
+        {columns.map((col, ci) => (
+          <div key={col.title} className={`flex flex-col ${ci > 0 ? "border-l border-[#F3F4F6] ml-4 pl-4" : ""}`}>
+            <p className="text-[10px] font-medium uppercase tracking-[0.1em] text-[#9CA3AF] mb-2 px-2 whitespace-nowrap">{col.title}</p>
+            <ul className="space-y-0.5">
               {col.links.map((link) => {
                 const Icon = "icon" in link ? link.icon : null;
-                const isPrimary = "primary" in link && link.primary;
                 return (
                   <li key={link.href}>
                     <Link
                       href={link.href}
                       onClick={onClose}
-                      className="flex items-center gap-2.5 px-3 py-2 rounded-[8px] hover:bg-[#f5f5f5] transition-colors group"
+                      className="flex items-center gap-2 px-2 py-1.5 rounded-lg hover:bg-[#f5f5f5] transition-colors group whitespace-nowrap"
                     >
-                      {Icon && (
-                        <Icon size={15} className={`shrink-0 transition-colors ${isPrimary ? "text-[#22AEA4]" : "text-[#bbb] group-hover:text-[#4e4e4e]"}`} />
-                      )}
-                      <span className={`text-[14px] tracking-[0.01em] transition-colors ${isPrimary ? "font-medium text-black" : "text-[#4e4e4e] group-hover:text-black"}`}>
-                        {link.label}
-                      </span>
-                      {isPrimary && (
-                        <span className="text-[9px] font-medium uppercase tracking-widest text-[#22AEA4] ml-auto">Primary</span>
-                      )}
+                      {Icon && <Icon size={13} className="shrink-0 text-[#D1D5DB] group-hover:text-[#6B7280] transition-colors" />}
+                      <span className="text-[13px] text-[#374151] group-hover:text-black transition-colors tracking-tight">{link.label}</span>
                     </Link>
                   </li>
                 );
@@ -213,41 +171,53 @@ function ColumnMegaMenu({
           </div>
         ))}
       </div>
-    </div>
+    </DropdownCard>
   );
 }
 
-// ─── Desktop nav item with mega menu ──────────────────────────────────────────
+// ─── Nav item with dropdown ────────────────────────────────────────────────────
 
-function NavItem({
-  label,
-  href,
-  open,
-  onEnter,
-  onLeave,
+function NavDropdown({
+  label, activeMenu, setActiveMenu, hoverTimer, children,
 }: {
   label: string;
-  href: string;
-  open: boolean;
-  onEnter: () => void;
-  onLeave: () => void;
+  activeMenu: string | null;
+  setActiveMenu: (v: string | null) => void;
+  hoverTimer: React.RefObject<ReturnType<typeof setTimeout> | null>;
+  children: (open: boolean, close: () => void) => React.ReactNode;
 }) {
+  const open = activeMenu === label;
+
+  function enter() {
+    if (hoverTimer.current) clearTimeout(hoverTimer.current);
+    setActiveMenu(label);
+  }
+  function leave() {
+    hoverTimer.current = setTimeout(() => setActiveMenu(null), 120);
+  }
+  function keepOpen() {
+    if (hoverTimer.current) clearTimeout(hoverTimer.current);
+  }
+
   return (
-    <div className="relative" onMouseEnter={onEnter} onMouseLeave={onLeave}>
-      <Link
-        href={href}
-        className={`flex items-center gap-1 px-3 py-2 text-[13px] font-medium rounded-[4px] transition-colors tracking-[0.01em] ${open ? "text-black bg-[#f5f5f5]" : "text-[#4e4e4e] hover:text-black hover:bg-[#f5f5f5]"}`}
+    <div className="relative" onMouseEnter={enter} onMouseLeave={leave}>
+      <button
+        onClick={() => setActiveMenu(open ? null : label)}
+        className={`flex items-center gap-1 px-3 py-2 text-[13px] font-medium rounded-[4px] transition-colors tracking-[0.01em] cursor-pointer ${open ? "text-black bg-[#f5f5f5]" : "text-[#4e4e4e] hover:text-black hover:bg-[#f5f5f5]"}`}
       >
         {label}
-        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className={`shrink-0 transition-transform duration-150 ${open ? "rotate-180" : ""}`}>
+        <svg width="11" height="11" viewBox="0 0 12 12" fill="none" className={`shrink-0 transition-transform duration-150 ${open ? "rotate-180" : ""}`}>
           <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
-      </Link>
+      </button>
+      <div onMouseEnter={keepOpen} onMouseLeave={leave}>
+        {children(open, () => setActiveMenu(null))}
+      </div>
     </div>
   );
 }
 
-// ─── Mobile accordion ─────────────────────────────────────────────────────────
+// ─── Mobile accordion ──────────────────────────────────────────────────────────
 
 function MobileAccordion({ label, children }: { label: string; children: React.ReactNode }) {
   const [open, setOpen] = useState(false);
@@ -267,26 +237,17 @@ function MobileAccordion({ label, children }: { label: string; children: React.R
   );
 }
 
-// ─── Header ───────────────────────────────────────────────────────────────────
+// ─── Header ────────────────────────────────────────────────────────────────────
 
 export function Header() {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
-
-  // Desktop panel animation: 2-phase open (expand → fade-in), 2-phase close (fade-out → collapse)
-  const [panelMounted, setPanelMounted] = useState(false);   // controls render
-  const [panelExpanded, setPanelExpanded] = useState(false); // controls max-height
-  const [panelContent, setPanelContent] = useState(false);   // controls inner opacity
-  const [displayedMenu, setDisplayedMenu] = useState<string | null>(null);
-
-  // Mobile menu — same 2-phase logic
   const [mobileMounted, setMobileMounted] = useState(false);
   const [mobileExpanded, setMobileExpanded] = useState(false);
   const [mobileContent, setMobileContent] = useState(false);
-
   const [scrolled, setScrolled] = useState(false);
-  const hoverTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const t1 = useRef<ReturnType<typeof setTimeout> | null>(null);
   const t2 = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const hoverTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     function onScroll() { setScrolled(window.scrollY > 12); }
@@ -294,64 +255,14 @@ export function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  function clearTimers() {
-    if (hoverTimer.current) clearTimeout(hoverTimer.current);
-    if (t1.current) clearTimeout(t1.current);
-    if (t2.current) clearTimeout(t2.current);
-  }
-
-  // ── Desktop panel ──
-  function openMenu(key: string) {
-    clearTimers();
-    setActiveMenu(key);
-
-    if (panelMounted) {
-      // Already open (or mid-close) — swap content and ensure panel is visible
-      setDisplayedMenu(key);
-      setPanelExpanded(true);
-      setPanelContent(true);
-    } else {
-      // Phase 1: mount + expand height
-      setDisplayedMenu(key);
-      setPanelMounted(true);
-      requestAnimationFrame(() => {
-        setPanelExpanded(true);
-        // Phase 2: after expand, fade in content
-        t1.current = setTimeout(() => setPanelContent(true), 200);
-      });
-    }
-  }
-
-  function closeMenu() {
-    hoverTimer.current = setTimeout(() => {
-      clearTimers();
-      setActiveMenu(null);
-      // Phase 1: fade out content
-      setPanelContent(false);
-      // Phase 2: collapse height
-      t1.current = setTimeout(() => {
-        setPanelExpanded(false);
-        // Phase 3: unmount
-        t2.current = setTimeout(() => {
-          setPanelMounted(false);
-          setDisplayedMenu(null);
-        }, 240);
-      }, 160);
-    }, 80);
-  }
-
-  // ── Mobile menu ──
   function toggleMobile() {
-    clearTimers();
     if (mobileMounted) {
-      // Close: fade content → collapse → unmount
       setMobileContent(false);
       t1.current = setTimeout(() => {
         setMobileExpanded(false);
         t2.current = setTimeout(() => setMobileMounted(false), 240);
       }, 160);
     } else {
-      // Open: mount → expand → fade content
       setMobileMounted(true);
       requestAnimationFrame(() => {
         setMobileExpanded(true);
@@ -360,28 +271,22 @@ export function Header() {
     }
   }
 
-  function closeAll() {
-    clearTimers();
+  const closeAll = useCallback(() => {
     setActiveMenu(null);
-    setPanelContent(false);
-    t1.current = setTimeout(() => {
-      setPanelExpanded(false);
-      t2.current = setTimeout(() => { setPanelMounted(false); setDisplayedMenu(null); }, 240);
-    }, 160);
     setMobileContent(false);
     setTimeout(() => {
       setMobileExpanded(false);
       setTimeout(() => setMobileMounted(false), 240);
     }, 160);
-  }
+  }, []);
 
   return (
     <div className="fixed top-0 left-0 right-0 z-50">
-      {/* ── Navbar bar ── */}
+      {/* ── Navbar ── */}
       <header
         className="transition-all duration-300"
         style={{
-          background: scrolled ? "rgba(245,245,245,0.82)" : "rgba(245,245,245,0.75)",
+          background: scrolled ? "rgba(245,245,245,0.88)" : "rgba(245,245,245,0.82)",
           backdropFilter: "blur(40px) saturate(180%)",
           WebkitBackdropFilter: "blur(40px) saturate(180%)",
           boxShadow: scrolled ? "0 1px 0 rgba(0,0,0,0.08), 0 4px 16px rgba(0,0,0,0.05)" : "none",
@@ -390,44 +295,32 @@ export function Header() {
         <div className="max-w-7xl mx-auto px-6 h-14 flex items-center justify-between gap-8">
           {/* Logo */}
           <Link href="/" className="shrink-0 hover:opacity-80 transition-opacity" onClick={closeAll}>
-            <Image src="/logos/Logo Sciensa.svg" alt="Sciensa" width={156} height={42} className="h-9 w-auto" priority />
+            <Image src="/logos/Logo Sciensa.svg" alt="Sciensa" width={156} height={42} className="h-[55px] w-auto" priority />
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden md:flex items-center ml-auto">
-            <Link href="/about" className="px-3 py-2 text-[13px] font-medium text-[#4e4e4e] hover:text-black rounded-[4px] hover:bg-[#f5f5f5] transition-colors tracking-[0.01em]">
+          <nav className="hidden md:flex items-center gap-1 ml-auto">
+            <Link href="/about" className="px-3 py-2 text-[13px] font-medium text-[#4e4e4e] hover:text-black rounded-[4px] transition-colors tracking-[0.01em]">
               About
             </Link>
 
             {megaMenus.map((menu) => (
-              <NavItem
-                key={menu.href}
-                label={menu.label}
-                href={menu.href}
-                open={activeMenu === menu.label}
-                onEnter={() => openMenu(menu.label)}
-                onLeave={closeMenu}
-              />
+              <NavDropdown key={menu.label} label={menu.label} activeMenu={activeMenu} setActiveMenu={setActiveMenu} hoverTimer={hoverTimer}>
+                {(open, close) => (
+                  <ColumnDropdown open={open} onClose={() => { close(); closeAll(); }} columns={menu.columns} href={menu.href} label={menu.label} />
+                )}
+              </NavDropdown>
             ))}
 
-            <NavItem
-              label="Platforms"
-              href="/platforms"
-              open={activeMenu === "Platforms"}
-              onEnter={() => openMenu("Platforms")}
-              onLeave={closeMenu}
-            />
-
-            <Link href="/insights" className="px-3 py-2 text-[13px] font-medium text-[#4e4e4e] hover:text-black rounded-[4px] hover:bg-[#f5f5f5] transition-colors tracking-[0.01em]">
-              Insights
-            </Link>
+            <NavDropdown label="Platforms" activeMenu={activeMenu} setActiveMenu={setActiveMenu} hoverTimer={hoverTimer}>
+              {(open, close) => (
+                <PlatformDropdown open={open} onClose={() => { close(); closeAll(); }} />
+              )}
+            </NavDropdown>
           </nav>
 
           {/* CTA */}
-          <div className="hidden md:flex items-center gap-2.5 shrink-0 ml-4">
-            <Link href="/case-studies" className="text-[13px] font-medium text-[#777169] hover:text-black transition-colors tracking-[0.01em]">
-              Case studies
-            </Link>
+          <div className="hidden md:flex items-center shrink-0 ml-4">
             <Button href="/contact" variant="black-pill">Contact us</Button>
           </div>
 
@@ -446,59 +339,19 @@ export function Header() {
         </div>
       </header>
 
-      {/* ── Desktop mega menu — 2-phase: expand then fade-in content ── */}
-      {panelMounted && (
-        <div
-          className="hidden md:block overflow-hidden"
-          style={{
-            background: "rgba(245,245,245,0.82)",
-            backdropFilter: "blur(40px) saturate(180%)",
-            WebkitBackdropFilter: "blur(40px) saturate(180%)",
-            boxShadow: panelExpanded ? "0 1px 0 rgba(0,0,0,0.06), 0px 8px 24px rgba(0,0,0,0.04), 0px 2px 6px rgba(0,0,0,0.04)" : "none",
-            maxHeight: panelExpanded ? "600px" : "0px",
-            transition: "max-height 220ms cubic-bezier(0.4,0,0.2,1), box-shadow 220ms ease",
-          }}
-          onMouseEnter={() => { if (hoverTimer.current) clearTimeout(hoverTimer.current); }}
-          onMouseLeave={closeMenu}
-        >
-          <div
-            style={{
-              opacity: panelContent ? 1 : 0,
-              transition: "opacity 160ms ease",
-            }}
-          >
-            <div className="max-w-7xl mx-auto">
-              {displayedMenu === "Platforms" && <PlatformMegaMenu onClose={closeAll} />}
-              {megaMenus.map((menu) =>
-                displayedMenu === menu.label ? (
-                  <ColumnMegaMenu key={menu.label} columns={menu.columns} href={menu.href} label={menu.label} onClose={closeAll} />
-                ) : null
-              )}
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* ── Mobile menu — same 2-phase logic ── */}
+      {/* ── Mobile menu ── */}
       {mobileMounted && (
         <div
           className="md:hidden overflow-hidden"
           style={{
-            background: "rgba(245,245,245,0.82)",
+            background: "rgba(245,245,245,0.95)",
             backdropFilter: "blur(40px) saturate(180%)",
             WebkitBackdropFilter: "blur(40px) saturate(180%)",
             maxHeight: mobileExpanded ? "80vh" : "0px",
             transition: "max-height 240ms cubic-bezier(0.4,0,0.2,1)",
           }}
         >
-          <div
-            style={{
-              opacity: mobileContent ? 1 : 0,
-              transition: "opacity 160ms ease",
-              overflowY: "auto",
-              maxHeight: "80vh",
-            }}
-          >
+          <div style={{ opacity: mobileContent ? 1 : 0, transition: "opacity 160ms ease", overflowY: "auto", maxHeight: "80vh" }}>
             <div className="px-4 py-2">
               <Link href="/about" className="block px-3 py-3.5 text-[15px] font-medium text-[#4e4e4e] border-b border-[#f0f0f0]" onClick={closeAll}>About</Link>
 
@@ -506,47 +359,46 @@ export function Header() {
                 <MobileAccordion key={menu.label} label={menu.label}>
                   {menu.columns.map((col) => (
                     <div key={col.title} className="mt-2">
-                      <p className="px-3 py-1 text-[11px] font-medium uppercase tracking-[0.1em] text-[#777169]">{col.title}</p>
+                      <p className="px-3 py-1 text-[11px] font-medium uppercase tracking-[0.1em] text-[#9CA3AF]">{col.title}</p>
                       {col.links.map((link) => {
                         const Icon = "icon" in link ? link.icon : null;
                         return (
                           <Link key={link.href} href={link.href} onClick={closeAll}
-                            className="flex items-center gap-2.5 px-3 py-2.5 text-[15px] text-[#4e4e4e] hover:text-black rounded-[6px] hover:bg-[#f5f5f5] transition-colors"
+                            className="flex items-center gap-2.5 px-3 py-2.5 text-[15px] text-[#4e4e4e] hover:text-black rounded-[6px] hover:bg-[#f0f0f0] transition-colors"
                           >
-                            {Icon && <Icon size={15} className="shrink-0 text-[#bbb]" />}
+                            {Icon && <Icon size={15} className="shrink-0 text-[#D1D5DB]" />}
                             {link.label}
                           </Link>
                         );
                       })}
                     </div>
                   ))}
-                  <Link href={menu.href} onClick={closeAll} className="block px-3 mt-3 text-[13px] font-medium text-[#22AEA4] hover:underline">
+                  <Link href={menu.href} onClick={closeAll} className="block px-3 mt-3 text-[13px] font-medium text-[#22AEA4]">
                     All {menu.label.toLowerCase()} →
                   </Link>
                 </MobileAccordion>
               ))}
 
               <MobileAccordion label="Platforms">
-                <div className="space-y-2 pt-1">
+                <div className="space-y-1 pt-1">
                   {platformItems.map((p) => (
-                    <Link key={p.href} href={p.href} onClick={closeAll} className="flex items-center gap-3 px-3 py-2 rounded-[8px] hover:bg-[#f5f5f5] transition-colors">
-                      <div className="w-10 h-10 rounded-lg shrink-0 flex items-center justify-center overflow-hidden" style={{ background: p.gradient }}>
+                    <Link key={p.href} href={p.href} onClick={closeAll}
+                      className="flex items-center gap-3 px-3 py-2 rounded-[8px] hover:bg-[#f0f0f0] transition-colors"
+                    >
+                      <div className="w-9 h-9 rounded-lg shrink-0 flex items-center justify-center overflow-hidden" style={{ background: p.gradient }}>
                         {p.symbol
-                          ? <Image src={p.symbol} alt={p.label} width={24} height={24} className="object-contain" />
-                          : <span className="text-white font-bold text-sm">{p.label[0]}</span>
+                          ? <Image src={p.symbol} alt={p.label} width={20} height={20} className="object-contain" />
+                          : <span className="text-white font-bold text-xs">{p.label[0]}</span>
                         }
                       </div>
                       <div>
                         <p className="text-[14px] font-medium text-black">{p.label}</p>
-                        <p className="text-[12px] text-[#777169] leading-snug">{p.description}</p>
+                        <p className="text-[12px] text-[#9CA3AF] leading-snug">{p.description}</p>
                       </div>
                     </Link>
                   ))}
                 </div>
               </MobileAccordion>
-
-              <Link href="/insights" className="block px-3 py-3.5 text-[15px] font-medium text-[#4e4e4e] border-b border-[#f0f0f0]" onClick={closeAll}>Insights</Link>
-              <Link href="/case-studies" className="block px-3 py-3.5 text-[15px] font-medium text-[#4e4e4e] border-b border-[#f0f0f0]" onClick={closeAll}>Case studies</Link>
 
               <div className="pt-3 pb-4">
                 <Link href="/contact" onClick={closeAll}

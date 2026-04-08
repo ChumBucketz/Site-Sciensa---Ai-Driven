@@ -7,8 +7,8 @@ import { Badge } from "@/components/ui/Badge";
 import { tagVariant } from "@/components/ui/tagColor";
 import { MockLumiaChat } from "@/components/mocks/MockLumiaChat";
 import { MockAmplify } from "@/components/mocks/MockAmplify";
-import { MockCodeGenius } from "@/components/mocks/MockCodeGenius";
-import { MockSmartCollect } from "@/components/mocks/MockSmartCollect";
+// import { MockCodeGenius } from "@/components/mocks/MockCodeGenius";
+import { MockNextdue } from "@/components/mocks/MockSmartCollect";
 
 const platforms = [
   {
@@ -31,25 +31,25 @@ const platforms = [
     dots: "rgba(34,174,164,0.18)",
     href: "/platforms/amplify",
   },
+  // {
+  //   name: "CodeGenius",
+  //   tag: "ENGINEERING",
+  //   description: "AI-accelerated engineering — boosting productivity, code quality, testing, and documentation.",
+  //   features: ["Developer Productivity", "Automated Testing", "Code Review AI"],
+  //   logo: "/logos/Code Genious logo.png",
+  //   bg: "#ececfd",
+  //   dots: "rgba(99,102,241,0.18)",
+  //   href: "/platforms/codegenius",
+  // },
   {
-    name: "CodeGenius",
-    tag: "ENGINEERING",
-    description: "AI-accelerated engineering — boosting productivity, code quality, testing, and documentation.",
-    features: ["Developer Productivity", "Automated Testing", "Code Review AI"],
-    logo: "/logos/Code Genious logo.png",
-    bg: "#ececfd",
-    dots: "rgba(99,102,241,0.18)",
-    href: "/platforms/codegenius",
-  },
-  {
-    name: "SmartCollect",
+    name: "Nextdue",
     tag: "AI SOLUTION",
     description: "Applied intelligence for collections, recovery, and operational efficiency at scale.",
     features: ["Automated Prioritization", "Recovery Intelligence", "BACEN Compliance"],
-    logo: null,
+    logo: "/logos/nextdue logo.png",
     bg: "#fef1f7",
     dots: "rgba(236,72,153,0.18)",
-    href: "/platforms/smartcollect",
+    href: "/platforms/nextdue",
   },
 ];
 
@@ -80,6 +80,7 @@ export function PlatformCarousel() {
                   transition: "background 500ms ease",
                 }} />
 
+                {/* CodeGenius mock hidden
                 {platform.name === "CodeGenius" && (
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="relative hidden md:block w-[700px] h-[400px] rounded-[24px] overflow-hidden"
@@ -88,6 +89,7 @@ export function PlatformCarousel() {
                     </div>
                   </div>
                 )}
+                */}
                 {platform.name === "Amplify" && (
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="relative hidden md:block w-[700px] h-[400px] rounded-[24px] overflow-hidden"
@@ -104,11 +106,11 @@ export function PlatformCarousel() {
                     </div>
                   </div>
                 )}
-                {platform.name === "SmartCollect" && (
+                {platform.name === "Nextdue" && (
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="relative hidden md:block w-[700px] h-[420px] rounded-[24px] overflow-hidden"
                       style={{ boxShadow: "0 0 0 1px rgba(0,0,0,0.08), 0 32px 64px rgba(0,0,0,0.12)" }}>
-                      <MockSmartCollect />
+                      <MockNextdue />
                     </div>
                   </div>
                 )}
@@ -128,8 +130,8 @@ export function PlatformCarousel() {
                     <p className="text-[14px] text-[#4e4e4e] leading-relaxed tracking-[0.01em]">{platform.description}</p>
                     <ul className="flex flex-wrap gap-x-4 gap-y-1">
                       {platform.features.map((f) => (
-                        <li key={f} className="text-xs text-[#777169] flex items-center gap-1.5">
-                          <span className="w-1 h-1 rounded-full bg-[#777169] shrink-0" />
+                        <li key={f} className="text-xs text-[rgb(58, 179, 181)] flex items-center gap-1.5">
+                          <span className="w-1 h-1 rounded-full bg-[rgb(58, 179, 181)] shrink-0" />
                           {f}
                         </li>
                       ))}

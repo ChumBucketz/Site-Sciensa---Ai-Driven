@@ -6,8 +6,6 @@ import { PlatformCarousel } from "@/components/sections/PlatformCarousel";
 import { CTABanner } from "@/components/sections/CTABanner";
 import { CapabilitiesGrid } from "@/components/sections/CapabilitiesGrid";
 import { FadeIn } from "@/components/ui/FadeIn";
-import { Badge } from "@/components/ui/Badge";
-import { tagVariant } from "@/components/ui/tagColor";
 import { MockTerminal } from "@/components/mocks/MockTerminal";
 import { MockDashboard } from "@/components/mocks/MockDashboard";
 import { MockSquad } from "@/components/mocks/MockSquad";
@@ -42,7 +40,7 @@ export default function Home() {
       {/* Logo ticker */}
       <section className="max-w-7xl mx-auto px-4 md:px-6 py-3">
         <FadeIn>
-        <p className="text-label text-[#777169] text-center mb-6">Trusted by leaders in complex industries</p>
+        <p className="text-label text-[rgb(58, 179, 181)] text-center mb-6">Trusted by leaders in complex industries</p>
         <div className="overflow-hidden py-2" style={{ maskImage: "linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%)", WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%)" }}>
           <div className="flex w-max animate-marquee gap-4">
               {[...logos, ...logos].map((logo, i) => (
@@ -68,7 +66,7 @@ export default function Home() {
       <section className="max-w-7xl mx-auto px-4 md:px-6 py-3">
         <FadeIn>
         <div className="bg-white rounded-2xl px-5 md:px-10 py-12">
-          <p className="text-label text-[#777169] mb-10">
+          <p className="text-label text-[rgb(58, 179, 181)] mb-10">
             Trusted by leaders in complex industries
           </p>
           <StatGrid
@@ -128,7 +126,7 @@ export default function Home() {
                   </div>
                   <div className="pt-5 border-t border-[#e5e5e5]">
                     <span className="text-3xl font-light text-black tracking-tight">{pillar.stat}</span>
-                    <span className="block text-label text-[#777169] mt-1">{pillar.statLabel}</span>
+                    <span className="block text-label text-[rgb(58, 179, 181)] mt-1">{pillar.statLabel}</span>
                   </div>
                 </div>
               </div>
@@ -167,98 +165,6 @@ export default function Home() {
         </FadeIn>
       </section>
 
-      {/* Reinvention Stories */}
-      <section className="max-w-7xl mx-auto px-4 md:px-6 py-3">
-        <FadeIn>
-        <div className="bg-white rounded-2xl px-5 md:px-10 py-16">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
-            <SectionHeader eyebrow="// REINVENTION STORIES" headline="Outcomes that speak for themselves." />
-            <Link href="/case-studies" className="shrink-0 text-[15px] font-medium text-black hover:text-[#4e4e4e] transition-colors">
-              View all case studies →
-            </Link>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {[
-              {
-                industry: "Financial Services",
-                title: "Re-architecting a Tier-1 bank's core lending platform",
-                image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80",
-                metrics: [{ value: "40%", label: "Faster time-to-market" }, { value: "99.99%", label: "Platform uptime" }, { value: "3×", label: "Throughput improvement" }],
-              },
-              {
-                industry: "Healthcare",
-                title: "Building an AI-powered clinical decision support system",
-                image: "https://images.unsplash.com/photo-1559757175-5700dde675bc?w=800&q=80",
-                metrics: [{ value: "85%", label: "Diagnostic accuracy" }, { value: "60%", label: "Reduced report time" }, { value: "12", label: "Hospitals deployed" }],
-              },
-              {
-                industry: "Energy & Mining",
-                title: "Predictive maintenance platform for critical grid infrastructure",
-                image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&q=80",
-                metrics: [{ value: "35%", label: "Fewer unplanned outages" }, { value: "2.5×", label: "ROI in year one" }, { value: "50K+", label: "Assets monitored" }],
-              },
-            ].map((cs, ci) => (
-              <div key={cs.title} className="el-card flex flex-col overflow-hidden">
-                {/* Image */}
-                <div className="h-48 w-full shrink-0 rounded-t-2xl overflow-hidden relative">
-                  <Image
-                    src={cs.image}
-                    alt={cs.title}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                  />
-                </div>
-                {/* Content */}
-                <div className="p-8 flex flex-col gap-4 flex-1">
-                  <Badge variant={tagVariant(ci)}>{cs.industry}</Badge>
-                  <h3 className="text-base font-medium leading-snug text-black tracking-tight">{cs.title}</h3>
-                  <div className="grid grid-cols-3 gap-3 mt-auto pt-5 border-t border-[#e5e5e5]">
-                    {cs.metrics.map((m) => (
-                      <div key={m.label}>
-                        <span className="text-xl font-light text-black tracking-tight block">{m.value}</span>
-                        <span className="text-xs text-[#777169] leading-snug">{m.label}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-        </FadeIn>
-      </section>
-
-      {/* Insights Preview */}
-      <section className="max-w-7xl mx-auto px-4 md:px-6 py-3">
-        <FadeIn>
-        <div className="bg-white rounded-2xl px-5 md:px-10 py-16">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
-            <SectionHeader eyebrow="// INSIGHTS" headline="Perspectives from the field." />
-            <Link href="/insights" className="shrink-0 text-[15px] font-medium text-black hover:text-[#4e4e4e] transition-colors">
-              All articles →
-            </Link>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {[
-              { tag: "AI", title: "Why RAG Alone Isn't Enough for Enterprise AI", excerpt: "Moving beyond retrieval-augmented generation toward agent-based workflows that actually ship.", date: "Mar 2026", readTime: "6 min read" },
-              { tag: "Engineering", title: "The Real Cost of Technical Debt in Financial Systems", excerpt: "A quantitative framework for measuring and prioritizing tech debt in regulated environments.", date: "Feb 2026", readTime: "8 min read" },
-              { tag: "Cloud", title: "Multi-Cloud Is Not a Strategy — It's a Capability", excerpt: "How to build genuine portability without the overhead of lowest-common-denominator abstractions.", date: "Jan 2026", readTime: "5 min read" },
-            ].map((article, ai) => (
-              <div key={article.title} className="el-card p-8 flex flex-col gap-4">
-                <Badge variant={tagVariant(ai)}>{article.tag}</Badge>
-                <h3 className="text-base font-medium leading-snug text-black tracking-tight">{article.title}</h3>
-                <p className="text-[15px] text-[#4e4e4e] leading-relaxed flex-1 tracking-[0.01em]">{article.excerpt}</p>
-                <div className="flex items-center gap-4 text-xs text-[#777169]">
-                  <span>{article.date}</span>
-                  <span>{article.readTime}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-        </FadeIn>
-      </section>
 
       {/* CTA */}
       <section className="max-w-7xl mx-auto px-4 md:px-6 py-3 pb-6">

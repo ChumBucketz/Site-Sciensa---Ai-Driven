@@ -52,13 +52,13 @@ export function MockDashboard() {
         <span className="w-3 h-3 rounded-full bg-[#ff5f57]" />
         <span className="w-3 h-3 rounded-full bg-[#febc2e]" />
         <span className="w-3 h-3 rounded-full bg-[#28c840]" />
-        <span className="ml-3 text-[11px] text-[#777169] font-mono">compliance.dashboard</span>
+        <span className="ml-3 text-[11px] text-[rgb(58, 179, 181)] font-mono">compliance.dashboard</span>
       </div>
 
       <div className="flex-1 p-5 flex flex-col gap-4">
         <div className="flex items-center justify-between">
           <p className="text-[12px] font-medium text-black">Compliance Coverage</p>
-          <p className="text-[11px] text-[#777169]">15+ yrs · 5 verticals</p>
+          <p className="text-[11px] text-[rgb(58, 179, 181)]">15+ yrs · 5 verticals</p>
         </div>
 
         <div className="flex flex-col gap-3 flex-1 justify-center" key={key}>

@@ -9,7 +9,7 @@ interface MonoLabelProps {
 export function MonoLabel({ children, className = "", light = false }: MonoLabelProps) {
   return (
     <span
-      className={`text-label ${light ? "text-white/50" : "text-[#777169]"} ${className}`}
+      className={`text-label ${light ? "text-white/50" : "text-[rgb(58, 179, 181)]"} ${className}`}
     >
       {children}
     </span>

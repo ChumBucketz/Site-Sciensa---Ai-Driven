@@ -11,13 +11,13 @@ const platforms = [
   { slug: "amplify", label: "Amplify", type: "Platform / Accelerator", tagline: "Accelerator for digital finance", description: "A modular platform that accelerates digital banking and financial product launches — covering onboarding, wallet, payments, APIs, and composable financial journeys.", highlights: ["Digital onboarding & KYC", "Wallet & payments orchestration", "Open API architecture", "Composable financial modules", "Time-to-market acceleration"] },
   { slug: "lumia-ai", label: "Lumia AI", type: "AI Platform", tagline: "Intelligence layer for the enterprise", description: "An applied intelligence layer that powers copilots, internal assistants, contextual intelligence, workflow automation, and enterprise knowledge — embedded across journeys and operations.", highlights: ["Copilots & AI assistants", "Internal knowledge agents", "Contextual intelligence", "Workflow automation", "Enterprise knowledge platform"] },
   { slug: "codegenius", label: "CodeGenius", type: "Engineering Accelerator", tagline: "AI-accelerated engineering", description: "Accelerates software engineering with AI — boosting productivity, code quality, testing, refactoring, documentation, and assisted development across the engineering lifecycle.", highlights: ["Developer productivity", "Code quality & analysis", "Automated testing", "Intelligent refactoring", "Documentation generation"] },
-  { slug: "smartcollect", label: "SmartCollect", type: "AI Solution", tagline: "Intelligent collection & recovery", description: "Applied intelligence for collections, recovery, and operational efficiency — with automated prioritization, segmentation, experience optimization, and operational intelligence.", highlights: ["Automated prioritization", "Intelligent segmentation", "Customer experience optimization", "Recovery intelligence", "Operational efficiency"] },
+  { slug: "nextdue", label: "Nextdue", type: "AI Solution", tagline: "Intelligent collection & recovery", description: "Applied intelligence for collections, recovery, and operational efficiency — with automated prioritization, segmentation, experience optimization, and operational intelligence.", highlights: ["Automated prioritization", "Intelligent segmentation", "Customer experience optimization", "Recovery intelligence", "Operational efficiency"] },
 ];
 
 const differentiators = [
   {
     title: "Born from real enterprise deployments",
-    description: "Every platform originated from solving a real enterprise problem — not from a product hypothesis. Amplify was built for a tier-1 bank. Lumia AI for a large insurance operation. SmartCollect for a financial conglomerate managing 8M+ accounts.",
+    description: "Every platform originated from solving a real enterprise problem — not from a product hypothesis. Amplify was built for a tier-1 bank. Lumia AI for a large insurance operation. Nextdue for a financial conglomerate managing 8M+ accounts.",
     stat: "R$1.2B+",
     statLabel: "Annual value enabled by platform clients",
     reverse: false,
@@ -75,7 +75,7 @@ export default function Platforms() {
                       <span className="w-3 h-3 rounded-full bg-[#ff5f57]" />
                       <span className="w-3 h-3 rounded-full bg-[#febc2e]" />
                       <span className="w-3 h-3 rounded-full bg-[#28c840]" />
-                      <span className="ml-3 text-[11px] text-[#777169] font-mono">platform.properties</span>
+                      <span className="ml-3 text-[11px] text-[rgb(58, 179, 181)] font-mono">platform.properties</span>
                     </div>
                     <div className="flex-1 p-5 flex flex-col gap-2.5 justify-center">
                       {diff.points.map((point) => (
@@ -97,7 +97,7 @@ export default function Platforms() {
                     </div>
                     <div className="pt-5 border-t border-[#e5e5e5]">
                       <span className="text-3xl font-light text-black tracking-tight">{diff.stat}</span>
-                      <span className="block text-label text-[#777169] mt-1">{diff.statLabel}</span>
+                      <span className="block text-label text-[rgb(58, 179, 181)] mt-1">{diff.statLabel}</span>
                     </div>
                   </div>
                 </div>
@@ -119,7 +119,7 @@ export default function Platforms() {
                     <Badge variant={tagVariant(pi)}>{platform.type}</Badge>
                     <div>
                       <h2 className="text-2xl font-light text-black tracking-tight">{platform.label}</h2>
-                      <p className="text-[15px] text-[#777169] mt-1 tracking-[0.01em]">{platform.tagline}</p>
+                      <p className="text-[15px] text-[rgb(58, 179, 181)] mt-1 tracking-[0.01em]">{platform.tagline}</p>
                     </div>
                     <p className="text-[15px] text-[#4e4e4e] leading-relaxed tracking-[0.01em]">{platform.description}</p>
                   </div>
@@ -128,7 +128,7 @@ export default function Platforms() {
                     <ul className="space-y-3">
                       {platform.highlights.map((h) => (
                         <li key={h} className="flex items-center gap-3 text-[15px] text-[#4e4e4e] tracking-[0.01em]">
-                          <span className="w-1.5 h-1.5 rounded-full bg-[#777169] shrink-0" />
+                          <span className="w-1.5 h-1.5 rounded-full bg-[rgb(58, 179, 181)] shrink-0" />
                           {h}
                         </li>
                       ))}
