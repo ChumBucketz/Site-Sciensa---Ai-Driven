@@ -75,14 +75,6 @@ export function Footer() {
           <p className="text-xs text-white/30 tracking-wide">
             © {new Date().getFullYear()} Sciensa. All rights reserved.
           </p>
-          <div className="flex items-center gap-6">
-            <Link href="#" className="text-xs text-white/30 hover:text-white/70 transition-colors">
-              Privacy Policy
-            </Link>
-            <Link href="#" className="text-xs text-white/30 hover:text-white/70 transition-colors">
-              Terms of Use
-            </Link>
-          </div>
         </div>
       </div>
     </footer>
