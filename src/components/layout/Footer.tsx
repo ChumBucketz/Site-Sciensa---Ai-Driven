@@ -8,7 +8,6 @@ const columns = [
       { label: "Capabilities", href: "/capabilities" },
       { label: "Solutions", href: "/solutions" },
       { label: "Platforms", href: "/platforms" },
-      { label: "Case Studies", href: "/case-studies" },
     ],
   },
   {
@@ -25,8 +24,7 @@ const columns = [
     title: "Company",
     links: [
       { label: "About", href: "/about" },
-      { label: "Careers", href: "/careers" },
-      { label: "Insights", href: "/insights" },
+
       { label: "Contact", href: "/contact" },
     ],
   },
