@@ -108,7 +108,7 @@ export function Hero({ eyebrow, headlines, subheadline, primary, secondary }: He
             {/* Bottom block */}
             <div>
               {/* Rotating headline */}
-              <div className="lg:h-[calc(1.08*3.5rem*3)]">
+              <div className="min-h-[calc(1.08*2rem*3)] sm:min-h-[calc(1.08*2.5rem*3)] lg:min-h-[calc(1.08*3.5rem*3)]">
                 <h1
                   className="font-light text-white tracking-tight text-[2rem] sm:text-[2.5rem] lg:text-[3.5rem]"
                   style={{
