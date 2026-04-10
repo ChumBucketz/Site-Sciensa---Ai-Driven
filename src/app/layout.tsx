@@ -18,8 +18,8 @@ export const metadata: Metadata = {
   description:
     "AI-native engineering, cross-market execution, and proprietary platforms for the industries that can't afford to fail.",
   icons: {
-    icon: "/logos/logo sciensa symbol.png",
-    apple: "/logos/logo sciensa symbol.png",
+    icon: "/logos/favicon.png",
+    apple: "/logos/favicon.png",
   },
   openGraph: {
     title: "Sciensa | AI Driven Solutions",

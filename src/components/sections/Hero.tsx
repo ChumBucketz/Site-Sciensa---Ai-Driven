@@ -44,7 +44,7 @@ export function Hero({ eyebrow, headlines, subheadline, primary, secondary }: He
         ref={heroRef}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
-        className="relative overflow-hidden rounded-2xl h-[500px] px-8 md:px-16 lg:h-[780px]"
+        className="relative overflow-hidden rounded-2xl h-[86vh] px-8 md:px-16"
       >
         {/* Video background */}
         <video
