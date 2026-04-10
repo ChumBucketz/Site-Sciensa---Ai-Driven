@@ -15,7 +15,43 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   title: "Sciensa | AI Driven Solutions",
   description:
-    "AI-native engineering, cross-market execution, and proprietary platforms for the industries that can't afford to fail.",
+    "Sciensa é uma empresa de engenharia de tecnologia que projeta, constrói e opera plataformas mission-critical para banking, payments, saúde, energia e varejo na América Latina. 500+ engenheiros, plataformas proprietárias de IA e mais de 10 anos entregando sistemas de alta complexidade.",
+  keywords: [
+    "engenharia de software",
+    "inteligência artificial",
+    "plataformas de IA",
+    "AI engineering",
+    "platform engineering",
+    "cloud DevSecOps",
+    "data analytics",
+    "API integration",
+    "banking technology",
+    "financial services technology",
+    "Lumia AI",
+    "Amplify",
+    "Nextdue",
+    "Latin America",
+    "São Paulo",
+    "enterprise software",
+    "digital transformation",
+    "Sciensa",
+  ],
+  authors: [{ name: "Sciensa", url: "https://sciensa.com" }],
+  metadataBase: new URL("https://sciensa.com"),
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   icons: {
     icon: "/logos/favicon.png",
     apple: "/logos/favicon.png",
@@ -23,16 +59,20 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Sciensa | AI Driven Solutions",
     description:
-      "AI-native engineering, cross-market execution, and proprietary platforms for the industries that can't afford to fail.",
-    images: [{ url: "/logos/Sciensa logo.png", width: 1200, height: 630, alt: "Sciensa" }],
+      "Engenharia de tecnologia mission-critical para banking, payments, saúde, energia e varejo. 500+ engenheiros, plataformas proprietárias de IA, 10+ anos de entrega em alta complexidade.",
+    url: "https://sciensa.com",
+    siteName: "Sciensa",
+    images: [{ url: "/logos/Sciensa logo.png", width: 1200, height: 630, alt: "Sciensa — AI Driven Solutions" }],
+    locale: "pt_BR",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "Sciensa | AI Driven Solutions",
     description:
-      "AI-native engineering, cross-market execution, and proprietary platforms for the industries that can't afford to fail.",
+      "Engenharia de tecnologia mission-critical para banking, payments, saúde, energia e varejo. 500+ engenheiros, plataformas proprietárias de IA.",
     images: ["/logos/Sciensa logo.png"],
+    creator: "@sciensa",
   },
 };
 
