@@ -11,7 +11,7 @@ export default function Contact() {
         subheadline="Whether you're planning a new platform, exploring AI, or just want to talk engineering — we'd love to hear from you."        video="https://res.cloudinary.com/dshrkq1up/video/upload/q_auto/f_auto/v1775486156/0_Abstract_Background_3840x2160_eu366r.mp4"
       />
 
-      <section className="max-w-7xl mx-auto px-4 md:px-6 py-3 pb-6">
+      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3 pb-6">
         <div className="bg-white rounded-2xl px-5 md:px-10 py-16">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-16">
             {/* Form */}
@@ -28,7 +28,7 @@ export default function Contact() {
                   São Paulo, <span className="text-[#717171] font-normal">Brazil</span>
                 </p>
                 <p className="text-[15px] text-[#4e4e4e] mt-1 tracking-[0.01em]">
-                  Alameda Campinas, 802 — Jardim Paulista
+                  Alameda Campinas, 802, Conjunto 122 — Jardim Paulista
                 </p>
                 <p className="text-[14px] text-[#717171] mt-0.5">São Paulo – SP, 01404-200</p>
               </div>

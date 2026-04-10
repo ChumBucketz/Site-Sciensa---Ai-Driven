@@ -9,7 +9,7 @@ const data: PlatformDetailData = {
   accentColor: "#22AEA4",
   stats: [
     { value: "10×", label: "Faster time-to-market" },
-    { value: "50%", label: "Lower development cost" },
+    { value: "90%", label: "Lower development cost" },
     { value: "6×", label: "Project ROI" },
     { value: "40%", label: "Higher NPS" },
   ],
@@ -50,7 +50,7 @@ const data: PlatformDetailData = {
   },
   caseStudies: [
     { client: "iFood Pago", title: "Digital Bank Launch", result: "Stood up the entire banking operation rapidly, enabling strategic account rollout for iFood Pago's top partners — from zero to live in record time.", tags: ["Digital Banking", "Platform"] },
-    { client: "Mid-Size Bank", title: "Core Modernization", result: "Replaced legacy core with Amplify modules, cutting operational cost by 50% and enabling new product launches in weeks instead of quarters.", tags: ["Modernization", "Cost Reduction"] },
+    { client: "Mid-Size Bank", title: "Core Modernization", result: "Replaced legacy core with Amplify modules, cutting operational cost by 90% and enabling new product launches in weeks instead of quarters.", tags: ["Modernization", "Cost Reduction"] },
     { client: "Financial Institution", title: "PJ Digital Account", result: "Launched a complete PJ digital account product in 8 weeks, reaching 10k+ active business accounts within the first quarter.", tags: ["PJ Accounts", "Time-to-Market"] },
   ],
   cta: {

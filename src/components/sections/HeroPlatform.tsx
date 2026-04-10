@@ -24,7 +24,7 @@ export function HeroPlatform({
   video,
 }: HeroPlatformProps) {
   return (
-    <section className="max-w-7xl mx-auto px-4 md:px-6 pt-20 pb-3">
+    <section className="max-w-[1336px] mx-auto px-4 lg:px-0 pt-20 pb-3">
       <div className="relative rounded-2xl overflow-hidden px-6 md:px-14 py-14 md:py-20 flex flex-col items-center text-center">
 
         {/* Video */}

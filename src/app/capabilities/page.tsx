@@ -1,9 +1,11 @@
+import { CountUp } from "@/components/ui/CountUp";
 import { HeroSimple } from "@/components/sections/HeroSimple";
 import { SectionHeader } from "@/components/sections/SectionHeader";
 import { StatGrid } from "@/components/sections/StatGrid";
 import { CTABanner } from "@/components/sections/CTABanner";
 import { MonoLabel } from "@/components/ui/MonoLabel";
 import { FadeIn } from "@/components/ui/FadeIn";
+import { CapabilityMap } from "@/components/diagrams/CapabilityMap";
 
 const capabilities = [
   { slug: "ai-engineering", label: "AI Engineering", headline: "Production AI systems, not science projects", description: "We design, build, and operate enterprise AI — from LLM platforms and RAG pipelines to agentic workflows and copilot experiences — integrated into your critical business systems.", subcapabilities: ["LLM platforms & orchestration", "RAG & enterprise knowledge", "Copilots & AI assistants", "Agentic workflows", "AI governance & guardrails", "Enterprise AI integration"] },
@@ -59,7 +61,7 @@ export default function Capabilities() {
       />
 
       {/* Stats */}
-      <section className="max-w-7xl mx-auto px-4 md:px-6 py-3">
+      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3">
         <FadeIn>
           <div className="bg-white rounded-2xl px-5 md:px-10 py-12">
             <StatGrid stats={[
@@ -72,8 +74,20 @@ export default function Capabilities() {
         </FadeIn>
       </section>
 
+      {/* Capability architecture diagram */}
+      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3">
+        <FadeIn>
+          <div className="bg-white rounded-2xl px-5 md:px-10 py-16">
+            <SectionHeader eyebrow="// ARCHITECTURE" headline="Six disciplines. One integrated platform." />
+            <div className="mt-10">
+              <CapabilityMap />
+            </div>
+          </div>
+        </FadeIn>
+      </section>
+
       {/* Approach pillars */}
-      <section className="max-w-7xl mx-auto px-4 md:px-6 py-3">
+      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3">
         <FadeIn>
           <div className="bg-white rounded-2xl px-5 md:px-10 py-16">
             <SectionHeader eyebrow="// OUR APPROACH" headline="What makes our engineering different." />
@@ -139,7 +153,7 @@ export default function Capabilities() {
                       <p className="text-[15px] text-[#4e4e4e] leading-relaxed tracking-[0.01em]">{pillar.description}</p>
                     </div>
                     <div className="pt-5 border-t border-[#e5e5e5]">
-                      <span className="text-3xl font-light text-black tracking-tight">{pillar.stat}</span>
+                      <CountUp value={pillar.stat} className="text-3xl font-light text-black tracking-tight" />
                       <span className="block text-label text-[#717171] mt-1">{pillar.statLabel}</span>
                     </div>
                   </div>
@@ -151,7 +165,7 @@ export default function Capabilities() {
       </section>
 
       {/* Capability cards */}
-      <section className="max-w-7xl mx-auto px-4 md:px-6 py-3">
+      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3">
         <FadeIn>
           <div className="bg-white rounded-2xl px-5 md:px-10 py-16">
             <SectionHeader eyebrow="// ALL CAPABILITIES" headline="Six disciplines. One team." />
@@ -178,7 +192,7 @@ export default function Capabilities() {
         </FadeIn>
       </section>
 
-      <section className="max-w-7xl mx-auto px-4 md:px-6 py-3 pb-6">
+      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3 pb-6">
         <FadeIn>
           <CTABanner
             headline="Need a specific capability?"

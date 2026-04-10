@@ -292,7 +292,7 @@ export function Header() {
           boxShadow: scrolled ? "0 1px 0 rgba(0,0,0,0.08), 0 4px 16px rgba(0,0,0,0.05)" : "none",
         }}
       >
-        <div className="max-w-7xl mx-auto px-6 h-14 flex items-center justify-between gap-8">
+        <div className="max-w-[1336px] mx-auto px-4 lg:px-0 h-14 flex items-center justify-between gap-8">
           {/* Logo */}
           <Link href="/" className="shrink-0 hover:opacity-80 transition-opacity" onClick={closeAll}>
             <Image src="/logos/Logo Sciensa.svg" alt="Sciensa" width={156} height={42} className="h-[55px] w-auto" priority />

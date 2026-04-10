@@ -1,3 +1,4 @@
+import { CountUp } from "@/components/ui/CountUp";
 import { HeroSimple } from "@/components/sections/HeroSimple";
 import { SectionHeader } from "@/components/sections/SectionHeader";
 import { StatGrid } from "@/components/sections/StatGrid";
@@ -44,7 +45,7 @@ export default function Platforms() {
       />
 
       {/* Stats */}
-      <section className="max-w-7xl mx-auto px-4 md:px-6 py-3">
+      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3">
         <FadeIn>
           <div className="bg-white rounded-2xl px-5 md:px-10 py-12">
             <StatGrid stats={[
@@ -58,7 +59,7 @@ export default function Platforms() {
       </section>
 
       {/* Why platforms alternating rows */}
-      <section className="max-w-7xl mx-auto px-4 md:px-6 py-3">
+      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3">
         <FadeIn>
           <div className="bg-white rounded-2xl px-5 md:px-10 py-16">
             <SectionHeader eyebrow="// WHY PROPRIETARY" headline="Built from the inside out." />
@@ -96,7 +97,7 @@ export default function Platforms() {
                       <p className="text-[15px] text-[#4e4e4e] leading-relaxed tracking-[0.01em]">{diff.description}</p>
                     </div>
                     <div className="pt-5 border-t border-[#e5e5e5]">
-                      <span className="text-3xl font-light text-black tracking-tight">{diff.stat}</span>
+                      <CountUp value={diff.stat} className="text-3xl font-light text-black tracking-tight" />
                       <span className="block text-label text-[#717171] mt-1">{diff.statLabel}</span>
                     </div>
                   </div>
@@ -108,7 +109,7 @@ export default function Platforms() {
       </section>
 
       {/* Platform cards */}
-      <section className="max-w-7xl mx-auto px-4 md:px-6 py-3">
+      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3">
         <FadeIn>
           <div className="bg-white rounded-2xl px-5 md:px-10 py-16">
             <SectionHeader eyebrow="// ALL PLATFORMS" headline="Four platforms. One ecosystem." />
@@ -142,7 +143,7 @@ export default function Platforms() {
       </section>
 
       {/* Why platforms 3-col */}
-      <section className="max-w-7xl mx-auto px-4 md:px-6 py-3">
+      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3">
         <FadeIn>
           <div className="bg-white rounded-2xl px-5 md:px-10 py-16">
             <SectionHeader eyebrow="// THE PLATFORM ADVANTAGE" headline="Why our clients choose platforms over custom-only builds." />
@@ -162,7 +163,7 @@ export default function Platforms() {
         </FadeIn>
       </section>
 
-      <section className="max-w-7xl mx-auto px-4 md:px-6 py-3 pb-6">
+      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3 pb-6">
         <FadeIn>
           <CTABanner
             headline="Accelerate with our platforms"

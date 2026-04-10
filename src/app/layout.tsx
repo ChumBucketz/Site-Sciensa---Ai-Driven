@@ -14,7 +14,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Sciensa — AI-Native Engineering",
+  title: "Sciensa | AI Driven Solutions",
   description:
     "AI-native engineering, cross-market execution, and proprietary platforms for the industries that can't afford to fail.",
   icons: {
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     apple: "/logos/logo sciensa symbol.png",
   },
   openGraph: {
-    title: "Sciensa — AI-Native Engineering",
+    title: "Sciensa | AI Driven Solutions",
     description:
       "AI-native engineering, cross-market execution, and proprietary platforms for the industries that can't afford to fail.",
     images: [{ url: "/logos/Sciensa logo.png", width: 1200, height: 630, alt: "Sciensa" }],
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sciensa — AI-Native Engineering",
+    title: "Sciensa | AI Driven Solutions",
     description:
       "AI-native engineering, cross-market execution, and proprietary platforms for the industries that can't afford to fail.",
     images: ["/logos/Sciensa logo.png"],

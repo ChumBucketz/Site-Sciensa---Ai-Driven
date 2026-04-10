@@ -27,7 +27,7 @@ export function HeroCategory({ eyebrow, headline, subheadline, video, stats }: H
   const crumb = parseBreadcrumb(eyebrow);
 
   return (
-    <section className="max-w-7xl mx-auto px-4 md:px-6 pt-20 pb-3">
+    <section className="max-w-[1336px] mx-auto px-4 lg:px-0 pt-20 pb-3">
       {/* Hero card with video */}
       <div
         ref={ref}

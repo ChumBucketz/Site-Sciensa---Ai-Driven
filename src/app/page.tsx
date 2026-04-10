@@ -1,3 +1,4 @@
+import { CountUp } from "@/components/ui/CountUp";
 import { Hero } from "@/components/sections/Hero";
 import { SectionHeader } from "@/components/sections/SectionHeader";
 import { StatGrid } from "@/components/sections/StatGrid";
@@ -38,7 +39,7 @@ export default function Home() {
       />
 
       {/* Logo ticker */}
-      <section className="max-w-7xl mx-auto px-4 md:px-6 py-3">
+      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3">
         <FadeIn>
         <p className="text-label text-[#717171] text-center mb-6">Trusted by leaders in complex industries</p>
         <div className="overflow-hidden py-2" style={{ maskImage: "linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%)", WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%)" }}>
@@ -63,7 +64,7 @@ export default function Home() {
       </section>
 
       {/* Stats */}
-      <section className="max-w-7xl mx-auto px-4 md:px-6 py-3">
+      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3">
         <FadeIn>
         <div className="bg-white rounded-2xl px-5 md:px-10 py-12">
           <p className="text-label text-[#717171] mb-10">
@@ -82,7 +83,7 @@ export default function Home() {
       </section>
 
       {/* Why Sciensa */}
-      <section className="max-w-7xl mx-auto px-4 md:px-6 py-3">
+      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3">
         <FadeIn>
         <div className="bg-white rounded-2xl px-5 md:px-10 py-16">
           <SectionHeader eyebrow="// WHY SCIENSA" headline="Forget technology services as you know them." />
@@ -125,7 +126,7 @@ export default function Home() {
                     <p className="text-[15px] text-[#4e4e4e] leading-relaxed tracking-[0.01em]">{pillar.description}</p>
                   </div>
                   <div className="pt-5 border-t border-[#e5e5e5]">
-                    <span className="text-3xl font-light text-black tracking-tight">{pillar.stat}</span>
+                    <CountUp value={pillar.stat} className="text-3xl font-light text-black tracking-tight" />
                     <span className="block text-label text-[#717171] mt-1">{pillar.statLabel}</span>
                   </div>
                 </div>
@@ -137,21 +138,21 @@ export default function Home() {
       </section>
 
       {/* Industry Studios */}
-      <section className="max-w-7xl mx-auto px-4 md:px-6 py-3">
+      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3">
         <div className="bg-white rounded-2xl px-5 md:px-10 py-16">
           <IndustriesGrid />
         </div>
       </section>
 
       {/* Core Capabilities */}
-      <section className="max-w-7xl mx-auto px-4 md:px-6 py-3">
+      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3">
         <div className="bg-white rounded-2xl px-5 md:px-10 py-16">
           <CapabilitiesGrid />
         </div>
       </section>
 
       {/* Platform Spotlight */}
-      <section className="max-w-7xl mx-auto px-4 md:px-6 py-3">
+      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3">
         <FadeIn>
         <div className="bg-white rounded-2xl px-5 md:px-10 py-16">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
@@ -167,7 +168,7 @@ export default function Home() {
 
 
       {/* CTA */}
-      <section className="max-w-7xl mx-auto px-4 md:px-6 py-3 pb-6">
+      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3 pb-6">
         <FadeIn>
         <CTABanner
           eyebrow="// LET'S BUILD"

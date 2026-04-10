@@ -1,3 +1,4 @@
+import { CountUp } from "@/components/ui/CountUp";
 import { HeroPlatform } from "@/components/sections/HeroPlatform";
 import { SectionHeader } from "@/components/sections/SectionHeader";
 import { CTABanner } from "@/components/sections/CTABanner";
@@ -88,7 +89,7 @@ export function PlatformDetailTemplate({ data }: { data: PlatformDetailData }) {
       />
 
       {/* Approach alternating rows */}
-      <section className="max-w-7xl mx-auto px-4 md:px-6 py-3">
+      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3">
         <FadeIn>
           <div className="bg-white rounded-2xl px-5 md:px-10 py-16">
             <SectionHeader eyebrow={data.approach.sectionLabel} headline={data.approach.sectionHeadline} />
@@ -105,7 +106,7 @@ export function PlatformDetailTemplate({ data }: { data: PlatformDetailData }) {
                       <p className="text-[15px] text-[#4e4e4e] leading-relaxed tracking-[0.01em]">{row.description}</p>
                     </div>
                     <div className="pt-5 border-t border-[#e5e5e5]">
-                      <span className="text-3xl font-light text-black tracking-tight">{row.stat}</span>
+                      <CountUp value={row.stat} className="text-3xl font-light text-black tracking-tight" />
                       <span className="block text-label text-[#717171] mt-1">{row.statLabel}</span>
                     </div>
                   </div>
@@ -117,7 +118,7 @@ export function PlatformDetailTemplate({ data }: { data: PlatformDetailData }) {
       </section>
 
       {/* Modules */}
-      <section className="max-w-7xl mx-auto px-4 md:px-6 py-3">
+      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3">
         <FadeIn>
           <div className="bg-white rounded-2xl px-5 md:px-10 py-16">
             <SectionHeader
@@ -143,7 +144,7 @@ export function PlatformDetailTemplate({ data }: { data: PlatformDetailData }) {
       </section>
 
       {/* Case studies */}
-      <section className="max-w-7xl mx-auto px-4 md:px-6 py-3">
+      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3">
         <FadeIn>
           <div className="bg-white rounded-2xl px-5 md:px-10 py-16">
             <SectionHeader eyebrow="// PROOF POINTS" headline="Results from the field" />
@@ -164,7 +165,7 @@ export function PlatformDetailTemplate({ data }: { data: PlatformDetailData }) {
       </section>
 
       {/* CTA */}
-      <section className="max-w-7xl mx-auto px-4 md:px-6 py-3 pb-6">
+      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3 pb-6">
         <FadeIn>
           <CTABanner
             headline={data.cta.headline}

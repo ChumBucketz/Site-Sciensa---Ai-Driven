@@ -1,3 +1,4 @@
+import { CountUp } from "@/components/ui/CountUp";
 import { HeroSimple } from "@/components/sections/HeroSimple";
 import { SectionHeader } from "@/components/sections/SectionHeader";
 import { StatGrid } from "@/components/sections/StatGrid";
@@ -44,7 +45,7 @@ export default function Industries() {
       />
 
       {/* Stats */}
-      <section className="max-w-7xl mx-auto px-4 md:px-6 py-3">
+      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3">
         <FadeIn>
           <div className="bg-white rounded-2xl px-5 md:px-10 py-12">
             <StatGrid stats={[
@@ -58,7 +59,7 @@ export default function Industries() {
       </section>
 
       {/* What makes our approach different */}
-      <section className="max-w-7xl mx-auto px-4 md:px-6 py-3">
+      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3">
         <FadeIn>
           <div className="bg-white rounded-2xl px-5 md:px-10 py-16">
             <SectionHeader eyebrow="// OUR EDGE" headline="Engineering rigor meets domain depth." />
@@ -96,7 +97,7 @@ export default function Industries() {
                       <p className="text-[15px] text-[#4e4e4e] leading-relaxed tracking-[0.01em]">{rigor.description}</p>
                     </div>
                     <div className="pt-5 border-t border-[#e5e5e5]">
-                      <span className="text-3xl font-light text-black tracking-tight">{rigor.stat}</span>
+                      <CountUp value={rigor.stat} className="text-3xl font-light text-black tracking-tight" />
                       <span className="block text-label text-[#717171] mt-1">{rigor.statLabel}</span>
                     </div>
                   </div>
@@ -108,7 +109,7 @@ export default function Industries() {
       </section>
 
       {/* Featured: Financial Services */}
-      <section className="max-w-7xl mx-auto px-4 md:px-6 py-3">
+      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3">
         <FadeIn>
           <div className="bg-black text-white rounded-2xl p-10 md:p-14">
             <MonoLabel className="text-white/40 block mb-6">Primary vertical</MonoLabel>
@@ -138,7 +139,7 @@ export default function Industries() {
       </section>
 
       {/* Cross-market */}
-      <section className="max-w-7xl mx-auto px-4 md:px-6 py-3">
+      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3">
         <FadeIn>
           <div className="bg-white rounded-2xl px-5 md:px-10 py-16">
             <SectionHeader eyebrow="// CROSS-MARKET" headline="Cross-market expertise" subheadline="The same engineering rigor born in financial services, applied to every complex industry we serve." />
@@ -165,7 +166,7 @@ export default function Industries() {
         </FadeIn>
       </section>
 
-      <section className="max-w-7xl mx-auto px-4 md:px-6 py-3 pb-6">
+      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3 pb-6">
         <FadeIn>
           <CTABanner
             headline="Operating in a complex market?"

@@ -22,7 +22,7 @@ export default function Insights() {
         subheadline="Articles, whitepapers and reports on AI, platforms, data, engineering and digital transformation in complex industries."        video="https://res.cloudinary.com/dshrkq1up/video/upload/q_auto/f_auto/v1775486835/0_Speed_Lines_Motion_Blur_3840x2160_1_jhoiu0.mp4"
       />
 
-      <section className="max-w-7xl mx-auto px-4 md:px-6 py-3">
+      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3">
         <div className="bg-white rounded-2xl px-5 md:px-10 py-16">
           <CategoryFilter
             categories={["All", "AI", "Financial Services", "Platforms", "Data", "Engineering", "Cross-market"]}
@@ -32,7 +32,7 @@ export default function Insights() {
       </section>
 
       {/* Newsletter */}
-      <section className="max-w-7xl mx-auto px-4 md:px-6 py-3 pb-6">
+      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3 pb-6">
         <div className="bg-black text-white rounded-2xl px-10 py-20">
           <div className="max-w-xl">
             <h2 className="text-heading text-white mb-3">Stay ahead of the complexity curve</h2>

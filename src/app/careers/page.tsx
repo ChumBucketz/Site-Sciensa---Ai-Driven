@@ -31,7 +31,7 @@ export default function Careers() {
         subheadline="Join 500+ engineers building mission-critical platforms for financial services, healthcare, retail and more."        video="https://res.cloudinary.com/dshrkq1up/video/upload/q_auto/f_auto/v1775486834/0_Circuit_Board_Technology_3840x2160_rbiidg.mp4"
       />
 
-      <section className="max-w-7xl mx-auto px-4 md:px-6 py-3">
+      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3">
         <div className="bg-white rounded-2xl px-5 md:px-10 py-16">
           <SectionHeader eyebrow="// WHY SCIENSA" headline="Why engineers choose Sciensa" subheadline="Hard problems, real impact, and a culture that invests in your growth." />
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -45,7 +45,7 @@ export default function Careers() {
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto px-4 md:px-6 py-3">
+      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3">
         <div className="bg-white rounded-2xl px-5 md:px-10 py-16">
           <SectionHeader eyebrow="// OPEN POSITIONS" headline="Open positions" />
           <div className="mt-10">
@@ -57,7 +57,7 @@ export default function Careers() {
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto px-4 md:px-6 py-3 pb-6">
+      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3 pb-6">
         <CTABanner
           headline="Don't see your role? Reach out anyway."
           subheadline="We're always interested in meeting exceptional engineers, architects and leaders. Send us a note."
