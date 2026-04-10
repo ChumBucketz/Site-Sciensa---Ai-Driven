@@ -100,24 +100,35 @@ export default function Capabilities() {
                   {/* Visual side */}
                   <div className="relative min-h-[240px] rounded-2xl overflow-hidden bg-white border border-[#f0f0f0] flex flex-col">
                     <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse at 0% 100%, rgba(34,174,164,0.10) 0%, rgba(94,179,89,0.06) 40%, transparent 70%)" }} />
-                    <div className="flex items-center gap-1.5 px-4 py-3 bg-[#fafafa] border-b border-[#f0f0f0] shrink-0">
+                    <div className={`flex items-center gap-1.5 px-4 py-3 shrink-0 rounded-t-2xl border-b ${pillar.layers ? "bg-[#0b0d14] border-white/[0.06]" : "bg-[#fafafa] border-[#f0f0f0]"}`}>
                       <span className="w-3 h-3 rounded-full bg-[#ff5f57]" />
                       <span className="w-3 h-3 rounded-full bg-[#febc2e]" />
                       <span className="w-3 h-3 rounded-full bg-[#28c840]" />
-                      <span className="ml-3 text-[11px] text-[#717171] font-mono">
-                        {pillar.layers ? "stack.layers" : pillar.pipeline ? "ai.pipeline" : "sre.checks"}
+                      <span className={`ml-3 text-[11px] font-mono ${pillar.layers ? "text-white/30" : "text-[#717171]"}`}>
+                        {pillar.layers ? "sciensa — stack inspect" : pillar.pipeline ? "ai.pipeline" : "sre.checks"}
                       </span>
                     </div>
-                    <div className="flex-1 p-5 flex flex-col justify-center gap-3">
-                      {pillar.layers && pillar.layers.map((layer, i) => (
-                        <div key={layer.label} className="flex items-center gap-3">
-                          <div className="w-2 h-2 rounded-full shrink-0" style={{ background: layer.color }} />
-                          <div className="flex-1 h-7 rounded-[6px] flex items-center px-3" style={{ background: `${layer.color}14`, border: `1px solid ${layer.color}22` }}>
-                            <span className="text-[11px] font-medium" style={{ color: layer.color }}>{layer.label}</span>
+                    <div className={`flex-1 p-5 flex flex-col justify-center gap-3 ${pillar.layers ? "bg-[#0b0d14]" : ""}`}>
+                      {pillar.layers && (
+                        <div className="font-mono text-[12px] flex flex-col gap-1.5">
+                          <p><span className="text-[#22AEA4]">$</span> <span className="text-white/70">sciensa stack --inspect --all</span></p>
+                          <p className="text-white/30 mt-1">Loading stack configuration...</p>
+                          <div className="mt-2 flex flex-col gap-1">
+                            {pillar.layers.map((layer, i) => (
+                              <div key={layer.label} className="flex items-center gap-2">
+                                <span className="text-white/30 w-5 text-right shrink-0">{i + 1}</span>
+                                <span className="text-[#22AEA4]">✓</span>
+                                <span className="text-white/80 flex-1">{layer.label}</span>
+                                <span className="text-[#5EB359] text-[10px]">active</span>
+                              </div>
+                            ))}
                           </div>
-                          <span className="text-[10px] text-[#717171] font-mono w-4 text-right">{i + 1}</span>
+                          <div className="mt-2 pt-2 border-t border-white/[0.06]">
+                            <p><span className="text-[#5EB359]">✓</span> <span className="text-white/50">All 6 disciplines operational</span></p>
+                            <p className="text-white/30">→ Full-stack coverage: <span className="text-[#22AEA4]">100%</span></p>
+                          </div>
                         </div>
-                      ))}
+                      )}
                       {pillar.pipeline && (
                         <div className="flex flex-col gap-2">
                           {pillar.pipeline.map((step, i) => (

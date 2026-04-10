@@ -140,27 +140,6 @@ export function CapabilityDetailTemplate({ data }: { data: CapabilityDetailData 
         </FadeIn>
       </section>
 
-      {/* Case studies */}
-      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3">
-        <FadeIn>
-          <div className="bg-white rounded-2xl px-5 md:px-10 py-16">
-            <SectionHeader eyebrow="// PROOF POINTS" headline="Results from the field" />
-            <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4">
-              {data.caseStudies.map((cs) => (
-                <div key={cs.title} className="el-card p-8 flex flex-col gap-4">
-                  <p className="text-xs text-[#717171] tracking-[0.01em]">{cs.client}</p>
-                  <h3 className="text-base font-medium text-black tracking-tight">{cs.title}</h3>
-                  <p className="text-[15px] text-[#4e4e4e] leading-relaxed tracking-[0.01em] flex-1">{cs.result}</p>
-                  <div className="flex flex-wrap gap-2 mt-auto">
-                    {cs.tags.map((tag) => <Badge key={tag} variant="brand">{tag}</Badge>)}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </FadeIn>
-      </section>
-
       {/* CTA */}
       <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3 pb-6">
         <FadeIn>

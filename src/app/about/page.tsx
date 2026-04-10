@@ -4,12 +4,61 @@ import { StatGrid } from "@/components/sections/StatGrid";
 import { CTABanner } from "@/components/sections/CTABanner";
 
 const timeline = [
-  { year: "2014", event: "Founded in São Paulo as a boutique consultancy for financial services technology." },
-  { year: "2016", event: "Expanded platform engineering practice; first enterprise banking client." },
-  { year: "2018", event: "Launched Data & AI practice; opened second office." },
-  { year: "2020", event: "200+ engineers; established partnerships with AWS, Google Cloud and Azure." },
-  { year: "2022", event: "Launched Amplify and Nextdue platforms; entered healthcare and retail verticals." },
-  { year: "2024", event: "500+ engineers; launched Lumia AI and CodeGenius platforms; expanded to 6 industries." },
+  {
+    year: "2014",
+    event: "Founded in São Paulo as a boutique consultancy for financial services technology.",
+    icon: (
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M3 21h18M9 21V7l6-4v18M9 11H6a1 1 0 0 0-1 1v9M15 21V11h3a1 1 0 0 1 1 1v9"/>
+      </svg>
+    ),
+  },
+  {
+    year: "2016",
+    event: "Expanded platform engineering practice; first enterprise banking client.",
+    icon: (
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2M12 12v4M10 14h4"/>
+      </svg>
+    ),
+  },
+  {
+    year: "2018",
+    event: "Launched Data & AI practice; opened second office.",
+    icon: (
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 2a4 4 0 0 1 4 4c0 1.5-.8 2.8-2 3.5V11h1a1 1 0 0 1 1 1v1h1a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1h1v-1a1 1 0 0 1 1-1h1V9.5A4 4 0 0 1 8 6a4 4 0 0 1 4-4z"/>
+        <path d="M9 21h6M10 17v4M14 17v4"/>
+      </svg>
+    ),
+  },
+  {
+    year: "2020",
+    event: "200+ engineers; established partnerships with AWS, Google Cloud and Azure.",
+    icon: (
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 0 1 0 9z"/>
+      </svg>
+    ),
+  },
+  {
+    year: "2022",
+    event: "Launched Amplify and Nextdue platforms; entered healthcare and retail verticals.",
+    icon: (
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+        <polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/>
+      </svg>
+    ),
+  },
+  {
+    year: "2024",
+    event: "500+ engineers; launched Lumia AI and CodeGenius platforms; expanded to 6 industries.",
+    icon: (
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>
+      </svg>
+    ),
+  },
 ];
 
 const values = [
@@ -20,12 +69,9 @@ const values = [
 ];
 
 const leadership = [
-  { name: "CEO & Co-Founder", role: "Strategy & Vision" },
-  { name: "CTO & Co-Founder", role: "Engineering & Architecture" },
-  { name: "VP Engineering", role: "Delivery & Excellence" },
-  { name: "VP AI & Data", role: "AI Engineering & Data Science" },
-  { name: "Head of Platforms", role: "Product Platforms" },
-  { name: "Head of Sales", role: "Growth & Partnerships" },
+  { name: "Bruno Mancini",  role: "CEO", fullRole: "Chief Executive Officer",  photo: "/avatar/bruno-mancini.jfif"  },
+  { name: "Felipe Scaphe",  role: "CVO", fullRole: "Chief Vision Officer",      photo: "/avatar/felipe-scaphe.jfif"  },
+  { name: "Bruno Mizrahi",  role: "CPO", fullRole: "Chief Product Officer",     photo: "/avatar/bruno-mizrahi.jfif"  },
 ];
 
 export default function About() {
@@ -68,19 +114,30 @@ export default function About() {
                   what we learn with the community.
                 </p>
               </div>
+
+              {/* Vimeo embed */}
+              <div className="mt-8 rounded-2xl overflow-hidden" style={{ aspectRatio: "16/9" }}>
+                <iframe
+                  src="https://player.vimeo.com/video/418384212?autoplay=0&title=0&byline=0&portrait=0"
+                  className="w-full h-full"
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
             </div>
             <div>
               {timeline.map((item, i) => (
-                <div key={item.year} className="flex gap-5 pb-8 relative">
-                  <div className="flex flex-col items-center shrink-0">
-                    <div className="w-8 h-8 rounded-full border border-[#e5e5e5] flex items-center justify-center bg-white z-10">
-                      <div className="w-2 h-2 rounded-full bg-black" />
+                <div key={item.year} className="flex gap-5 relative h-[115px] group">
+                  {/* Connector column */}
+                  <div className="relative shrink-0 flex flex-col items-center" style={{ width: 36 }}>
+                    <div className="w-9 h-9 rounded-full border border-[#e5e5e5] flex items-center justify-center bg-white z-10 text-black relative transition-all duration-300 group-hover:border-[#22AEA4]/50 group-hover:text-[#22AEA4] group-hover:bg-[#22AEA4]/[0.06] group-hover:shadow-[0_0_16px_4px_rgba(34,174,164,0.22)]">
+                      {item.icon}
                     </div>
                     {i < timeline.length - 1 && (
-                      <div className="w-px flex-1 bg-[#e5e5e5] mt-1" />
+                      <div className="absolute top-9 bottom-0 w-px bg-[#e5e5e5]" />
                     )}
                   </div>
-                  <div className="pt-1 pb-2">
+                  <div className="pt-1.5 pb-2">
                     <span className="text-label text-[#717171] block mb-1">{item.year}</span>
                     <p className="text-[15px] text-[#4e4e4e] leading-relaxed tracking-[0.01em]">{item.event}</p>
                   </div>
@@ -109,13 +166,19 @@ export default function About() {
       {/* Leadership */}
       <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3">
         <div className="bg-white rounded-2xl px-5 md:px-10 py-16">
-          <SectionHeader eyebrow="// TEAM" headline="Leadership" subheadline="A senior team of engineers, architects and operators." />
-          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <SectionHeader eyebrow="// TEAM" headline="Leadership" subheadline="Founders, builders and visionaries who shape what Sciensa is — and what it becomes." />
+          <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
             {leadership.map((member) => (
-              <div key={member.name} className="el-card p-8 flex flex-col gap-2">
-                <div className="w-10 h-10 rounded-full bg-[#f5f5f5] border border-[#e5e5e5] mb-2" />
-                <span className="text-base font-medium text-black tracking-tight">{member.name}</span>
-                <span className="text-[15px] text-[#717171] tracking-[0.01em]">{member.role}</span>
+              <div key={member.name} className="el-card p-8 flex flex-col items-center text-center gap-4">
+                <img
+                  src={member.photo}
+                  alt={member.name}
+                  className="w-20 h-20 rounded-full object-cover object-top border border-[#e5e5e5] grayscale"
+                />
+                <div>
+                  <p className="text-base font-medium text-black tracking-tight">{member.name}</p>
+                  <p className="text-[13px] text-[#717171] mt-0.5 tracking-[0.01em]">{member.fullRole}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -126,8 +189,7 @@ export default function About() {
         <CTABanner
           headline="Want to be part of the team?"
           subheadline="We're always looking for engineers who care about craft. See open positions or send us a note."
-          primary={{ label: "View open positions", href: "/careers" }}
-          secondary={{ label: "Contact us →", href: "/contact" }}
+          primary={{ label: "Contact us →", href: "/contact" }}
         />
       </section>
     </>

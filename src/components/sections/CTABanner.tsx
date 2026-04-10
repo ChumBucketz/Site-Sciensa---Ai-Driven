@@ -52,11 +52,23 @@ export function CTABanner({
         loop
         playsInline
         className="absolute inset-0 w-full h-full object-cover"
-        style={{ opacity: 0.25 }}
+        style={{ opacity: 0.5 }}
+      />
+
+      {/* Green brand gradient — colorizes the video */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: "linear-gradient(135deg, #22AEA4 0%, #5EB359 50%, #22AEA4 100%)",
+          backgroundSize: "300% 300%",
+          animation: "heroGradient 8s ease infinite",
+          opacity: 0.6,
+          mixBlendMode: "color",
+        }}
       />
 
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/60" />
+      <div className="absolute inset-0 bg-black/45" />
 
       {/* Animated motion gradient */}
       <div

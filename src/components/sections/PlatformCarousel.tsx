@@ -91,7 +91,7 @@ export function PlatformCarousel() {
                 )}
                 */}
                 {platform.name === "Amplify" && (
-                  <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="absolute inset-0 flex items-center justify-start pl-10">
                     <div className="relative hidden md:block w-[700px] h-[400px] rounded-[24px] overflow-hidden"
                       style={{ boxShadow: "0 0 0 1px rgba(0,0,0,0.08), 0 32px 64px rgba(0,0,0,0.12)" }}>
                       <MockAmplify />
@@ -99,7 +99,7 @@ export function PlatformCarousel() {
                   </div>
                 )}
                 {platform.name === "Lumia AI" && (
-                  <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="absolute inset-0 flex items-center justify-start pl-10">
                     <div className="relative hidden md:block w-[700px] h-[460px] rounded-[24px] overflow-hidden"
                       style={{ boxShadow: "0 0 0 1px rgba(0,0,0,0.08), 0 32px 64px rgba(0,0,0,0.12)" }}>
                       <MockLumiaChat />
@@ -107,7 +107,7 @@ export function PlatformCarousel() {
                   </div>
                 )}
                 {platform.name === "Nextdue" && (
-                  <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="absolute inset-0 flex items-center justify-start pl-10">
                     <div className="relative hidden md:block w-[700px] h-[420px] rounded-[24px] overflow-hidden"
                       style={{ boxShadow: "0 0 0 1px rgba(0,0,0,0.08), 0 32px 64px rgba(0,0,0,0.12)" }}>
                       <MockNextdue />
