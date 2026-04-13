@@ -42,8 +42,8 @@ const pillars = [
   },
   {
     title: "Enterprise-grade by design",
-    description: "Every architecture decision is made against financial-services-grade standards: 99.99% uptime targets, compliance by default, security in every layer, and full observability from day one.",
-    stat: "99.99%",
+    description: "Every architecture decision is made against financial-services-grade standards: 99.9% uptime targets, compliance by default, security in every layer, and full observability from day one.",
+    stat: "99.9%",
     statLabel: "Target platform uptime",
     reverse: false,
     checks: ["Zero-downtime deployments", "Security by design", "Compliance automation", "Full observability", "Disaster recovery", "Cost governance"],
@@ -66,7 +66,7 @@ export default function Capabilities() {
           <div className="bg-white rounded-2xl px-5 md:px-10 py-12">
             <StatGrid stats={[
               { value: "6", label: "Core disciplines" },
-              { value: "500+", label: "Engineers" },
+              { value: "200+", label: "Engineers" },
               { value: "200+", label: "AI models deployed" },
               { value: "15+", label: "Years of delivery" },
             ]} />

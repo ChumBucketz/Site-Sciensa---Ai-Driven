@@ -96,8 +96,8 @@ export default function About() {
       <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3">
         <div className="bg-white rounded-2xl px-5 md:px-10 py-12">
           <StatGrid stats={[
-            { value: "500+", label: "Engineers" },
-            { value: "10+", label: "Years" },
+            { value: "200+", label: "Engineers" },
+            { value: "15+", label: "Years" },
             { value: "120+", label: "Enterprise clients" },
             { value: "6", label: "Industries" },
           ]} />

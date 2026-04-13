@@ -6,7 +6,7 @@ const data: CapabilityDetailData = {
   subheadline: "Cloud foundations, CI/CD automation, security by design, infrastructure scalability, and operational reliability — engineering trust into every deployment.",
   video: "https://res.cloudinary.com/dshrkq1up/video/upload/q_auto/f_auto/v1775486835/0_Technology_Futuristic_3840x2160_1_fydegq.mp4",
   stats: [
-    { value: "99.99%", label: "Uptime delivered" },
+    { value: "99.9%", label: "Uptime delivered" },
     { value: "60%", label: "Avg. infra cost reduction" },
     { value: "10×", label: "Deployment frequency increase" },
     { value: "75%", label: "Fewer production vulnerabilities" },
@@ -55,9 +55,9 @@ const data: CapabilityDetailData = {
     ],
   },
   caseStudies: [
-    { client: "Digital Bank", title: "Cloud-native Core Banking", result: "Migrated core banking to AWS with zero-downtime, achieving 99.99% uptime and 60% infrastructure cost reduction.", tags: ["Cloud Migration", "FinOps"] },
+    { client: "Digital Bank", title: "Cloud-native Core Banking", result: "Migrated core banking to AWS with zero-downtime, achieving 99.9% uptime and 60% infrastructure cost reduction.", tags: ["Cloud Migration", "FinOps"] },
     { client: "Insurance Group", title: "DevSecOps Transformation", result: "Embedded security into CI/CD pipelines across 30+ teams, cutting security vulnerabilities in production by 75%.", tags: ["DevSecOps", "CI/CD"] },
-    { client: "Energy Company", title: "Kubernetes Platform", result: "Built multi-cloud Kubernetes platform supporting 200+ microservices with self-service deployment for 150+ engineers.", tags: ["SRE", "Kubernetes"] },
+    { client: "Energy Company", title: "Kubernetes Platform", result: "Built multi-cloud Kubernetes platform supporting 200+ microservices with self-service deployment for 200+ engineers.", tags: ["SRE", "Kubernetes"] },
   ],
   cta: {
     headline: "Ready to build on a reliable foundation?",

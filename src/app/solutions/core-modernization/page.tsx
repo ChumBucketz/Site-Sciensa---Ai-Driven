@@ -9,7 +9,7 @@ const data: SolutionDetailData = {
     { value: "20+", label: "Core systems modernized" },
     { value: "0", label: "Data loss incidents" },
     { value: "70%", label: "Faster deployments post-migration" },
-    { value: "99.99%", label: "Uptime during migration" },
+    { value: "99.9%", label: "Uptime during migration" },
   ],
   approach: {
     sectionLabel: "// OUR APPROACH",
@@ -54,7 +54,7 @@ const data: SolutionDetailData = {
     ],
   },
   caseStudies: [
-    { client: "Tier-1 Brazilian Bank", title: "Core Banking Decomposition", result: "70% reduction in deployment cycles while maintaining 99.99% uptime during migration of 12M+ accounts from legacy COBOL core.", tags: ["Strangler Fig", "Data Migration"] },
+    { client: "Tier-1 Brazilian Bank", title: "Core Banking Decomposition", result: "70% reduction in deployment cycles while maintaining 99.9% uptime during migration of 12M+ accounts from legacy COBOL core.", tags: ["Strangler Fig", "Data Migration"] },
     { client: "Insurance Holding", title: "Policy Management Modernization", result: "Migrated 30-year-old policy management system to event-driven microservices in 18 months with zero data loss across 8M policies.", tags: ["Legacy Assessment", "Incremental Modernization"] },
     { client: "Telecom Operator", title: "BSS Platform Replacement", result: "Replaced monolithic BSS with cloud-native platform using API wrapping for legacy integration — 50% faster order-to-activation.", tags: ["API Wrapping", "Incremental"] },
   ],

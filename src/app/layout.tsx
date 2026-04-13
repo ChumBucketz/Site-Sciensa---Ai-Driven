@@ -15,7 +15,7 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   title: "Sciensa | AI Driven Solutions",
   description:
-    "Sciensa é uma empresa de engenharia de tecnologia que projeta, constrói e opera plataformas mission-critical para banking, payments, saúde, energia e varejo na América Latina. 500+ engenheiros, plataformas proprietárias de IA e mais de 10 anos entregando sistemas de alta complexidade.",
+    "Sciensa é uma empresa de engenharia de tecnologia que projeta, constrói e opera plataformas mission-critical para banking, payments, saúde, energia e varejo na América Latina. 200+ engenheiros, plataformas proprietárias de IA e mais de 15 anos entregando sistemas de alta complexidade.",
   keywords: [
     "engenharia de software",
     "inteligência artificial",
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Sciensa | AI Driven Solutions",
     description:
-      "Engenharia de tecnologia mission-critical para banking, payments, saúde, energia e varejo. 500+ engenheiros, plataformas proprietárias de IA, 10+ anos de entrega em alta complexidade.",
+      "Engenharia de tecnologia mission-critical para banking, payments, saúde, energia e varejo. 200+ engenheiros, plataformas proprietárias de IA, 15+ anos de entrega em alta complexidade.",
     url: "https://sciensa.com",
     siteName: "Sciensa",
     images: [{ url: "/logos/Sciensa logo.png", width: 1200, height: 630, alt: "Sciensa — AI Driven Solutions" }],
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Sciensa | AI Driven Solutions",
     description:
-      "Engenharia de tecnologia mission-critical para banking, payments, saúde, energia e varejo. 500+ engenheiros, plataformas proprietárias de IA.",
+      "Engenharia de tecnologia mission-critical para banking, payments, saúde, energia e varejo. 200+ engenheiros, plataformas proprietárias de IA.",
     images: ["/logos/Sciensa logo.png"],
     creator: "@sciensa",
   },

@@ -8,7 +8,7 @@ const data: IndustryDetailData = {
   stats: [
     { value: "200+", label: "Financial services projects delivered" },
     { value: "40+", label: "Clients across banking, payments & insurance" },
-    { value: "99.99%", label: "System uptime for mission-critical platforms" },
+    { value: "99.9%", label: "System uptime for mission-critical platforms" },
     { value: "15+", label: "Years of sector expertise" },
   ],
   approach: {
@@ -47,7 +47,7 @@ const data: IndustryDetailData = {
     ],
   },
   caseStudies: [
-    { client: "Tier-1 Brazilian Bank", title: "Core Banking Decomposition", result: "70% reduction in deployment cycles while maintaining 99.99% uptime during migration of 12M+ accounts.", tags: ["Platform Engineering", "AI Engineering"] },
+    { client: "Tier-1 Brazilian Bank", title: "Core Banking Decomposition", result: "70% reduction in deployment cycles while maintaining 99.9% uptime during migration of 12M+ accounts.", tags: ["Platform Engineering", "AI Engineering"] },
     { client: "Digital Payments Provider", title: "PIX Infrastructure at Scale", result: "Processed 2.5M+ daily transactions with < 200ms p99 latency and real-time fraud scoring across all payment flows.", tags: ["Real-Time Systems", "Cloud & DevSecOps"] },
     { client: "Insurance Holding Group", title: "AI-Powered Claims Intelligence", result: "Reduced claims processing time by 65% and fraud-related losses by 40% through automated triage and anomaly detection.", tags: ["AI Engineering", "Data Intelligence"] },
   ],

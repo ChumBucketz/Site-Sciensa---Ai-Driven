@@ -22,7 +22,7 @@ const rigors = [
     stat: "15+",
     statLabel: "Years in financial services engineering",
     reverse: false,
-    items: ["Real-time processing at scale", "Regulatory compliance by design", "99.99% uptime standards", "Financial-grade security posture"],
+    items: ["Real-time processing at scale", "Regulatory compliance by design", "99.9% uptime standards", "Financial-grade security posture"],
   },
   {
     title: "Domain expertise that accelerates delivery",
@@ -52,7 +52,7 @@ export default function Industries() {
               { value: "6", label: "Industry verticals" },
               { value: "120+", label: "Enterprise clients" },
               { value: "15+", label: "Years of domain expertise" },
-              { value: "500+", label: "Engineers deployed" },
+              { value: "200+", label: "Engineers deployed" },
             ]} />
           </div>
         </FadeIn>

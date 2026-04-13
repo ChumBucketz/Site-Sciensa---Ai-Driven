@@ -6,7 +6,7 @@ const data: CapabilityDetailData = {
   subheadline: "We design, build, and operationalize AI systems that create measurable business value — from computer vision to generative AI agents.",
   video: "https://res.cloudinary.com/dshrkq1up/video/upload/q_auto/f_auto/v1775486835/0_Technology_Futuristic_3840x2160_1_fydegq.mp4",
   stats: [
-    { value: "150+", label: "AI models in production" },
+    { value: "200+", label: "AI models in production" },
     { value: "85%", label: "Avg. accuracy improvement" },
     { value: "40+", label: "Enterprise AI deployments" },
     { value: "10×", label: "Faster model iteration" },

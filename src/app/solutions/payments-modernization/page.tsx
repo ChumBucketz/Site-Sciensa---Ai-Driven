@@ -8,7 +8,7 @@ const data: SolutionDetailData = {
   stats: [
     { value: "15K", label: "TPS processed" },
     { value: "<200ms", label: "P99 latency" },
-    { value: "99.99%", label: "Platform availability" },
+    { value: "99.9%", label: "Platform availability" },
     { value: "80%", label: "Fewer operational incidents" },
   ],
   approach: {
@@ -26,7 +26,7 @@ const data: SolutionDetailData = {
       {
         title: "Multi-rail without the complexity",
         description: "PIX, TED, boleto, cards, Open Finance — each payment rail has its own compliance model, message format, and failure mode. We build unified orchestration layers that abstract this complexity.",
-        stat: "10+",
+        stat: "15+",
         statLabel: "Payment rails integrated in a single platform",
         reverse: true,
         items: ["PIX & TED processing", "Boleto & card schemes", "Open Finance initiation", "Cross-border routing"],

@@ -7,7 +7,7 @@ const data: CapabilityDetailData = {
   video: "https://res.cloudinary.com/dshrkq1up/video/upload/q_auto/f_auto/v1775486835/0_Technology_Futuristic_3840x2160_1_fydegq.mp4",
   stats: [
     { value: "80+", label: "Platforms modernized" },
-    { value: "99.99%", label: "Uptime delivered" },
+    { value: "99.9%", label: "Uptime delivered" },
     { value: "10×", label: "Deployment frequency increase" },
     { value: "60%", label: "Reduction in MTTR" },
   ],
@@ -55,7 +55,7 @@ const data: CapabilityDetailData = {
     ],
   },
   caseStudies: [
-    { client: "Tier-1 Brazilian Bank", title: "Core Platform Decomposition", result: "Decomposed 20-year monolith into 80+ microservices while maintaining 99.99% uptime across 12M active accounts.", tags: ["Microservices", "Modernization"] },
+    { client: "Tier-1 Brazilian Bank", title: "Core Platform Decomposition", result: "Decomposed 20-year monolith into 80+ microservices while maintaining 99.9% uptime across 12M active accounts.", tags: ["Microservices", "Modernization"] },
     { client: "Insurance Holding", title: "Internal Developer Platform", result: "Built IDP with golden paths for 400+ engineers, cutting new service onboarding from 2 weeks to 2 hours.", tags: ["IDP", "Developer Experience"] },
     { client: "Payments Fintech", title: "Event-Driven Payments Core", result: "Kafka-powered payments platform processing 2.5M daily transactions with < 50ms p99 latency.", tags: ["Event-Driven", "Real-time"] },
   ],

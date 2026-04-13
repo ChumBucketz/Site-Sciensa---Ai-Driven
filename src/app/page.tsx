@@ -80,7 +80,7 @@ export default function Home() {
             stats={[
               { value: "200+", label: "Engineers" },
               { value: "15+", label: "Years" },
-              { value: "5", label: "Verticals" },
+              { value: "6", label: "Industries" },
               { value: "99.9%", label: "Uptime" },
             ]}
           />

@@ -8,7 +8,7 @@ const data: SolutionDetailData = {
   stats: [
     { value: "12M+", label: "Users on platforms we built" },
     { value: "8 wks", label: "Fastest go-live with Amplify" },
-    { value: "99.99%", label: "Platform uptime" },
+    { value: "99.9%", label: "Platform uptime" },
     { value: "40×", label: "Deployment frequency" },
   ],
   approach: {
@@ -60,7 +60,7 @@ const data: SolutionDetailData = {
     },
   },
   caseStudies: [
-    { client: "Top-5 Brazilian Bank", title: "Next-gen Digital Banking Platform", result: "Built cloud-native digital banking platform for 12M+ users with 99.99% uptime and 40× weekly deployment frequency.", tags: ["Account Lifecycle", "Self-service"] },
+    { client: "Top-5 Brazilian Bank", title: "Next-gen Digital Banking Platform", result: "Built cloud-native digital banking platform for 12M+ users with 99.9% uptime and 40× weekly deployment frequency.", tags: ["Account Lifecycle", "Self-service"] },
     { client: "Digital Neobank", title: "Zero-to-Live in 8 Weeks", result: "Full digital banking stack — onboarding, accounts, PIX, and cards — live in 8 weeks via Amplify platform.", tags: ["Digital Onboarding", "Card Management"] },
     { client: "Regional Bank", title: "Mobile-first Transformation", result: "Redesigned mobile banking app achieving 4.8★ App Store rating and 60% increase in digital adoption within 6 months.", tags: ["Self-service", "Engagement"] },
   ],

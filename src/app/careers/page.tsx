@@ -14,7 +14,7 @@ const benefits = [
 
 const jobs = [
   { title: "Senior Backend Engineer", department: "Engineering", location: "São Paulo · Remote", type: "Full-time", description: "Design and build high-throughput distributed systems for financial services clients. Experience with event-driven architectures and Kotlin/Go preferred." },
-  { title: "Staff Platform Engineer", department: "Engineering", location: "São Paulo · Hybrid", type: "Full-time", description: "Lead the internal developer platform initiative — golden paths, service templates, and CI/CD automation for 500+ engineers." },
+  { title: "Staff Platform Engineer", department: "Engineering", location: "São Paulo · Hybrid", type: "Full-time", description: "Lead the internal developer platform initiative — golden paths, service templates, and CI/CD automation for 200+ engineers." },
   { title: "AI/ML Engineer", department: "AI & Data", location: "Remote", type: "Full-time", description: "Build and deploy production LLM pipelines, RAG systems, and agent frameworks for enterprise clients in banking and insurance." },
   { title: "Data Engineer", department: "AI & Data", location: "São Paulo · Remote", type: "Full-time", description: "Design real-time and batch data pipelines using Spark, Flink, and modern lakehouse architectures. Experience with financial data strongly preferred." },
   { title: "Senior Frontend Engineer", department: "Engineering", location: "Remote", type: "Full-time", description: "Build complex, performant UIs for digital banking and marketplace platforms. React, TypeScript, and a strong eye for UX." },
@@ -28,7 +28,7 @@ export default function Careers() {
       <HeroSimple
         eyebrow="Careers"
         headline="Build what actually runs"
-        subheadline="Join 500+ engineers building mission-critical platforms for financial services, healthcare, retail and more."        video="https://res.cloudinary.com/dshrkq1up/video/upload/q_auto/f_auto/v1775486834/0_Circuit_Board_Technology_3840x2160_rbiidg.mp4"
+        subheadline="Join 200+ engineers building mission-critical platforms for financial services, healthcare, retail and more."        video="https://res.cloudinary.com/dshrkq1up/video/upload/q_auto/f_auto/v1775486834/0_Circuit_Board_Technology_3840x2160_rbiidg.mp4"
       />
 
       <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3">

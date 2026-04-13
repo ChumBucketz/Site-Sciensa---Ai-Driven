@@ -9,7 +9,7 @@ import { FadeIn } from "@/components/ui/FadeIn";
 import { tagVariant } from "@/components/ui/tagColor";
 
 const caseStudies = [
-  { slug: "digital-banking-platform", title: "Building a next-gen digital banking platform for 12M+ users", client: "Top-5 Brazilian Bank", industry: "Financial Services", summary: "End-to-end redesign and modernization of a legacy core banking front-end into a cloud-native digital banking platform — serving 12 million active users with 99.99% uptime.", metrics: [{ label: "Active users", value: "12M+" }, { label: "Uptime", value: "99.99%" }, { label: "Deployment freq.", value: "40×/week" }] },
+  { slug: "digital-banking-platform", title: "Building a next-gen digital banking platform for 12M+ users", client: "Top-5 Brazilian Bank", industry: "Financial Services", summary: "End-to-end redesign and modernization of a legacy core banking front-end into a cloud-native digital banking platform — serving 12 million active users with 99.9% uptime.", metrics: [{ label: "Active users", value: "12M+" }, { label: "Uptime", value: "99.9%" }, { label: "Deployment freq.", value: "40×/week" }] },
   { slug: "payments-modernization", title: "Modernizing real-time payments infrastructure for Pix and Open Finance", client: "Leading Payments Institution", industry: "Financial Services", summary: "Designed and implemented a high-throughput payment processing architecture capable of handling 15,000 TPS with sub-200ms latency — fully integrated with Brazil's Pix ecosystem.", metrics: [{ label: "Throughput", value: "15K TPS" }, { label: "Latency P99", value: "<200ms" }, { label: "Time-to-market", value: "6 months" }] },
   { slug: "ai-contact-center", title: "AI-powered contact center reducing resolution time by 60%", client: "Major Insurance Company", industry: "Financial Services", summary: "Deployed an intelligent contact center solution using LLM-powered copilots, intent classification, and automated routing — cutting average resolution time from 12 to 4.8 minutes.", metrics: [{ label: "Resolution time", value: "−60%" }, { label: "CSAT", value: "+22pts" }, { label: "Containment", value: "72%" }] },
   { slug: "marketplace-orchestration", title: "Orchestration platform for a $2B retail marketplace", client: "Enterprise Retailer", industry: "Retail & E-Commerce", summary: "Built a seller orchestration platform managing catalog, pricing, fulfillment and settlement for 3,000+ sellers — enabling the retailer to scale to a full marketplace model.", metrics: [{ label: "GMV enabled", value: "$2B+" }, { label: "Sellers", value: "3,000+" }, { label: "API uptime", value: "99.97%" }] },
@@ -36,7 +36,7 @@ export default function CaseStudies() {
               { value: "120+", label: "Enterprise clients" },
               { value: "R$1.2B+", label: "Recovered annually" },
               { value: "200+", label: "Hospitals connected" },
-              { value: "99.99%", label: "Uptime delivered" },
+              { value: "99.9%", label: "Uptime delivered" },
             ]} />
           </div>
         </FadeIn>
@@ -54,7 +54,7 @@ export default function CaseStudies() {
                   Next-gen digital banking platform for 12M+ users
                 </h2>
                 <p className="text-[15px] text-white/60 leading-relaxed tracking-[0.01em]">
-                  End-to-end modernization of a legacy core banking front-end into a cloud-native digital banking platform — serving 12 million active users, deploying 40× per week, and maintaining 99.99% uptime.
+                  End-to-end modernization of a legacy core banking front-end into a cloud-native digital banking platform — serving 12 million active users, deploying 40× per week, and maintaining 99.9% uptime.
                 </p>
                 <div className="mt-8">
                   <Button variant="white-pill" href="/contact">
@@ -65,7 +65,7 @@ export default function CaseStudies() {
               <div className="grid grid-cols-3 gap-6 content-center">
                 {[
                   { value: "12M+", label: "Active users" },
-                  { value: "99.99%", label: "Uptime" },
+                  { value: "99.9%", label: "Uptime" },
                   { value: "40×", label: "Deployments/week" },
                   { value: "6 mo", label: "Time to production" },
                   { value: "3×", label: "Throughput improvement" },

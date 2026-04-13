@@ -7,7 +7,7 @@ const data: CapabilityDetailData = {
   video: "https://res.cloudinary.com/dshrkq1up/video/upload/q_auto/f_auto/v1775486835/0_Technology_Futuristic_3840x2160_1_fydegq.mp4",
   stats: [
     { value: "500M+", label: "API calls managed/month" },
-    { value: "99.99%", label: "Integration uptime" },
+    { value: "99.9%", label: "Integration uptime" },
     { value: "80+", label: "Systems integrated" },
     { value: "40%", label: "Faster integration delivery" },
   ],
