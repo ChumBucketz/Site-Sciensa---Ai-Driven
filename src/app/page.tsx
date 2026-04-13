@@ -12,6 +12,7 @@ import { MockDashboard } from "@/components/mocks/MockDashboard";
 import { MockSquad } from "@/components/mocks/MockSquad";
 import Image from "next/image";
 import Link from "next/link";
+import { InsightsSection } from "@/components/sections/InsightsSection";
 
 const logos = [
   { src: "/logos/image 10.png", alt: "Genial Investimentos" },
@@ -172,6 +173,9 @@ export default function Home() {
         </FadeIn>
       </section>
 
+
+      {/* Insights */}
+      <InsightsSection />
 
       {/* CTA */}
       <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3 pb-6">

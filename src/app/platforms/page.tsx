@@ -12,13 +12,12 @@ const platforms = [
   { slug: "amplify", label: "Amplify", type: "Platform / Accelerator", tagline: "Accelerator for digital finance", description: "A modular platform that accelerates digital banking and financial product launches — covering onboarding, wallet, payments, APIs, and composable financial journeys.", highlights: ["Digital onboarding & KYC", "Wallet & payments orchestration", "Open API architecture", "Composable financial modules", "Time-to-market acceleration"] },
   { slug: "lumia-ai", label: "Lumia AI", type: "AI Platform", tagline: "Intelligence layer for the enterprise", description: "An applied intelligence layer that powers copilots, internal assistants, contextual intelligence, workflow automation, and enterprise knowledge — embedded across journeys and operations.", highlights: ["Copilots & AI assistants", "Internal knowledge agents", "Contextual intelligence", "Workflow automation", "Enterprise knowledge platform"] },
   { slug: "codegenius", label: "CodeGenius", type: "Engineering Accelerator", tagline: "AI-accelerated engineering", description: "Accelerates software engineering with AI — boosting productivity, code quality, testing, refactoring, documentation, and assisted development across the engineering lifecycle.", highlights: ["Developer productivity", "Code quality & analysis", "Automated testing", "Intelligent refactoring", "Documentation generation"] },
-  { slug: "nextdue", label: "Nextdue", type: "AI Solution", tagline: "Intelligent collection & recovery", description: "Applied intelligence for collections, recovery, and operational efficiency — with automated prioritization, segmentation, experience optimization, and operational intelligence.", highlights: ["Automated prioritization", "Intelligent segmentation", "Customer experience optimization", "Recovery intelligence", "Operational efficiency"] },
 ];
 
 const differentiators = [
   {
     title: "Born from real enterprise deployments",
-    description: "Every platform originated from solving a real enterprise problem — not from a product hypothesis. Amplify was built for a tier-1 bank. Lumia AI for a large insurance operation. Nextdue for a financial conglomerate managing 8M+ accounts.",
+    description: "Every platform originated from solving a real enterprise problem — not from a product hypothesis. Amplify was built for a tier-1 bank. Lumia AI for a large insurance operation. CodeGenius for engineering teams scaling output without scaling headcount.",
     stat: "R$1.2B+",
     statLabel: "Annual value enabled by platform clients",
     reverse: false,
@@ -49,7 +48,7 @@ export default function Platforms() {
         <FadeIn>
           <div className="bg-white rounded-2xl px-5 md:px-10 py-12">
             <StatGrid stats={[
-              { value: "4", label: "Proprietary platforms" },
+              { value: "3", label: "Proprietary platforms" },
               { value: "20+", label: "Enterprise deployments" },
               { value: "4", label: "Weeks to first module" },
               { value: "3×", label: "Faster time-to-market" },
@@ -112,7 +111,7 @@ export default function Platforms() {
       <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3">
         <FadeIn>
           <div className="bg-white rounded-2xl px-5 md:px-10 py-16">
-            <SectionHeader eyebrow="// ALL PLATFORMS" headline="Four platforms. One ecosystem." />
+            <SectionHeader eyebrow="// ALL PLATFORMS" headline="Three platforms. One ecosystem." />
             <div className="mt-10 flex flex-col gap-4">
               {platforms.map((platform, pi) => (
                 <div key={platform.slug} className="el-card-lg grid grid-cols-1 lg:grid-cols-2 overflow-hidden">

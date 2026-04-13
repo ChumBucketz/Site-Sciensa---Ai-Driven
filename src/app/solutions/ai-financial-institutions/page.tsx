@@ -54,7 +54,6 @@ const data: SolutionDetailData = {
     ],
   },
   caseStudies: [
-    { client: "Financial Conglomerate", title: "Nextdue AI Collections", result: "AI-driven collections platform recovering R$1.2B/year across 8M+ accounts with 45% efficiency improvement.", tags: ["AI Collections", "Predictive Analytics"] },
     { client: "Digital Payments Provider", title: "Real-time Fraud Platform", result: "Graph-based fraud detection reducing fraud losses by 60% while maintaining < 0.1% false positive rate on 2.5M daily transactions.", tags: ["Fraud Detection", "Risk Intelligence"] },
     { client: "Insurance Leader", title: "Claims Risk Intelligence", result: "ML-powered claims triage reduced fraudulent claims by 40% and cut processing time by 65% for legitimate claims.", tags: ["Risk Intelligence", "AML & Compliance"] },
   ],
@@ -62,7 +61,6 @@ const data: SolutionDetailData = {
     headline: "Ready to deploy AI in your financial institution?",
     subheadline: "Talk to our financial AI team about your risk, fraud, and compliance challenges.",
     primary: { label: "Start a conversation", href: "/contact" },
-    secondary: { label: "Explore Nextdue →", href: "/platforms/nextdue" },
   },
 };
 

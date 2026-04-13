@@ -8,8 +8,6 @@ import { tagVariant } from "@/components/ui/tagColor";
 import { MockLumiaChat } from "@/components/mocks/MockLumiaChat";
 import { MockAmplify } from "@/components/mocks/MockAmplify";
 // import { MockCodeGenius } from "@/components/mocks/MockCodeGenius";
-import { MockNextdue } from "@/components/mocks/MockSmartCollect";
-
 const platforms = [
   {
     name: "Lumia AI",
@@ -41,16 +39,6 @@ const platforms = [
   //   dots: "rgba(99,102,241,0.18)",
   //   href: "/platforms/codegenius",
   // },
-  {
-    name: "Nextdue",
-    tag: "AI SOLUTION",
-    description: "Applied intelligence for collections, recovery, and operational efficiency at scale.",
-    features: ["Automated Prioritization", "Recovery Intelligence", "BACEN Compliance"],
-    logo: "/logos/nextdue logo.png",
-    bg: "#fef1f7",
-    dots: "rgba(236,72,153,0.18)",
-    href: "/platforms/nextdue",
-  },
 ];
 
 export function PlatformCarousel() {
@@ -103,14 +91,6 @@ export function PlatformCarousel() {
                     <div className="relative hidden md:block w-[700px] h-[460px] rounded-[24px] overflow-hidden"
                       style={{ boxShadow: "0 0 0 1px rgba(0,0,0,0.08), 0 32px 64px rgba(0,0,0,0.12)" }}>
                       <MockLumiaChat />
-                    </div>
-                  </div>
-                )}
-                {platform.name === "Nextdue" && (
-                  <div className="absolute inset-0 flex items-center justify-start pl-10">
-                    <div className="relative hidden md:block w-[700px] h-[420px] rounded-[24px] overflow-hidden"
-                      style={{ boxShadow: "0 0 0 1px rgba(0,0,0,0.08), 0 32px 64px rgba(0,0,0,0.12)" }}>
-                      <MockNextdue />
                     </div>
                   </div>
                 )}

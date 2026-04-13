@@ -16,7 +16,6 @@ const platformItems = [
   { label: "Amplify", description: "AI-powered delivery acceleration.", href: "/platforms/amplify", gradient: "linear-gradient(135deg, #22AEA4 0%, #5EB359 100%)", symbol: "/logos/Amplify.png" },
   { label: "Lumia AI", description: "Enterprise LLM orchestration.", href: "/platforms/lumia-ai", gradient: "linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)", symbol: "/logos/Lumia.png" },
   // { label: "CodeGenius", description: "AI-native code generation at scale.", href: "/platforms/codegenius", gradient: "linear-gradient(135deg, #7c3aed 0%, #ec4899 100%)", symbol: "/logos/Code Genious.png" },
-  { label: "Nextdue", description: "Intelligent collections lifecycle.", href: "/platforms/nextdue", gradient: "linear-gradient(135deg, #ec4899 0%, #f97316 100%)", symbol: "/logos/nextdue symbol.png" },
 ];
 
 const megaMenus = [
