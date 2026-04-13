@@ -1,16 +1,17 @@
 import Link from "next/link";
-import { getHomeInsights, getCoverFromMarkdown, getReadingTime, type StrapiInsight } from "@/lib/strapi";
+import { getHomeInsights, getCoverUrl, getFirstTag, getReadingTime, type StrapiInsight } from "@/lib/strapi";
 import { SectionHeader } from "@/components/sections/SectionHeader";
 
 function InsightCard({ insight }: { insight: StrapiInsight }) {
-  const cover = getCoverFromMarkdown(insight.markdown);
+  const cover = getCoverUrl(insight);
   const readTime = getReadingTime(insight.markdown);
+  const tag = getFirstTag(insight);
   const date = new Date(insight.publishedAt).toLocaleDateString("en-US", {
     month: "short", year: "numeric",
   });
 
   return (
-    <Link href={`/insights/${insight.id}`} className="group el-card overflow-hidden flex flex-col">
+    <Link href={`/insights/${insight.documentId}`} className="group el-card overflow-hidden flex flex-col">
       <div className="w-full h-44 bg-[#f5f5f5] overflow-hidden shrink-0">
         {cover ? (
           <img src={cover} alt={insight.titulo_carrossel} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
@@ -20,9 +21,9 @@ function InsightCard({ insight }: { insight: StrapiInsight }) {
       </div>
       <div className="p-6 flex flex-col gap-2 flex-1">
         <div className="flex items-center gap-2">
-          {insight.tag && (
+          {tag && (
             <span className="text-[11px] font-medium uppercase tracking-[0.1em] text-[#22AEA4] bg-[#22AEA4]/10 px-2 py-0.5 rounded-full">
-              {insight.tag}
+              {tag}
             </span>
           )}
           <span className="text-[11px] text-[#717171]">{date} · {readTime}</span>
@@ -33,14 +34,14 @@ function InsightCard({ insight }: { insight: StrapiInsight }) {
         <p className="text-[13px] text-[#4e4e4e] leading-relaxed line-clamp-2 flex-1">
           {insight.descricao_carrossel}
         </p>
-        {insight.autor_nome && (
+        {insight.author?.nome && (
           <div className="pt-3 border-t border-[#f0f0f0] flex items-center gap-2 mt-auto">
-            {insight.autor_picture?.url ? (
-              <img src={insight.autor_picture.url} alt={insight.autor_nome} className="w-6 h-6 rounded-full object-cover grayscale" />
-            ) : (
-              <div className="w-6 h-6 rounded-full bg-[#e5e5e5]" />
-            )}
-            <p className="text-[12px] text-[#717171]">{insight.autor_nome}</p>
+            <div className="w-6 h-6 rounded-full bg-[#e5e5e5] flex items-center justify-center shrink-0">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#aaa" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+              </svg>
+            </div>
+            <p className="text-[12px] text-[#717171]">{insight.author.nome}</p>
           </div>
         )}
       </div>

@@ -5,7 +5,21 @@ const headers: HeadersInit = STRAPI_TOKEN
   ? { Authorization: `Bearer ${STRAPI_TOKEN}` }
   : {};
 
-export interface StrapiAuthorPicture {
+export interface StrapiTag {
+  id: number;
+  documentId: string;
+  tag: string;
+}
+
+export interface StrapiAuthor {
+  id: number;
+  documentId: string;
+  nome: string;
+  mini_bio: string | null;
+}
+
+export interface StrapiImage {
+  id: number;
   url: string;
   alternativeText: string | null;
 }
@@ -18,10 +32,9 @@ export interface StrapiInsight {
   markdown: string;
   publishedAt: string;
   home: boolean;
-  tag: string | null;
-  autor_nome: string | null;
-  autor_cargo: string | null;
-  autor_picture: StrapiAuthorPicture | null;
+  tags: StrapiTag[];
+  imagem: StrapiImage | null;
+  author: StrapiAuthor | null;
 }
 
 interface StrapiResponse<T> {
@@ -36,21 +49,15 @@ interface StrapiResponse<T> {
   };
 }
 
-function resolveUrl(path: string): string {
+export function resolveUrl(path: string): string {
   if (!path) return "";
   if (path.startsWith("http")) return path;
   return `${STRAPI_URL}${path}`;
 }
 
-export function getAuthorPictureUrl(insight: StrapiInsight): string | null {
-  if (!insight.autor_picture?.url) return null;
-  return resolveUrl(insight.autor_picture.url);
-}
-
-export function getCoverFromMarkdown(markdown: string): string | null {
-  const match = markdown.match(/!\[.*?\]\((.*?)\)/);
-  if (!match) return null;
-  return resolveUrl(match[1]);
+export function getCoverUrl(insight: StrapiInsight): string | null {
+  if (!insight.imagem?.url) return null;
+  return resolveUrl(insight.imagem.url);
 }
 
 export function getReadingTime(markdown: string): string {
@@ -59,10 +66,24 @@ export function getReadingTime(markdown: string): string {
   return `${minutes} min read`;
 }
 
+export function getFirstTag(insight: StrapiInsight): string | null {
+  return insight.tags?.[0]?.tag ?? null;
+}
+
+export function stripMarkdownHeader(markdown: string): string {
+  return markdown
+    .replace(/^!\[.*?\]\(.*?\)\s*/m, "")   // remove first image
+    .replace(/^#\s+.+\n?/m, "")             // remove first H1
+    .replace(/^\*[^*\n]+\*\s*/m, "")        // remove first *italic* paragraph
+    .replace(/^_[^_\n]+_\s*/m, "")          // remove first _italic_ paragraph
+    .replace(/^---\s*/m, "")                // remove first hr
+    .trimStart();
+}
+
 export async function getInsights(): Promise<StrapiInsight[]> {
   try {
     const res = await fetch(
-      `${STRAPI_URL}/api/posts?populate=autor_picture&sort=publishedAt:desc`,
+      `${STRAPI_URL}/api/posts?populate=*&sort=publishedAt:desc`,
       { headers, next: { revalidate: 3600 } }
     );
     if (!res.ok) return [];
@@ -76,7 +97,7 @@ export async function getInsights(): Promise<StrapiInsight[]> {
 export async function getHomeInsights(): Promise<StrapiInsight[]> {
   try {
     const res = await fetch(
-      `${STRAPI_URL}/api/posts?populate=autor_picture&filters[home][$eq]=true&sort=publishedAt:desc`,
+      `${STRAPI_URL}/api/posts?populate=*&filters[home][$eq]=true&sort=publishedAt:desc`,
       { headers, next: { revalidate: 3600 } }
     );
     if (!res.ok) return [];
@@ -87,10 +108,10 @@ export async function getHomeInsights(): Promise<StrapiInsight[]> {
   }
 }
 
-export async function getInsightById(id: string): Promise<StrapiInsight | null> {
+export async function getInsightById(documentId: string): Promise<StrapiInsight | null> {
   try {
     const res = await fetch(
-      `${STRAPI_URL}/api/posts/${id}?populate=autor_picture`,
+      `${STRAPI_URL}/api/posts/${documentId}?populate=*`,
       { headers, next: { revalidate: 3600 } }
     );
     if (!res.ok) return null;

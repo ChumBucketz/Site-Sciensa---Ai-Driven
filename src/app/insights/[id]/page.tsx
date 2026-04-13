@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
-import { getInsightById, getInsights, getCoverFromMarkdown, getReadingTime, getAuthorPictureUrl } from "@/lib/strapi";
+import { getInsightById, getInsights, getCoverUrl, getFirstTag, getReadingTime, stripMarkdownHeader } from "@/lib/strapi";
 import { InsightsSection } from "@/components/sections/InsightsSection";
 
 interface Props {
@@ -11,7 +11,7 @@ interface Props {
 
 export async function generateStaticParams() {
   const insights = await getInsights();
-  return insights.map((i) => ({ id: String(i.id) }));
+  return insights.map((i) => ({ id: i.documentId }));
 }
 
 export default async function InsightPage({ params }: Props) {
@@ -19,9 +19,9 @@ export default async function InsightPage({ params }: Props) {
   const insight = await getInsightById(id);
   if (!insight) notFound();
 
-  const cover = getCoverFromMarkdown(insight.markdown);
+  const cover = getCoverUrl(insight);
   const readTime = getReadingTime(insight.markdown);
-  const authorPicture = getAuthorPictureUrl(insight);
+  const tag = getFirstTag(insight);
   const date = new Date(insight.publishedAt).toLocaleDateString("en-US", {
     day: "numeric", month: "long", year: "numeric",
   });
@@ -39,9 +39,9 @@ export default async function InsightPage({ params }: Props) {
         <div className="px-5 md:px-16 lg:px-24 py-14 max-w-[860px] mx-auto">
           {/* Meta */}
           <div className="flex items-center gap-3 mb-6">
-            {insight.tag && (
+            {tag && (
               <span className="text-[11px] font-medium uppercase tracking-[0.1em] text-[#22AEA4] bg-[#22AEA4]/10 px-2.5 py-1 rounded-full">
-                {insight.tag}
+                {tag}
               </span>
             )}
             <span className="text-[13px] text-[#717171]">{date}</span>
@@ -60,16 +60,15 @@ export default async function InsightPage({ params }: Props) {
           </p>
 
           {/* Author */}
-          {insight.autor_nome && (
+          {insight.author?.nome && (
             <div className="flex items-center gap-3 pb-8 mb-8 border-b border-[#f0f0f0]">
-              {authorPicture ? (
-                <img src={authorPicture} alt={insight.autor_nome} className="w-10 h-10 rounded-full object-cover grayscale" />
-              ) : (
-                <div className="w-10 h-10 rounded-full bg-[#e5e5e5]" />
-              )}
+              <div className="w-10 h-10 rounded-full bg-[#e5e5e5] flex items-center justify-center shrink-0">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#aaa" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+                </svg>
+              </div>
               <div>
-                <p className="text-sm font-medium text-black">{insight.autor_nome}</p>
-                {insight.autor_cargo && <p className="text-xs text-[#717171]">{insight.autor_cargo}</p>}
+                <p className="text-sm font-medium text-black">{insight.author.nome}</p>
               </div>
             </div>
           )}
@@ -87,7 +86,7 @@ export default async function InsightPage({ params }: Props) {
             prose-img:rounded-xl prose-img:w-full
             prose-hr:border-[#f0f0f0]">
             <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
-              {insight.markdown}
+              {stripMarkdownHeader(insight.markdown)}
             </ReactMarkdown>
           </div>
         </div>

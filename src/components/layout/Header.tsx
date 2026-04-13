@@ -316,6 +316,10 @@ export function Header() {
                 <PlatformDropdown open={open} onClose={() => { close(); closeAll(); }} />
               )}
             </NavDropdown>
+
+            <Link href="/insights" className="px-3 py-2 text-[13px] font-medium text-[#4e4e4e] hover:text-black rounded-[4px] transition-colors tracking-[0.01em]">
+              Insights
+            </Link>
           </nav>
 
           {/* CTA */}
@@ -398,6 +402,8 @@ export function Header() {
                   ))}
                 </div>
               </MobileAccordion>
+
+              <Link href="/insights" onClick={closeAll} className="block px-3 py-3.5 text-[15px] font-medium text-[#4e4e4e] border-b border-[#f0f0f0]">Insights</Link>
 
               <div className="pt-3 pb-4">
                 <Link href="/contact" onClick={closeAll}
