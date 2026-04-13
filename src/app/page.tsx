@@ -20,6 +20,10 @@ const logos = [
   { src: "/logos/image 14.png", alt: "Santander" },
   { src: "/logos/image 23.png", alt: "Itaú" },
   { src: "/logos/image 24.png", alt: "PicPay" },
+  { src: "/logos/ifood.png", alt: "iFood" },
+  { src: "/logos/pluxee.png", alt: "Pluxee" },
+  { src: "/logos/Br Partners.png", alt: "BR Partners" },
+  { src: "/logos/Gerdau.png", alt: "Gerdau" },
 ];
 
 export default function Home() {
@@ -41,6 +45,7 @@ export default function Home() {
       {/* Logo ticker */}
       <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3">
         <FadeIn>
+        <div className="bg-white rounded-2xl px-5 py-8">
         <p className="text-label text-[#717171] text-center mb-6">Trusted by leaders in complex industries</p>
         <div className="overflow-hidden py-2" style={{ maskImage: "linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%)", WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%)" }}>
           <div className="flex w-max animate-marquee gap-4">
@@ -54,12 +59,13 @@ export default function Home() {
                     alt={logo.alt}
                     width={120}
                     height={40}
-                    className="object-contain max-h-9 w-auto"
+                    className="object-contain max-h-9 w-auto mix-blend-multiply"
                   />
                 </div>
               ))}
             </div>
           </div>
+        </div>
         </FadeIn>
       </section>
 

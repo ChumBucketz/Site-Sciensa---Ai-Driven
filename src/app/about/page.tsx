@@ -5,6 +5,15 @@ import { CTABanner } from "@/components/sections/CTABanner";
 
 const timeline = [
   {
+    year: "2010",
+    event: "Founded SOA Expert, a school for enterprise integration and service-oriented architecture — the foundation of what would become Sciensa.",
+    icon: (
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>
+      </svg>
+    ),
+  },
+  {
     year: "2014",
     event: "Founded in São Paulo as a boutique consultancy for financial services technology.",
     icon: (
@@ -52,7 +61,7 @@ const timeline = [
   },
   {
     year: "2024",
-    event: "500+ engineers; launched Lumia AI and CodeGenius platforms; expanded to 6 industries.",
+    event: "200+ engineers; launched Lumia AI and CodeGenius platforms; expanded to 6 industries.",
     icon: (
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
         <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>
@@ -69,8 +78,8 @@ const values = [
 ];
 
 const leadership = [
+  { name: "Felipe Scaphe",  role: "Founder & CVO", fullRole: "Founder & Chief Vision Officer", photo: "/avatar/felipe-scaphe.jfif"  },
   { name: "Bruno Mancini",  role: "CEO", fullRole: "Chief Executive Officer",  photo: "/avatar/bruno-mancini.jfif"  },
-  { name: "Felipe Scaphe",  role: "CVO", fullRole: "Chief Vision Officer",      photo: "/avatar/felipe-scaphe.jfif"  },
   { name: "Bruno Mizrahi",  role: "CPO", fullRole: "Chief Product Officer",     photo: "/avatar/bruno-mizrahi.jfif"  },
 ];
 
@@ -100,7 +109,8 @@ export default function About() {
         <div className="bg-white rounded-2xl px-5 md:px-10 py-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <div>
-              <h2 className="text-heading text-black mb-8">Our story</h2>
+              <h2 className="text-heading text-black mb-4">Our story</h2>
+              <img src="/logos/soa-expert.png" alt="SOA Expert" className="h-7 w-auto mb-6 grayscale opacity-50" />
               <div className="space-y-5 text-[15px] text-[#4e4e4e] leading-relaxed tracking-[0.01em]">
                 <p>
                   We started in 2014 with a simple thesis: the hardest technology problems in Latin
@@ -108,7 +118,7 @@ export default function About() {
                   offshore staffing.
                 </p>
                 <p>
-                  Today, over 500 engineers work across banking, payments, insurance, retail,
+                  Today, over 200 engineers work across banking, payments, insurance, retail,
                   healthcare and energy — building the platforms that run critical infrastructure for
                   millions of users. We invest in proprietary platforms, publish research, and share
                   what we learn with the community.
