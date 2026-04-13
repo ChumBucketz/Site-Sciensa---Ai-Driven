@@ -185,7 +185,7 @@ export default function Home() {
         >
           <blockquote className="border-l-2 border-white/20 pl-6 mt-2">
             <p className="text-white/60 text-[15px] leading-relaxed italic max-w-xl">
-              "Precisávamos de uma parceria assertiva para acelerar nosso banking e cumprir metas e prazos super rígidos. A Sciensa entrou como um parceiro que agilizou muito, com precisão, data e segurança o desenvolvimento da nossa solução."
+              "We needed an assertive partner to accelerate our banking product and meet extremely tight deadlines. Sciensa stepped in and dramatically sped up development — with precision, data discipline, and security at every step."
             </p>
             <cite className="block mt-3 text-xs text-white/30 tracking-wide not-italic">
               — Rodrigo Borcat, Head de Engenharia · iFood
