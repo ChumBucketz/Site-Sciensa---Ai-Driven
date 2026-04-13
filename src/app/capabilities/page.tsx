@@ -35,7 +35,7 @@ const pillars = [
   {
     title: "AI embedded at every layer",
     description: "Intelligence isn't a feature we bolt on — it's woven into every engagement. From LLM orchestration and RAG pipelines to intelligent workflows and ML-ops, we make AI production-ready from day one.",
-    stat: "200+",
+    stat: "25+",
     statLabel: "AI models deployed in production",
     reverse: true,
     pipeline: ["Ingestion", "Embedding", "Retrieval", "Reasoning", "Guardrails", "Output"],
@@ -67,7 +67,7 @@ export default function Capabilities() {
             <StatGrid stats={[
               { value: "6", label: "Core disciplines" },
               { value: "200+", label: "Engineers" },
-              { value: "200+", label: "AI models deployed" },
+              { value: "25+", label: "AI models deployed" },
               { value: "15+", label: "Years of delivery" },
             ]} />
           </div>

@@ -99,7 +99,7 @@ export default function Home() {
               {
                 title: "Intelligence Layer",
                 description: "Every solution ships with an embedded AI layer — from LLM orchestration to predictive pipelines — because intelligence shouldn't be an afterthought.",
-                stat: "200+",
+                stat: "25+",
                 statLabel: "AI models deployed",
                 reverse: false,
               },
