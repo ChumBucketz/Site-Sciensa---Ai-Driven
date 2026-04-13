@@ -185,10 +185,10 @@ export default function Home() {
         >
           <blockquote className="border-l-2 border-white/20 pl-6 mt-2">
             <p className="text-white/60 text-[15px] leading-relaxed italic max-w-xl">
-              "Sciensa delivered what our internal teams couldn't in 12 months — in under 90 days. Their AI-native approach changed how we think about engineering."
+              "Precisávamos de uma parceria assertiva para acelerar nosso banking e cumprir metas e prazos super rígidos. A Sciensa entrou como um parceiro que agilizou muito, com precisão, data e segurança o desenvolvimento da nossa solução."
             </p>
             <cite className="block mt-3 text-xs text-white/30 tracking-wide not-italic">
-              — CTO, Fortune 500 Financial Services
+              — Rodrigo Borcat, Head de Engenharia · iFood
             </cite>
           </blockquote>
         </CTABanner>
