@@ -89,7 +89,7 @@ export function PlatformDetailTemplate({ data }: { data: PlatformDetailData }) {
       />
 
       {/* Approach alternating rows */}
-      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3">
+      <section className="max-w-[1336px] mx-auto px-4 3xl:px-0 py-3">
         <FadeIn>
           <div className="bg-white rounded-2xl px-5 md:px-10 py-16">
             <SectionHeader eyebrow={data.approach.sectionLabel} headline={data.approach.sectionHeadline} />
@@ -118,7 +118,7 @@ export function PlatformDetailTemplate({ data }: { data: PlatformDetailData }) {
       </section>
 
       {/* Modules */}
-      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3">
+      <section className="max-w-[1336px] mx-auto px-4 3xl:px-0 py-3">
         <FadeIn>
           <div className="bg-white rounded-2xl px-5 md:px-10 py-16">
             <SectionHeader
@@ -144,7 +144,7 @@ export function PlatformDetailTemplate({ data }: { data: PlatformDetailData }) {
       </section>
 
       {/* CTA */}
-      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3 pb-6">
+      <section className="max-w-[1336px] mx-auto px-4 3xl:px-0 py-3 pb-6">
         <FadeIn>
           <CTABanner
             headline={data.cta.headline}

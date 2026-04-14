@@ -61,7 +61,7 @@ export default function Capabilities() {
       />
 
       {/* Stats */}
-      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3">
+      <section className="max-w-[1336px] mx-auto px-4 3xl:px-0 py-3">
         <FadeIn>
           <div className="bg-white rounded-2xl px-5 md:px-10 py-12">
             <StatGrid stats={[
@@ -75,7 +75,7 @@ export default function Capabilities() {
       </section>
 
       {/* Capability architecture diagram */}
-      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3">
+      <section className="max-w-[1336px] mx-auto px-4 3xl:px-0 py-3">
         <FadeIn>
           <div className="bg-white rounded-2xl px-5 md:px-10 py-16">
             <SectionHeader eyebrow="// ARCHITECTURE" headline="Six disciplines. One integrated platform." />
@@ -87,7 +87,7 @@ export default function Capabilities() {
       </section>
 
       {/* Approach pillars */}
-      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3">
+      <section className="max-w-[1336px] mx-auto px-4 3xl:px-0 py-3">
         <FadeIn>
           <div className="bg-white rounded-2xl px-5 md:px-10 py-16">
             <SectionHeader eyebrow="// OUR APPROACH" headline="What makes our engineering different." />
@@ -176,7 +176,7 @@ export default function Capabilities() {
       </section>
 
       {/* Capability cards */}
-      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3">
+      <section className="max-w-[1336px] mx-auto px-4 3xl:px-0 py-3">
         <FadeIn>
           <div className="bg-white rounded-2xl px-5 md:px-10 py-16">
             <SectionHeader eyebrow="// ALL CAPABILITIES" headline="Six disciplines. One team." />
@@ -203,7 +203,7 @@ export default function Capabilities() {
         </FadeIn>
       </section>
 
-      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3 pb-6">
+      <section className="max-w-[1336px] mx-auto px-4 3xl:px-0 py-3 pb-6">
         <FadeIn>
           <CTABanner
             headline="Need a specific capability?"

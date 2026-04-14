@@ -58,7 +58,7 @@ export default function Solutions() {
       />
 
       {/* Stats */}
-      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3">
+      <section className="max-w-[1336px] mx-auto px-4 3xl:px-0 py-3">
         <FadeIn>
           <div className="bg-white rounded-2xl px-5 md:px-10 py-12">
             <StatGrid stats={[
@@ -72,7 +72,7 @@ export default function Solutions() {
       </section>
 
       {/* Featured: Enterprise AI */}
-      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3">
+      <section className="max-w-[1336px] mx-auto px-4 3xl:px-0 py-3">
         <FadeIn>
           <div className="bg-black text-white rounded-2xl p-10 md:p-14">
             <MonoLabel className="text-white/40 block mb-6">Most requested</MonoLabel>
@@ -102,7 +102,7 @@ export default function Solutions() {
       </section>
 
       {/* How it works */}
-      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3">
+      <section className="max-w-[1336px] mx-auto px-4 3xl:px-0 py-3">
         <FadeIn>
           <div className="bg-white rounded-2xl px-5 md:px-10 py-16">
             <SectionHeader eyebrow="// HOW WE WORK" headline="From problem to production." />
@@ -152,7 +152,7 @@ export default function Solutions() {
       </section>
 
       {/* All solutions grid */}
-      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3">
+      <section className="max-w-[1336px] mx-auto px-4 3xl:px-0 py-3">
         <FadeIn>
           <div className="bg-white rounded-2xl px-5 md:px-10 py-16">
             <SectionHeader eyebrow="// ALL SOLUTIONS" headline="Six areas. Measurable outcomes." />
@@ -187,7 +187,7 @@ export default function Solutions() {
         </FadeIn>
       </section>
 
-      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3 pb-6">
+      <section className="max-w-[1336px] mx-auto px-4 3xl:px-0 py-3 pb-6">
         <FadeIn>
           <CTABanner
             headline="Build what complexity demands"

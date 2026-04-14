@@ -27,7 +27,7 @@ export default function CaseStudies() {
       />
 
       {/* Aggregate impact stats */}
-      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3">
+      <section className="max-w-[1336px] mx-auto px-4 3xl:px-0 py-3">
         <FadeIn>
           <div className="bg-white rounded-2xl px-5 md:px-10 py-12">
             <p className="text-label text-[#717171] mb-10">Aggregate impact across engagements</p>
@@ -42,7 +42,7 @@ export default function CaseStudies() {
       </section>
 
       {/* Featured case study */}
-      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3">
+      <section className="max-w-[1336px] mx-auto px-4 3xl:px-0 py-3">
         <FadeIn>
           <div className="bg-black text-white rounded-2xl p-10 md:p-14">
             <MonoLabel className="text-white/40 block mb-6">Featured engagement</MonoLabel>
@@ -82,7 +82,7 @@ export default function CaseStudies() {
       </section>
 
       {/* Case study grid */}
-      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3">
+      <section className="max-w-[1336px] mx-auto px-4 3xl:px-0 py-3">
         <FadeIn>
           <div className="bg-white rounded-2xl px-5 md:px-10 py-16">
             <SectionHeader eyebrow="// ALL ENGAGEMENTS" headline="Outcomes that speak for themselves." />
@@ -110,7 +110,7 @@ export default function CaseStudies() {
         </FadeIn>
       </section>
 
-      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3 pb-6">
+      <section className="max-w-[1336px] mx-auto px-4 3xl:px-0 py-3 pb-6">
         <FadeIn>
           <CTABanner
             headline="Ready to build your next case study?"

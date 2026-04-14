@@ -44,7 +44,7 @@ export default function Home() {
       />
 
       {/* Logo ticker */}
-      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3">
+      <section className="max-w-[1336px] mx-auto px-4 3xl:px-0 py-3">
         <FadeIn>
         <div className="bg-white rounded-2xl px-5 py-8">
         <p className="text-label text-[#717171] text-center mb-6">Trusted by leaders in complex industries</p>
@@ -71,7 +71,7 @@ export default function Home() {
       </section>
 
       {/* Stats */}
-      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3">
+      <section className="max-w-[1336px] mx-auto px-4 3xl:px-0 py-3">
         <FadeIn>
         <div className="bg-white rounded-2xl px-5 md:px-10 py-12">
           <p className="text-label text-[#717171] mb-10">
@@ -90,7 +90,7 @@ export default function Home() {
       </section>
 
       {/* Why Sciensa */}
-      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3">
+      <section className="max-w-[1336px] mx-auto px-4 3xl:px-0 py-3">
         <FadeIn>
         <div className="bg-white rounded-2xl px-5 md:px-10 py-16">
           <SectionHeader eyebrow="// WHY SCIENSA" headline="Forget technology services as you know them." />
@@ -145,21 +145,21 @@ export default function Home() {
       </section>
 
       {/* Industry Studios */}
-      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3">
+      <section className="max-w-[1336px] mx-auto px-4 3xl:px-0 py-3">
         <div className="bg-white rounded-2xl px-5 md:px-10 py-16">
           <IndustriesGrid />
         </div>
       </section>
 
       {/* Core Capabilities */}
-      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3">
+      <section className="max-w-[1336px] mx-auto px-4 3xl:px-0 py-3">
         <div className="bg-white rounded-2xl px-5 md:px-10 py-16">
           <CapabilitiesGrid />
         </div>
       </section>
 
       {/* Platform Spotlight */}
-      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3">
+      <section className="max-w-[1336px] mx-auto px-4 3xl:px-0 py-3">
         <FadeIn>
         <div className="bg-white rounded-2xl px-5 md:px-10 py-16">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
@@ -178,7 +178,7 @@ export default function Home() {
       <InsightsSection />
 
       {/* CTA */}
-      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3 pb-6">
+      <section className="max-w-[1336px] mx-auto px-4 3xl:px-0 py-3 pb-6">
         <FadeIn>
         <CTABanner
           eyebrow="// LET'S BUILD"

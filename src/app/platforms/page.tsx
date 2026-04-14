@@ -44,7 +44,7 @@ export default function Platforms() {
       />
 
       {/* Stats */}
-      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3">
+      <section className="max-w-[1336px] mx-auto px-4 3xl:px-0 py-3">
         <FadeIn>
           <div className="bg-white rounded-2xl px-5 md:px-10 py-12">
             <StatGrid stats={[
@@ -58,7 +58,7 @@ export default function Platforms() {
       </section>
 
       {/* Why platforms alternating rows */}
-      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3">
+      <section className="max-w-[1336px] mx-auto px-4 3xl:px-0 py-3">
         <FadeIn>
           <div className="bg-white rounded-2xl px-5 md:px-10 py-16">
             <SectionHeader eyebrow="// WHY PROPRIETARY" headline="Built from the inside out." />
@@ -108,7 +108,7 @@ export default function Platforms() {
       </section>
 
       {/* Platform cards */}
-      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3">
+      <section className="max-w-[1336px] mx-auto px-4 3xl:px-0 py-3">
         <FadeIn>
           <div className="bg-white rounded-2xl px-5 md:px-10 py-16">
             <SectionHeader eyebrow="// ALL PLATFORMS" headline="Three platforms. One ecosystem." />
@@ -142,7 +142,7 @@ export default function Platforms() {
       </section>
 
       {/* Why platforms 3-col */}
-      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3">
+      <section className="max-w-[1336px] mx-auto px-4 3xl:px-0 py-3">
         <FadeIn>
           <div className="bg-white rounded-2xl px-5 md:px-10 py-16">
             <SectionHeader eyebrow="// THE PLATFORM ADVANTAGE" headline="Why our clients choose platforms over custom-only builds." />
@@ -162,7 +162,7 @@ export default function Platforms() {
         </FadeIn>
       </section>
 
-      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3 pb-6">
+      <section className="max-w-[1336px] mx-auto px-4 3xl:px-0 py-3 pb-6">
         <FadeIn>
           <CTABanner
             headline="Accelerate with our platforms"

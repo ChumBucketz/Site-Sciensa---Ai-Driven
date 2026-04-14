@@ -27,7 +27,7 @@ export default async function InsightPage({ params }: Props) {
   });
 
   return (
-    <main className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3 pb-6">
+    <main className="max-w-[1336px] mx-auto px-4 3xl:px-0 py-3 pb-6">
       <article className="bg-white rounded-2xl overflow-hidden">
         {/* Cover image */}
         {cover && (

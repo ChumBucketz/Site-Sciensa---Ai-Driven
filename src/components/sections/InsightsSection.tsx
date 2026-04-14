@@ -54,7 +54,7 @@ export async function InsightsSection() {
   if (insights.length === 0) return null;
 
   return (
-    <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3">
+    <section className="max-w-[1336px] mx-auto px-4 3xl:px-0 py-3">
       <div className="bg-white rounded-2xl px-5 md:px-10 py-16">
         <div className="flex items-end justify-between gap-6 mb-10">
           <SectionHeader eyebrow="// INSIGHTS" headline="Thinking from the engineering floor." />

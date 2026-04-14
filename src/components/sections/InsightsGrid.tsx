@@ -70,7 +70,7 @@ export function InsightsGrid({ insights, tags }: InsightsGridProps) {
   });
 
   return (
-    <section className="max-w-[1336px] mx-auto px-4 lg:px-0 pt-20 pb-3">
+    <section className="max-w-[1336px] mx-auto px-4 3xl:px-0 pt-20 pb-3">
       <div className="bg-white rounded-2xl px-5 md:px-10 py-12">
 
         {/* Header + search */}

@@ -11,7 +11,7 @@ export default function Contact() {
         subheadline="Whether you're planning a new platform, exploring AI, or just want to talk engineering — we'd love to hear from you."        video="https://res.cloudinary.com/dshrkq1up/video/upload/q_auto/f_auto/v1775486156/0_Abstract_Background_3840x2160_eu366r.mp4"
       />
 
-      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3 pb-6">
+      <section className="max-w-[1336px] mx-auto px-4 3xl:px-0 py-3 pb-6">
         <div className="bg-white rounded-2xl px-5 md:px-10 py-16">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-16">
             {/* Form */}

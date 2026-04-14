@@ -93,7 +93,7 @@ export default function About() {
       />
 
       {/* Stats */}
-      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3">
+      <section className="max-w-[1336px] mx-auto px-4 3xl:px-0 py-3">
         <div className="bg-white rounded-2xl px-5 md:px-10 py-12">
           <StatGrid stats={[
             { value: "200+", label: "Engineers" },
@@ -105,7 +105,7 @@ export default function About() {
       </section>
 
       {/* Story */}
-      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3">
+      <section className="max-w-[1336px] mx-auto px-4 3xl:px-0 py-3">
         <div className="bg-white rounded-2xl px-5 md:px-10 py-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <div>
@@ -159,7 +159,7 @@ export default function About() {
       </section>
 
       {/* Values */}
-      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3">
+      <section className="max-w-[1336px] mx-auto px-4 3xl:px-0 py-3">
         <div className="bg-white rounded-2xl px-5 md:px-10 py-16">
           <SectionHeader eyebrow="// VALUES" headline="What drives us" subheadline="Four principles that shape how we build, hire, and operate." />
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -174,7 +174,7 @@ export default function About() {
       </section>
 
       {/* Leadership */}
-      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3">
+      <section className="max-w-[1336px] mx-auto px-4 3xl:px-0 py-3">
         <div className="bg-white rounded-2xl px-5 md:px-10 py-16">
           <SectionHeader eyebrow="// TEAM" headline="Leadership" subheadline="Founders, builders and visionaries who shape what Sciensa is — and what it becomes." />
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -195,7 +195,7 @@ export default function About() {
         </div>
       </section>
 
-      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3 pb-6">
+      <section className="max-w-[1336px] mx-auto px-4 3xl:px-0 py-3 pb-6">
         <CTABanner
           headline="Want to be part of the team?"
           subheadline="We're always looking for engineers who care about craft. See open positions or send us a note."

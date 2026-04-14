@@ -39,7 +39,7 @@ export function Hero({ eyebrow, headlines, subheadline, primary, secondary }: He
   }, [headlines.length]);
 
   return (
-    <section className="max-w-[1336px] mx-auto px-4 lg:px-0 pt-20 pb-3">
+    <section className="max-w-[1336px] mx-auto px-4 3xl:px-0 pt-20 pb-3">
       <div
         ref={heroRef}
         onMouseMove={handleMouseMove}

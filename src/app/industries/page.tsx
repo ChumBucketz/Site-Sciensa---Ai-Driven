@@ -45,7 +45,7 @@ export default function Industries() {
       />
 
       {/* Stats */}
-      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3">
+      <section className="max-w-[1336px] mx-auto px-4 3xl:px-0 py-3">
         <FadeIn>
           <div className="bg-white rounded-2xl px-5 md:px-10 py-12">
             <StatGrid stats={[
@@ -59,7 +59,7 @@ export default function Industries() {
       </section>
 
       {/* What makes our approach different */}
-      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3">
+      <section className="max-w-[1336px] mx-auto px-4 3xl:px-0 py-3">
         <FadeIn>
           <div className="bg-white rounded-2xl px-5 md:px-10 py-16">
             <SectionHeader eyebrow="// OUR EDGE" headline="Engineering rigor meets domain depth." />
@@ -109,7 +109,7 @@ export default function Industries() {
       </section>
 
       {/* Featured: Financial Services */}
-      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3">
+      <section className="max-w-[1336px] mx-auto px-4 3xl:px-0 py-3">
         <FadeIn>
           <div className="bg-black text-white rounded-2xl p-10 md:p-14">
             <MonoLabel className="text-white/40 block mb-6">Primary vertical</MonoLabel>
@@ -139,7 +139,7 @@ export default function Industries() {
       </section>
 
       {/* Cross-market */}
-      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3">
+      <section className="max-w-[1336px] mx-auto px-4 3xl:px-0 py-3">
         <FadeIn>
           <div className="bg-white rounded-2xl px-5 md:px-10 py-16">
             <SectionHeader eyebrow="// CROSS-MARKET" headline="Cross-market expertise" subheadline="The same engineering rigor born in financial services, applied to every complex industry we serve." />
@@ -166,7 +166,7 @@ export default function Industries() {
         </FadeIn>
       </section>
 
-      <section className="max-w-[1336px] mx-auto px-4 lg:px-0 py-3 pb-6">
+      <section className="max-w-[1336px] mx-auto px-4 3xl:px-0 py-3 pb-6">
         <FadeIn>
           <CTABanner
             headline="Operating in a complex market?"
