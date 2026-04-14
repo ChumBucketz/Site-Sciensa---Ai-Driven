@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Careers at Sciensa | Join Our Engineering Team",
-  description: "Trabalhe na Sciensa — empresa de engenharia de tecnologia com 200+ engenheiros. Vagas em AI Engineering, Platform Engineering, Cloud DevSecOps e mais. São Paulo e remoto.",
+  description: "Work at Sciensa — a technology engineering firm with 200+ engineers. Open roles in AI Engineering, Platform Engineering, Cloud DevSecOps and more. São Paulo and remote.",
   alternates: { canonical: "/careers" },
-  openGraph: { title: "Careers at Sciensa", description: "Junte-se a 200+ engenheiros construindo plataformas mission-critical para os setores mais exigentes.", url: "https://sciensa.com/careers" },
+  openGraph: { title: "Careers at Sciensa", description: "Join 200+ engineers building mission-critical platforms for the most demanding industries.", url: "https://sciensa.com/careers", images: [{ url: "/image/og.png", width: 1200, height: 630 }] },
 };
 
 import { HeroSimple } from "@/components/sections/HeroSimple";

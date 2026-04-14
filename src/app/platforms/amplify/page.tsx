@@ -3,9 +3,9 @@ import { PlatformDetailTemplate, type PlatformDetailData } from "@/components/te
 
 export const metadata: Metadata = {
   title: "Amplify | Digital Banking Acceleration Platform — Sciensa",
-  description: "Amplify é a plataforma da Sciensa que acelera lançamentos de produtos financeiros digitais — cobrindo onboarding, wallet, pagamentos, APIs e jornadas financeiras composáveis.",
+  description: "Amplify is Sciensa's platform for accelerating digital financial product launches — covering onboarding, wallet, payments, APIs and composable financial journeys.",
   alternates: { canonical: "/platforms/amplify" },
-  openGraph: { title: "Amplify by Sciensa — Digital Banking Accelerator", description: "Plataforma modular para acelerar digital banking e lançamentos de produtos financeiros.", url: "https://sciensa.com/platforms/amplify" },
+  openGraph: { title: "Amplify by Sciensa — Digital Banking Accelerator", description: "Modular platform to accelerate digital banking and financial product launches.", url: "https://sciensa.com/platforms/amplify", images: [{ url: "/image/og.png", width: 1200, height: 630 }] },
 };
 
 const data: PlatformDetailData = {

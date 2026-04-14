@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Capabilities | AI, Platform & Cloud Engineering — Sciensa",
-  description: "Seis disciplinas de engenharia: AI Engineering, Platform Engineering, API & Integration, Cloud & DevSecOps, Data & AI, Product & Experience. Entrega enterprise com 200+ engenheiros.",
+  description: "Six engineering disciplines: AI Engineering, Platform Engineering, API & Integration, Cloud & DevSecOps, Data & AI, Product & Experience. Enterprise delivery with 200+ engineers.",
   alternates: { canonical: "/capabilities" },
-  openGraph: { title: "Engineering Capabilities — Sciensa", description: "AI Engineering, Platform Engineering, Cloud DevSecOps e mais. 200+ engenheiros especializados.", url: "https://sciensa.com/capabilities" },
+  openGraph: { title: "Engineering Capabilities — Sciensa", description: "AI Engineering, Platform Engineering, Cloud DevSecOps and more. 200+ specialized engineers.", url: "https://sciensa.com/capabilities", images: [{ url: "/image/og.png", width: 1200, height: 630 }] },
 };
 
 import { CountUp } from "@/components/ui/CountUp";

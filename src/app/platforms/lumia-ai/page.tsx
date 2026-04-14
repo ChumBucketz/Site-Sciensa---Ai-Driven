@@ -3,9 +3,9 @@ import { PlatformDetailTemplate, type PlatformDetailData } from "@/components/te
 
 export const metadata: Metadata = {
   title: "Lumia AI | Enterprise Intelligence Platform — Sciensa",
-  description: "Lumia AI é a camada de inteligência da Sciensa — copilots, assistentes internos, automação de workflows e plataforma de conhecimento enterprise com LLMs e RAG pipelines.",
+  description: "Lumia AI is Sciensa's intelligence layer — copilots, internal assistants, workflow automation and enterprise knowledge platform powered by LLMs and RAG pipelines.",
   alternates: { canonical: "/platforms/lumia-ai" },
-  openGraph: { title: "Lumia AI by Sciensa — Enterprise LLM Platform", description: "Inteligência aplicada em copilots, agentes de conhecimento e automação de workflows para enterprise.", url: "https://sciensa.com/platforms/lumia-ai" },
+  openGraph: { title: "Lumia AI by Sciensa — Enterprise LLM Platform", description: "Applied intelligence in copilots, knowledge agents and workflow automation for enterprise.", url: "https://sciensa.com/platforms/lumia-ai", images: [{ url: "/image/og.png", width: 1200, height: 630 }] },
 };
 
 const data: PlatformDetailData = {

@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Contact Sciensa | Start a Conversation",
-  description: "Entre em contato com a Sciensa para discutir seu próximo projeto de engenharia. Squads dedicados, plataformas proprietárias e 15+ anos de entrega em alta complexidade.",
+  description: "Get in touch with Sciensa to discuss your next engineering project. Dedicated squads, proprietary platforms and 15+ years of complex delivery.",
   alternates: { canonical: "/contact" },
-  openGraph: { title: "Contact Sciensa", description: "Fale com a equipe da Sciensa sobre seu próximo desafio de tecnologia.", url: "https://sciensa.com/contact" },
+  openGraph: { title: "Contact Sciensa", description: "Talk to the Sciensa team about your next technology challenge.", url: "https://sciensa.com/contact", images: [{ url: "/image/og.png", width: 1200, height: 630 }] },
 };
 
 import { HeroSimple } from "@/components/sections/HeroSimple";

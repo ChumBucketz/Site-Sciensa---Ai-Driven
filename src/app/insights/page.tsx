@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Insights | Engineering Thinking from Sciensa",
-  description: "Artigos, análises e perspectivas da equipe de engenharia da Sciensa sobre AI, platform engineering, payments, cloud e transformação digital em setores regulados.",
+  description: "Articles, analyses and perspectives from Sciensa's engineering team on AI, platform engineering, payments, cloud and digital transformation in regulated industries.",
   alternates: { canonical: "/insights" },
-  openGraph: { title: "Sciensa Insights — Engineering Thinking", description: "Perspectivas da equipe de engenharia da Sciensa sobre AI, payments e plataformas enterprise.", url: "https://sciensa.com/insights" },
+  openGraph: { title: "Sciensa Insights — Engineering Thinking", description: "Perspectives from Sciensa's engineering team on AI, payments and enterprise platforms.", url: "https://sciensa.com/insights", images: [{ url: "/image/og.png", width: 1200, height: 630 }] },
 };
 
 import { getInsights, resolveUrl } from "@/lib/strapi";
