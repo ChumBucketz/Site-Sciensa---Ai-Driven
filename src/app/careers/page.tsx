@@ -1,3 +1,12 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Careers at Sciensa | Join Our Engineering Team",
+  description: "Trabalhe na Sciensa — empresa de engenharia de tecnologia com 200+ engenheiros. Vagas em AI Engineering, Platform Engineering, Cloud DevSecOps e mais. São Paulo e remoto.",
+  alternates: { canonical: "/careers" },
+  openGraph: { title: "Careers at Sciensa", description: "Junte-se a 200+ engenheiros construindo plataformas mission-critical para os setores mais exigentes.", url: "https://sciensa.com/careers" },
+};
+
 import { HeroSimple } from "@/components/sections/HeroSimple";
 import { SectionHeader } from "@/components/sections/SectionHeader";
 import { CTABanner } from "@/components/sections/CTABanner";

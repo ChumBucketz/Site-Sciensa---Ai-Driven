@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -7,6 +8,37 @@ import { InsightsSection } from "@/components/sections/InsightsSection";
 
 interface Props {
   params: Promise<{ id: string }>;
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { id } = await params;
+  const insight = await getInsightById(id);
+  if (!insight) return {};
+
+  const cover = getCoverUrl(insight);
+  const tag = getFirstTag(insight);
+
+  return {
+    title: `${insight.titulo_carrossel} | Sciensa Insights`,
+    description: insight.descricao_carrossel,
+    alternates: { canonical: `/insights/${id}` },
+    openGraph: {
+      title: insight.titulo_carrossel,
+      description: insight.descricao_carrossel,
+      url: `https://sciensa.com/insights/${id}`,
+      type: "article",
+      publishedTime: insight.publishedAt,
+      authors: insight.author?.nome ? [insight.author.nome] : undefined,
+      tags: tag ? [tag] : undefined,
+      images: cover ? [{ url: cover, width: 1200, height: 630, alt: insight.titulo_carrossel }] : undefined,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: insight.titulo_carrossel,
+      description: insight.descricao_carrossel,
+      images: cover ? [cover] : undefined,
+    },
+  };
 }
 
 export async function generateStaticParams() {

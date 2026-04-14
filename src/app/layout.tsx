@@ -37,9 +37,6 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Sciensa", url: "https://sciensa.com" }],
   metadataBase: new URL("https://sciensa.com"),
-  alternates: {
-    canonical: "/",
-  },
   robots: {
     index: true,
     follow: true,
@@ -81,7 +78,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${spaceGrotesk.variable} h-full antialiased`}>
+    <html lang="pt-BR" className={`${spaceGrotesk.variable} h-full antialiased`}>
       <head>
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-F5MXK7WD1K" strategy="afterInteractive" />
         <Script id="gtag-init" strategy="afterInteractive">{`

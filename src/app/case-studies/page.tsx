@@ -1,3 +1,12 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Case Studies | Real Results from Complex Builds — Sciensa",
+  description: "Como a Sciensa ajuda líderes em financial services, retail, healthcare e outros setores regulados a projetar, construir e escalar plataformas mission-critical. 120+ clientes enterprise.",
+  alternates: { canonical: "/case-studies" },
+  openGraph: { title: "Sciensa Case Studies — Enterprise Results", description: "Resultados reais: 12M+ usuários em digital banking, R$1.2B recuperados, 200+ hospitais conectados.", url: "https://sciensa.com/case-studies" },
+};
+
 import { HeroSimple } from "@/components/sections/HeroSimple";
 import { SectionHeader } from "@/components/sections/SectionHeader";
 import { StatGrid } from "@/components/sections/StatGrid";

@@ -1,3 +1,12 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Industries | Financial Services, Healthcare, Retail & More — Sciensa",
+  description: "Sciensa atua em 6 indústrias: Financial Services, Retail & E-Commerce, Healthcare, Energy & Utilities, Telecommunications e Mobility & Logistics. Soluções de tecnologia para setores regulados.",
+  alternates: { canonical: "/industries" },
+  openGraph: { title: "Sciensa Industries — 6 Sectors, Mission-Critical Tech", description: "Tecnologia enterprise para os setores mais exigentes: banking, saúde, energia, varejo e telecomunicações.", url: "https://sciensa.com/industries" },
+};
+
 import { CountUp } from "@/components/ui/CountUp";
 import { HeroSimple } from "@/components/sections/HeroSimple";
 import { SectionHeader } from "@/components/sections/SectionHeader";

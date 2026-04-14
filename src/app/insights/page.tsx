@@ -1,3 +1,12 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Insights | Engineering Thinking from Sciensa",
+  description: "Artigos, análises e perspectivas da equipe de engenharia da Sciensa sobre AI, platform engineering, payments, cloud e transformação digital em setores regulados.",
+  alternates: { canonical: "/insights" },
+  openGraph: { title: "Sciensa Insights — Engineering Thinking", description: "Perspectivas da equipe de engenharia da Sciensa sobre AI, payments e plataformas enterprise.", url: "https://sciensa.com/insights" },
+};
+
 import { getInsights, resolveUrl } from "@/lib/strapi";
 import { InsightsGrid } from "@/components/sections/InsightsGrid";
 

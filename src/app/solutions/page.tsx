@@ -1,3 +1,12 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Solutions | Digital Banking, Payments, AI & Enterprise — Sciensa",
+  description: "Soluções de tecnologia para digital banking, modernização de pagamentos, AI para instituições financeiras, enterprise AI e marketplace orchestration. Entregues em 4–12 semanas.",
+  alternates: { canonical: "/solutions" },
+  openGraph: { title: "Sciensa Solutions — Banking, Payments & AI", description: "Soluções enterprise para digital banking, pagamentos, IA e marketplace.", url: "https://sciensa.com/solutions" },
+};
+
 import { CountUp } from "@/components/ui/CountUp";
 import { HeroSimple } from "@/components/sections/HeroSimple";
 import { SectionHeader } from "@/components/sections/SectionHeader";

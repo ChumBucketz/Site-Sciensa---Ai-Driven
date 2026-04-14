@@ -1,4 +1,12 @@
+import type { Metadata } from "next";
 import { HeroSimple } from "@/components/sections/HeroSimple";
+
+export const metadata: Metadata = {
+  title: "About Sciensa | AI-Native Engineering Firm",
+  description: "Sciensa é uma empresa de engenharia de tecnologia fundada em 2014. Conheça nossa história, liderança, valores e os 200+ engenheiros que entregam plataformas mission-critical para banking, payments, saúde e varejo.",
+  alternates: { canonical: "/about" },
+  openGraph: { title: "About Sciensa", description: "Conheça a equipe e a história da Sciensa — engenharia de tecnologia mission-critical desde 2014.", url: "https://sciensa.com/about" },
+};
 import { SectionHeader } from "@/components/sections/SectionHeader";
 import { StatGrid } from "@/components/sections/StatGrid";
 import { CTABanner } from "@/components/sections/CTABanner";

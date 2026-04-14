@@ -1,4 +1,12 @@
+import type { Metadata } from "next";
 import { PlatformDetailTemplate, type PlatformDetailData } from "@/components/templates/PlatformDetailTemplate";
+
+export const metadata: Metadata = {
+  title: "Lumia AI | Enterprise Intelligence Platform — Sciensa",
+  description: "Lumia AI é a camada de inteligência da Sciensa — copilots, assistentes internos, automação de workflows e plataforma de conhecimento enterprise com LLMs e RAG pipelines.",
+  alternates: { canonical: "/platforms/lumia-ai" },
+  openGraph: { title: "Lumia AI by Sciensa — Enterprise LLM Platform", description: "Inteligência aplicada em copilots, agentes de conhecimento e automação de workflows para enterprise.", url: "https://sciensa.com/platforms/lumia-ai" },
+};
 
 const data: PlatformDetailData = {
   eyebrow: "Platforms / Lumia AI",

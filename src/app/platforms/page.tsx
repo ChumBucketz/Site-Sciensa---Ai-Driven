@@ -1,3 +1,12 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Platforms | Amplify, Lumia AI & CodeGenius — Sciensa",
+  description: "Plataformas proprietárias da Sciensa: Amplify para digital banking, Lumia AI para inteligência empresarial, CodeGenius para engenharia acelerada por IA. 3× mais rápido ao mercado.",
+  alternates: { canonical: "/platforms" },
+  openGraph: { title: "Sciensa Platforms — Amplify, Lumia AI, CodeGenius", description: "Plataformas enterprise proprietárias que comprimem o time-to-market e amplificam a capacidade de engenharia.", url: "https://sciensa.com/platforms" },
+};
+
 import { CountUp } from "@/components/ui/CountUp";
 import { HeroSimple } from "@/components/sections/HeroSimple";
 import { SectionHeader } from "@/components/sections/SectionHeader";
