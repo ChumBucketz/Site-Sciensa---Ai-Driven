@@ -75,7 +75,7 @@ export default function Home() {
         <FadeIn>
         <div className="bg-white rounded-2xl px-5 md:px-10 py-12">
           <p className="text-label text-[#717171] mb-10">
-            Trusted by leaders in complex industries
+            By the numbers
           </p>
           <StatGrid
             stats={[

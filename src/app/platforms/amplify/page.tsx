@@ -11,7 +11,7 @@ const data: PlatformDetailData = {
     { value: "10×", label: "Faster time-to-market" },
     { value: "90%", label: "Lower development cost" },
     { value: "6×", label: "Project ROI" },
-    { value: "40%", label: "Higher NPS" },
+    { value: "94%", label: "Higher NPS" },
   ],
   approach: {
     sectionLabel: "// WHY AMPLIFY",

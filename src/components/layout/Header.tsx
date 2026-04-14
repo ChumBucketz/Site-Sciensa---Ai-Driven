@@ -100,7 +100,7 @@ function PlatformDropdown({ open, onClose }: { open: boolean; onClose: () => voi
           Learn more →
         </Link>
       </div>
-      <div className="grid grid-cols-4 gap-2" style={{ minWidth: 480 }}>
+      <div className="grid grid-cols-3 gap-2" style={{ minWidth: 360 }}>
         {platformItems.map((p) => (
           <Link key={p.href} href={p.href} onClick={onClose}
             className="group flex flex-col rounded-xl overflow-hidden hover:bg-[#f5f5f5] transition-colors"

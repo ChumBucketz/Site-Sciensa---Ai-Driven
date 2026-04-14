@@ -78,9 +78,12 @@ const values = [
 ];
 
 const leadership = [
-  { name: "Felipe Scaphe",  role: "Founder & CVO", fullRole: "Founder & Chief Vision Officer", photo: "/avatar/felipe-scaphe.jfif"  },
-  { name: "Bruno Mancini",  role: "CEO", fullRole: "Chief Executive Officer",  photo: "/avatar/bruno-mancini.jfif"  },
-  { name: "Bruno Mizrahi",  role: "CPO", fullRole: "Chief Product Officer",     photo: "/avatar/bruno-mizrahi.jfif"  },
+  { name: "Felipe Scaphe",    role: "Founder & CVO", fullRole: "Founder & Chief Vision Officer",  photo: "/avatar/felipe-scaphe.jfif",  linkedin: "https://www.linkedin.com/in/scaphe/" },
+  { name: "Bruno Mancini",    role: "CEO",            fullRole: "Chief Executive Officer",          photo: "/avatar/bruno-mancini.jfif",  linkedin: "https://www.linkedin.com/in/mancinitech/" },
+  { name: "Bruno Mizrahi",    role: "CPO",            fullRole: "Chief Product Officer",            photo: "/avatar/bruno-mizrahi.jfif",  linkedin: "https://www.linkedin.com/in/bruno-mizrahi-39731068/" },
+  { name: "Eduardo Bregaida", role: "Head of Eng.",   fullRole: "Head of Engineering",              photo: "/avatar/Bregaida.jfif",       linkedin: "https://www.linkedin.com/in/bregaida1986/" },
+  { name: "Mônica Valverde",  role: "Head of HR",     fullRole: "Head of Human Resources",          photo: "/avatar/monica.jfif",         linkedin: "https://www.linkedin.com/in/monica-valverde-48415150/" },
+  { name: "José Alves",       role: "CFO",            fullRole: "Chief Financial Officer",          photo: "",                            linkedin: "https://www.linkedin.com/in/jos%C3%A9-alves-de-oliveira-90b4b424/" },
 ];
 
 export default function About() {
@@ -180,15 +183,34 @@ export default function About() {
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
             {leadership.map((member) => (
               <div key={member.name} className="el-card p-8 flex flex-col items-center text-center gap-4">
-                <img
-                  src={member.photo}
-                  alt={member.name}
-                  className="w-20 h-20 rounded-full object-cover object-top border border-[#e5e5e5] grayscale"
-                />
-                <div>
+                {member.photo ? (
+                  <img
+                    src={member.photo}
+                    alt={member.name}
+                    className="w-20 h-20 rounded-full object-cover object-top border border-[#e5e5e5] grayscale"
+                  />
+                ) : (
+                  <div className="w-20 h-20 rounded-full bg-[#e5e5e5] border border-[#e5e5e5] flex items-center justify-center">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#aaa" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+                    </svg>
+                  </div>
+                )}
+                <div className="flex-1">
                   <p className="text-base font-medium text-black tracking-tight">{member.name}</p>
                   <p className="text-[13px] text-[#717171] mt-0.5 tracking-[0.01em]">{member.fullRole}</p>
                 </div>
+                <a
+                  href={member.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 text-[12px] text-[#0A66C2] hover:text-[#004182] transition-colors"
+                >
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                  </svg>
+                  LinkedIn
+                </a>
               </div>
             ))}
           </div>
