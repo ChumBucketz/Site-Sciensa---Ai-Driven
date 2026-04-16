@@ -1,0 +1,441 @@
+/* ═══════════════════════════════════════════════════════════════
+   Sciensa AI Assessment LP — Design System
+   Scoped to assessment-ai route only
+   ═══════════════════════════════════════════════════════════════ */
+
+.assessment-root {
+  /* ── Light surfaces ── */
+  --bg-primary:    #F9FAFB;
+  --bg-secondary:  #F3F4F6;
+  --bg-tertiary:   #E5E7EB;
+  --bg-card:       #FFFFFF;
+
+  /* ── Dark surfaces ── */
+  --bg-dark:       #050B15;
+  --bg-dark-alt:   #080E1A;
+  --bg-dark-card:  rgba(255, 255, 255, 0.03);
+  --bg-dark-card2: rgba(255, 255, 255, 0.06);
+
+  /* ── Text ── */
+  --text-primary:   #111827;
+  --text-secondary: #4B5563;
+  --text-muted:     #9CA3AF;
+  --text-on-dark:   #F9FAFB;
+  --text-dim:       #6B7280;
+
+  /* ── Accent — Sciensa teal ── */
+  --accent:         #0D9373;
+  --accent-bright:  #12C9A0;
+  --accent-dim:     #097A60;
+  --accent-bg:      rgba(13, 147, 115, 0.08);
+  --accent-bg-md:   rgba(13, 147, 115, 0.15);
+
+  /* ── Borders ── */
+  --border-subtle:   #E5E7EB;
+  --border-medium:   #D1D5DB;
+  --border-dark:     rgba(255, 255, 255, 0.08);
+  --border-dark-md:  rgba(255, 255, 255, 0.14);
+  --border-accent:   rgba(13, 147, 115, 0.30);
+  --border-accent-strong: rgba(13, 147, 115, 0.55);
+
+  /* ── Shadows ── */
+  --shadow-card:     0 4px 20px rgba(0,0,0,0.04), 0 0 0 1px var(--border-subtle);
+  --shadow-elevated: 0 12px 40px rgba(0,0,0,0.08), 0 0 0 1px var(--border-medium);
+  --shadow-glow:     0 0 40px rgba(13,147,115,0.10);
+  --shadow-glow-lg:  0 0 80px rgba(13,147,115,0.18);
+  --shadow-dark:     0 24px 60px rgba(0,0,0,0.35), 0 0 0 1px rgba(255,255,255,0.06);
+
+  /* ── Motion ── */
+  --ease-expo:   cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --t-fast:  200ms;
+  --t-base:  400ms;
+  --t-slow:  700ms;
+  --t-reveal: 800ms;
+}
+
+.assessment-root h1 {
+  font-size: clamp(2.5rem, 6vw, 5.5rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+}
+.assessment-root h2 {
+  font-size: clamp(1.875rem, 4vw, 3.25rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+.assessment-root h3 {
+  font-size: clamp(1.25rem, 2.5vw, 1.625rem);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+/* ── Label tag (eyebrow) ── */
+.assessment-root .label-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-family: var(--font-assessment-mono, monospace);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-bg);
+  border: 1px solid var(--border-accent);
+  padding: 0.3rem 0.875rem;
+  border-radius: 9999px;
+}
+
+.assessment-root .label-tag-dark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-family: var(--font-assessment-mono, monospace);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-bright);
+  background: rgba(13,147,115,0.12);
+  border: 1px solid rgba(13,147,115,0.35);
+  padding: 0.3rem 0.875rem;
+  border-radius: 9999px;
+}
+
+/* ── Gradient text ── */
+.assessment-root .gradient-text {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-bright) 50%, #06B6A4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Buttons ── */
+.assessment-root .btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.9rem 2.25rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--accent);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all var(--t-fast) var(--ease-expo);
+}
+.assessment-root .btn-primary:hover {
+  background: var(--accent-bright);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(13,147,115,0.30);
+}
+
+.assessment-root .btn-ghost-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.9rem 2.25rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.7);
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all var(--t-fast) var(--ease-expo);
+}
+.assessment-root .btn-ghost-dark:hover {
+  border-color: rgba(13,147,115,0.6);
+  color: var(--accent-bright);
+  background: rgba(13,147,115,0.08);
+}
+
+/* ── Cards ── */
+.assessment-root .glass-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 20px;
+  box-shadow: var(--shadow-card);
+  transition: all var(--t-base) var(--ease-expo);
+}
+.assessment-root .glass-card:hover {
+  border-color: var(--border-accent);
+  box-shadow: var(--shadow-elevated), var(--shadow-glow);
+  transform: translateY(-3px);
+}
+
+.assessment-root .glass-card-dark {
+  background: rgba(255,255,255,0.035);
+  border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all var(--t-base) var(--ease-expo);
+}
+.assessment-root .glass-card-dark:hover {
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(13,147,115,0.4);
+  box-shadow: 0 0 40px rgba(13,147,115,0.08);
+}
+
+.assessment-root .accent-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  transition: all var(--t-base) var(--ease-expo);
+}
+.assessment-root .accent-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-bright));
+  opacity: 0;
+  transition: opacity var(--t-base);
+}
+.assessment-root .accent-card:hover {
+  border-color: var(--border-accent);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-glow);
+}
+.assessment-root .accent-card:hover::before { opacity: 1; }
+
+/* ── Metric box ── */
+.assessment-root .metric-box {
+  background: rgba(13,147,115,0.05);
+  border: 1px solid var(--border-accent);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all var(--t-base) var(--ease-expo);
+}
+.assessment-root .metric-box:hover {
+  background: rgba(13,147,115,0.09);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow);
+}
+
+/* ── Backgrounds / textures ── */
+.assessment-root .dot-grid {
+  background-image: radial-gradient(circle, rgba(0,0,0,0.055) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.assessment-root .line-grid-dark {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* ── Glow elements ── */
+.assessment-root .hero-glow {
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1100px;
+  height: 800px;
+  background: radial-gradient(ellipse at 40% 50%,
+    rgba(13,147,115,0.16) 0%,
+    rgba(18,201,160,0.06) 35%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Scroll reveal ── */
+.assessment-root .reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity var(--t-reveal) var(--ease-expo),
+    transform var(--t-reveal) var(--ease-expo);
+}
+.assessment-root .reveal.revealed { opacity: 1; transform: translateY(0); }
+.assessment-root .reveal-d1 { transition-delay: 80ms; }
+.assessment-root .reveal-d2 { transition-delay: 160ms; }
+.assessment-root .reveal-d3 { transition-delay: 240ms; }
+.assessment-root .reveal-d4 { transition-delay: 320ms; }
+
+@media (prefers-reduced-motion: reduce) {
+  .assessment-root .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* ── Pulse dot ── */
+.assessment-root .pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: assessment-pulse-glow 2.4s ease-in-out infinite;
+}
+
+@keyframes assessment-pulse-glow {
+  0%, 100% { opacity: 1;   box-shadow: 0 0  8px rgba(13,147,115,0.5); }
+  50%      { opacity: 0.5; box-shadow: 0 0 18px rgba(13,147,115,0.2); }
+}
+
+/* ── Score preview card float ── */
+@keyframes assessment-float-card {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
+
+.assessment-root .score-card-float {
+  animation: assessment-float-card 5s ease-in-out infinite;
+}
+
+/* ── Score number glow ── */
+@keyframes assessment-score-pulse {
+  0%, 100% { filter: drop-shadow(0 0 12px rgba(52,211,153,0.35)); }
+  50%      { filter: drop-shadow(0 0 32px rgba(52,211,153,0.65)); }
+}
+
+.assessment-root .score-num-glow { animation: assessment-score-pulse 2.8s ease-in-out infinite; }
+
+/* ── Arrow link ── */
+.assessment-root .arrow-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  color: var(--accent);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: gap var(--t-fast) var(--ease-expo);
+}
+.assessment-root .arrow-link:hover { gap: 0.625rem; }
+
+/* ── Mobile sticky CTA ── */
+@media (min-width: 768px) {
+  .assessment-root .mobile-sticky-cta { display: none !important; }
+}
+
+/* ── Form elements (dark) ── */
+.assessment-root .input-dark {
+  width: 100%;
+  background: rgba(255,255,255,0.045);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+  color: #F9FAFB;
+  font-size: 0.95rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color var(--t-fast) var(--ease-expo);
+}
+.assessment-root .input-dark:focus {
+  border-color: rgba(13,147,115,0.55);
+}
+.assessment-root .input-dark::placeholder { color: #4B5563; }
+
+/* ── Assessment option button ── */
+.assessment-root .opt-btn {
+  width: 100%;
+  background: rgba(255,255,255,0.035);
+  border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 10px;
+  padding: 1rem 1.125rem;
+  text-align: left;
+  color: #D1D5DB;
+  font-size: 0.93rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  line-height: 1.5;
+}
+.assessment-root .opt-btn:hover {
+  background: rgba(255,255,255,0.065);
+  border-color: rgba(255,255,255,0.16);
+}
+.assessment-root .opt-btn.selected {
+  background: rgba(13,147,115,0.12);
+  border-color: rgba(13,147,115,0.5);
+}
+
+/* ── Chunky CTA button ── */
+.assessment-root .btn-cta-lg {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  padding: 1.125rem 2.75rem;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: #fff;
+  background: var(--accent);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  letter-spacing: -0.01em;
+  transition: all var(--t-fast) var(--ease-expo);
+  box-shadow: 0 4px 20px rgba(13,147,115,0.25), inset 0 1px 0 rgba(255,255,255,0.15);
+}
+.assessment-root .btn-cta-lg:hover {
+  background: var(--accent-bright);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 36px rgba(13,147,115,0.38), inset 0 1px 0 rgba(255,255,255,0.2);
+}
+
+/* ── Section eyebrow ── */
+.assessment-root .eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-assessment-mono, monospace);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.25rem;
+}
+.assessment-root .eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 20px; height: 2px;
+  background: var(--accent);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.assessment-root .eyebrow-dark {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-assessment-mono, monospace);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-bright);
+  margin-bottom: 1.25rem;
+}
+.assessment-root .eyebrow-dark::before {
+  content: '';
+  display: inline-block;
+  width: 20px; height: 2px;
+  background: var(--accent-bright);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
